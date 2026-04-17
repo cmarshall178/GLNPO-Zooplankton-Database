@@ -15,12 +15,10 @@ Target goals include streamlining GLNPO Zooplankton compilation and quality assu
 
 ```
 
-## Including Plots
+## Dependencies
 
-You can also embed plots, for example:
-
-```{r pressure, echo=FALSE}
-plot(pressure)
+```{r Project setup and Dependencies}
+Be sure to run the project setup R script to proper collaboration and reproducibility across different computers and local repositories. This ensures collaborators use identical package versions and that updates happen automatically. 
 ```
 
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
