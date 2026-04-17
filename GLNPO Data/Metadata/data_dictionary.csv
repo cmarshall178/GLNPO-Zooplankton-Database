@@ -1,0 +1,21 @@
+variable,description,type,required
+source_file,Original Excel filename,character,yes
+sample_num,Sample identifier from workbook,character,yes
+station,Station name/code,character,yes
+sample_type,"Sample type, e.g. D20",character,yes
+qa_link,Linked QA sample number or sentinel value,character,no
+split,Split identifier,character,no
+split_factor,Subsampling split factor,numeric,no
+analyst,Analyst initials,character,no
+analyst_date,Date analyst processed sample,date,no
+scope_used,Scope identifier,character,no
+power_used,Magnification used,character,no
+species_name,Taxon or combo label,character,yes
+species_code,Species code,character,yes
+subgroup,Subgroup code,character,no
+group_code,Higher group code,character,no
+length_mm,Body length,numeric,no
+sex,Sex field where present,character,no
+organism_count,Count recorded on row,numeric,yes
+comment,Free text comment,character,no
+is_qa_sample,TRUE when qa_link points to another sample,logical,yes

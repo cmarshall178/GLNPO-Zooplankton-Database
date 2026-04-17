@@ -1,0 +1,17 @@
+species_name,species_code,subgroup,group_code
+Acanthocyclops vernalis,ACAVERN,CYC ,COP
+Bosmina longirostris,BOSLONG,NDAP,CLA
+Cyclops copepodites,CYCCOPE,CYCIMM,IMM
+Cyclops strenuus,CYCSTRE,CYC ,COP
+Daphnia galeata mendotae,DAPGALEM,DAP ,CLA
+Daphnia longiremis,DAPLONG,DAP ,CLA
+Diacyclops thomasi,DIYTHOM,CYC ,COP
+Diaptomus copepodites,DIACOPE,CALIMM,IMM
+Leptodiaptomus ashlandi,LEOASHL,CAL,COP
+Leptodiaptomus minutus,LEOMINU,CAL,COP
+Mesocyclops copepodites,MESCOPE,CYCIMM,IMM
+Mesocyclops edax,MESEDAX,CYC,COP
+Microcyclops rubellus,MICRUBE,CYC ,COP
+Skistodiaptomus oregonensis,SKIOREG,CAL,COP
+Tropocyclops prasinus mexicanus,TROPRASM,CYC,COP
+Tropocyclops prasinus mexicanus,TROPRASM,CYC ,COP
