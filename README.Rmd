@@ -1,0 +1,26 @@
+---
+title: "README.md"
+output: html_document
+date: "2026-04-16"
+---
+
+```{r Project Overview}
+Planktonic Crustacean Zooplankton and Rotifer data are collected from the offshore waters of lakes Superior, Michigan, Huron, Erie and Ontario as part of the U.S. Environmental Protection Agency (U.S. EPA) Great Lakes National Program Office’s (GLNPO) regular monitoring of the Great Lakes.  Crustacean Zooplankton Samples are collected in spring (typically April) and summer (typically August) by vertical tows with a metered, 153-μm mesh net from 100 meters depth (or 2 meters above the bottom) to the surface. Shallow water Crustacean Zooplankton and Rotifer are collected by vertical tows with a metered, 63-μm mesh net from 20 meters depth (or 2 meters above the bottom) to the surface. Station-level data (mg per m3, number per m3) are summarized by major taxonomic group.
+```
+
+## 
+
+```{r Project Goals}
+Target goals include streamlining GLNPO Zooplankton compilation and quality assurance process with reproducibility and collaboration as a main feature. Designs have scalability and the potential for automatically generated reports to modernize zooplankton database exploration and outputs. 
+
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
