@@ -1,0 +1,105 @@
+---
+title: "Zooplankton QA Report"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+library(targets)
+library(dplyr)
+library(knitr)
+tar_load(
+  clean_data,
+  qa_summary,
+  sample_summary,
+  missing_required,
+  negative_counts,
+  nonpositive_split_factor,
+  unexpected_sex_values,
+  duplicate_organism_rows,
+  station_standardization,
+  qa_link_issues
+)
+```
+
+## Overview
+
+```{r}
+data.frame(
+  n_rows = nrow(clean_data),
+  n_samples = dplyr::n_distinct(clean_data$sample_num),
+  n_source_files = dplyr::n_distinct(clean_data$source_file),
+  n_taxa = dplyr::n_distinct(clean_data$species_name)
+) |>
+  knitr::kable()
+```
+
+## QA summary
+
+```{r}
+qa_summary |>
+  knitr::kable()
+```
+
+## Sample summary
+
+```{r}
+sample_summary |>
+  arrange(source_file, sample_num) |>
+  knitr::kable()
+```
+
+## Missing required values
+
+```{r}
+missing_required |>
+  head(50) |>
+  knitr::kable()
+```
+
+## Negative counts
+
+```{r}
+negative_counts |>
+  head(50) |>
+  knitr::kable()
+```
+
+## Nonpositive split factor
+
+```{r}
+nonpositive_split_factor |>
+  head(50) |>
+  knitr::kable()
+```
+
+## Unexpected sex values
+
+```{r}
+unexpected_sex_values |>
+  head(50) |>
+  knitr::kable()
+```
+
+## Duplicate organism rows
+
+```{r}
+duplicate_organism_rows |>
+  head(50) |>
+  knitr::kable()
+```
+
+## Station standardization
+
+```{r}
+station_standardization |>
+  head(50) |>
+  knitr::kable()
+```
+
+## QA link issues
+
+```{r}
+qa_link_issues |>
+  head(50) |>
+  knitr::kable()
+```
