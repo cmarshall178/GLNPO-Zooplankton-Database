@@ -1,23 +1,15 @@
-library(dplyr)
-library(readr)
-library(stringr)
-library(lubridate)
-library(tidyr)
-library(here)
 
 clean_zoop <- function(df) {
   if (nrow(df) == 0) {
     return(tibble::tibble())
   }
-
+  
   df |>
     dplyr::rename(
       sample_num = samplenum,
       sample_type = sampletype,
       split_factor = splitfactor,
       analyst_date = analystdate,
-      scope_used = scope_used,
-      power_used = power_used,
       species_name = combo,
       species_code = speccode,
       group_code = group,
@@ -45,8 +37,3 @@ clean_zoop <- function(df) {
     )
 }
 
-write_compiled_data <- function(df) {
-  out_path <- here::here("data", "processed", "compiled_zooplankton.csv")
-  readr::write_csv(df, out_path)
-  out_path
-}
