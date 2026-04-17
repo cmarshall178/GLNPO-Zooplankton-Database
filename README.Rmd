@@ -21,4 +21,155 @@ Target goals include streamlining GLNPO Zooplankton compilation and quality assu
 Be sure to run the project setup R script to proper collaboration and reproducibility across different computers and local repositories. This ensures collaborators use identical package versions and that updates happen automatically. 
 ```
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+# Zooplankton QA project template
+
+This repository is a starter RStudio project for compiling raw zooplankton Excel files into a single tidy database, running quality checks, and generating a report.
+
+## What this template is built for
+
+The example files in `GLNLPO Data/Raw Data/` show the expected structure:
+
+- one worksheet per file
+- header row already present in row 1
+- one row per organism record
+- core fields such as `SAMPLENUM`, `STATION`, `SAMPLETYPE`, `COMBO`, `SPECCODE`, `LENGTH`, `SEX`, `ORGANISMCOUNT`
+- extra pivot-summary columns on the right like `Unnamed: 18`, `Unnamed: 19`, etc.
+
+The import code removes those pivot-summary columns and standardizes names.
+
+## Project layout
+
+- `_targets.R`: pipeline definition
+- `RCode/import.R`: find and import raw Excel files
+- `RCode/clean.R`: standardize columns and combine files
+- `RCode/qa_checks.R`: quality assurance checks
+- `RCode/summarize.R`: simple summaries for reporting
+- `Reports/qa_report.Rmd`: HTML QA report
+- `GLNPO Data/Raw Data/`: place new raw Excel files here
+- `GLNPO Data/raw/examples/`: example files from this template
+- `GLNPO Data/Processed Data/`: compiled outputs written by the pipeline
+- `Outputs/`: tables and figures from QA
+
+## How collaborators should use paths
+
+### The rule
+
+Never write absolute paths such as:
+
+```r
+readxl::read_excel("C:/Users/Name/Desktop/zoop/file.xlsx")
+```
+
+That will break as soon as someone clones the repo to a different computer.
+
+Instead, always build paths relative to the project root:
+
+```r
+here::here("data", "raw", "my_file.xlsx")
+```
+
+If the project is cloned to another machine, `here()` still points to the project folder, so the same code works there too.
+
+### Why `here()` works
+
+When you open the `.Rproj` or run code from the project root, the `here` package detects the repository root. Then:
+
+```r
+here::here()
+```
+
+returns the top-level project directory, and
+
+```r
+here::here("data", "raw")
+```
+
+returns the raw data folder inside that project.
+
+### Good path patterns
+
+Read one file:
+
+```r
+readxl::read_excel(here::here("data", "raw", "sample.xlsx"))
+```
+
+List all raw files:
+
+```r
+list.files(here::here("data", "raw"), pattern = "\\.xlsx$", full.names = TRUE)
+```
+
+Write output:
+
+```r
+readr::write_csv(df, here::here("data", "processed", "compiled_zooplankton.csv"))
+```
+
+### Other safe path helpers
+
+This project also uses `fs::path()` for joining path pieces:
+
+```r
+fs::path(here::here("data"), "raw", "sample.xlsx")
+```
+
+This is not required, but it can be helpful in functions.
+
+### What to avoid
+
+- `setwd()`
+- clicking around manually in file chooser dialogs for production code
+- absolute paths tied to one computer
+- saving outputs outside the repository
+
+## Typical workflow
+
+1. Clone the repository.
+2. Open the `.Rproj` file in RStudio.
+3. Put new raw Excel files into `data/raw/`.
+4. Run:
+
+```r
+install.packages(c(
+  "targets", "tarchetypes", "tidyverse", "readxl", "here",
+  "fs", "janitor", "lubridate", "rmarkdown"
+))
+```
+
+5. Then run:
+
+```r
+targets::tar_make()
+```
+
+6. View:
+   - `data/processed/compiled_zooplankton.csv`
+   - `outputs/tables/qa_summary.csv`
+   - `reports/qa_report.html`
+
+## Quality checks included
+
+- missing required values
+- invalid negative counts
+- duplicate organism rows
+- inconsistent station names after whitespace cleanup
+- suspicious QA links
+- nonstandard sex values
+- nonpositive split factors
+- pivot artifact columns in imported workbooks
+
+## Notes on your example files
+
+The attached example files appear to be organism-level records rather than already summarized station-level tables. A QA workbook includes a `QA_LINK` pointing to an original sample. Some station values have spacing differences such as `ER15M` versus `ER 15M`, so the cleaning step standardizes whitespace while preserving the original value for QA.
+
+## Recommended Git practice
+
+Keep large or confidential production raw files out of Git when needed. For collaboration, either:
+
+- commit only small de-identified examples, or
+- ignore `data/raw/` in `.gitignore` and share raw files through your lab storage
+
+This template keeps the example files in `data/raw/examples/` and lets collaborators place active files in `data/raw/`.
+
+
