@@ -1,11 +1,13 @@
+#install.packages("targets")
 library(targets)
 library(tarchetypes)
+library(here)
 
-source("R/import.R")
-source("R/clean.R")
-source("R/qa_checks.R")
-source("R/summarize.R")
-source("R/utils.R")
+source(here::here("RCode/import.R"))
+source(here::here("RCode/clean.R"))
+source(here::here("RCode/qa_checks.R"))
+source(here::here("RCode/summarize.R"))
+source(here::here("RCode/utils.R"))
 
 tar_option_set(
   packages = c(
@@ -13,6 +15,7 @@ tar_option_set(
     "tidyr", "lubridate", "here", "fs", "janitor", "rmarkdown"
   )
 )
+
 
 list(
   tar_target(project_dirs, ensure_project_dirs(), cue = tar_cue(mode = "always")),
