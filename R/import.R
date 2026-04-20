@@ -26,10 +26,17 @@ find_raw_files <- function(include_examples = FALSE) {
 }
 
 read_zoop_excel <- function(path, sheet = 1) {
-  readxl::read_excel(path = path, sheet = sheet) |>
+  readxl::read_excel(
+    path = path,
+    sheet = sheet,
+    col_types = "text"
+  ) |>
     janitor::clean_names() |>
     dplyr::select(-dplyr::matches("^unnamed")) |>
-    dplyr::mutate(source_file = base::basename(path), .before = 1)
+    dplyr::mutate(
+      source_file = fs::path_rel(path, start = here::here("data", "raw")),
+      .before = 1
+    )
 }
 
 read_all_zoop <- function(include_examples = FALSE) {

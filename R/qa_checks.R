@@ -13,14 +13,19 @@ required_columns <- c(
 )
 
 check_missing_required <- function(df) {
+  fields_to_check <- setdiff(required_columns, c("source_file", "sample_num"))
+  
   df |>
-    dplyr::mutate(row_id = dplyr::row_number()) |>
+    dplyr::mutate(
+      row_id = dplyr::row_number(),
+      dplyr::across(dplyr::all_of(fields_to_check), as.character)
+    ) |>
     tidyr::pivot_longer(
-      cols = dplyr::all_of(required_columns),
+      cols = dplyr::all_of(fields_to_check),
       names_to = "field",
       values_to = "value"
     ) |>
-    dplyr::filter(is.na(value) | value == "") |>
+    dplyr::filter(is.na(value) | stringr::str_trim(value) == "") |>
     dplyr::select(row_id, source_file, sample_num, field)
 }
 
