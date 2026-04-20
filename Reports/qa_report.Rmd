@@ -1,24 +1,42 @@
 ---
 title: "Zooplankton QA Report"
 output: html_document
+params:
+  clean_data: NULL
+  raw_files: NULL
+  compiled_csv: NULL
+  missing_required: NULL
+  negative_counts: NULL
+  nonpositive_split_factor: NULL
+  unexpected_sex_values: NULL
+  duplicate_organism_rows: NULL
+  station_standardization: NULL
+  qa_link_issues: NULL
+  qa_summary: NULL
+  sample_summary: NULL
+  sample_summary_csv: NULL
 ---
 
 ```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
+
 library(targets)
 library(dplyr)
-library(knitr)
-tar_load(
-  clean_data,
-  qa_summary,
-  sample_summary,
-  missing_required,
-  negative_counts,
-  nonpositive_split_factor,
-  unexpected_sex_values,
-  duplicate_organism_rows,
-  station_standardization,
-  qa_link_issues
-)
+library(tibble)
+
+clean_data <- params$clean_data
+raw_files <- params$raw_files
+compiled_csv <- params$compiled_csv
+missing_required <- params$missing_required
+negative_counts <- params$negative_counts
+nonpositive_split_factor <- params$nonpositive_split_factor
+unexpected_sex_values <- params$unexpected_sex_values
+duplicate_organism_rows <- params$duplicate_organism_rows
+station_standardization <- params$station_standardization
+qa_link_issues <- params$qa_link_issues
+qa_summary <- params$qa_summary
+sample_summary <- params$sample_summary
+sample_summary_csv <- params$sample_summary_csv
 ```
 
 ## Overview
@@ -44,7 +62,7 @@ qa_summary |>
 
 ```{r}
 sample_summary |>
-  arrange(source_file, sample_num) |>
+  dplyr::arrange(source_file, sample_num) |>
   knitr::kable()
 ```
 
