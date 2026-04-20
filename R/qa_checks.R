@@ -1,3 +1,12 @@
+# Current Checks
+# missing required fields
+# negative organism counts
+# missing or nonpositive split factors
+# unexpected sex values
+# duplicate organism rows
+# station-name standardization issues
+# broken or self-referential QA links
+
 required_columns <- c(
   "sample_num", "station", "sample_type", "species_name",
   "species_code", "organism_count", "source_file"

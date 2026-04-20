@@ -1,6 +1,20 @@
+# This the control center of the entire workflow. It tells R:
+# What to run, in what order, and when something needs to be re-run.
+# This allows the project to have a reproducible pipeline.
+# This creates a dependency chain: raw_data → clean_data → outliers
+
+# The workflow:
+# find raw Excel files
+# import all files
+# clean and standardize them
+# save a compiled CSV
+#run QA checks
+# write QA summary tables
+# render a report
+
 library(targets)
 library(tarchetypes)
-library(here)
+library(here) #builds a paths from the project root instead of from a specific computer
 
 source(here::here("R", "import.R"))
 source(here::here("R", "clean.R"))
