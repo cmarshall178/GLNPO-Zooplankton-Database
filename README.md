@@ -1,0 +1,65 @@
+---
+title: "README.md"
+output: html_document
+date: "2026-04-16"
+---
+
+```{r Project Overview}
+Planktonic Crustacean Zooplankton and Rotifer data are collected from the offshore waters of lakes Superior, Michigan, Huron, Erie and Ontario as part of the U.S. Environmental Protection Agency (U.S. EPA) Great Lakes National Program Office’s (GLNPO) regular monitoring of the Great Lakes.  Crustacean Zooplankton Samples are collected in spring (typically April) and summer (typically August) by vertical tows with a metered, 153-μm mesh net from 100 meters depth (or 2 meters above the bottom) to the surface. Shallow water Crustacean Zooplankton and Rotifer are collected by vertical tows with a metered, 63-μm mesh net from 20 meters depth (or 2 meters above the bottom) to the surface. Station-level data (mg per m3, number per m3) are summarized by major taxonomic group.
+```
+
+## 
+
+```{r Project Goals}
+Target goals include streamlining GLNPO Zooplankton compilation and quality assurance process with reproducibility and collaboration as a main feature. Designs have scalability and the potential for automatically generated reports to modernize zooplankton database exploration and outputs. 
+
+```
+
+## Dependencies
+
+```{r Project setup and Dependencies}
+Be sure to run the project setup R script to proper collaboration and reproducibility across different computers and local repositories. This ensures collaborators use identical package versions and that updates happen automatically. 
+```
+
+# GLNPO Zooplankton QA Project
+
+This project provides a reproducible and collaborative R workflow for importing raw Excel files, compiling them into standardized datasets, running automated quality checks, and generating QA reports.
+
+The project is designed to be cloned to other computers and run consistently using `targets`, `here`, and `renv`.
+
+## Project goals
+
+- Import raw GLNPO counting spreadsheets in Excel format
+- Standardize metadata and analyst-entered fields
+- Compile datasets reproducibly in code
+- Run automated QA checks on compiled raw data
+- Separate Zooplankton (`Zoop`) and Rotifer (`Rot`) protocols
+- Generate summary tables and HTML QA reports
+- Support collaboration across multiple computers
+
+## Project structure
+
+```text
+GLNPO Zooplankton Database/
+├── _targets.R
+├── GLNPO Zooplankton Database.Rproj
+├── README.md
+├── renv.lock
+├── renv/
+├── R/
+│   ├── import.R
+│   ├── clean.R
+│   ├── qa_checks.R
+│   ├── summarize.R
+│   └── utils.R
+├── data/
+│   ├── raw/
+│   │   └── ... raw Excel files and subfolders ...
+│   ├── processed/
+│   └── metadata/
+├── outputs/
+│   ├── figures/
+│   ├── tables/
+│   └── qa_report.html
+└── reports/
+    └── qa_report.Rmd
