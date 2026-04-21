@@ -56,89 +56,138 @@ list(
   ),
   
   tar_target(
+    unknown_protocol,
+    check_unknown_protocol(raw_data)
+  ),
+  
+  tar_target(
     clean_data,
     clean_zoop(raw_data)
   ),
   
   tar_target(
-    compiled_csv,
-    write_compiled_data(clean_data),
+    zoop_data,
+    dplyr::filter(clean_data, protocol == "zoop")
+  ),
+  
+  tar_target(
+    rot_data,
+    dplyr::filter(clean_data, protocol == "rot")
+  ),
+  
+  tar_target(
+    zoop_compiled_csv,
+    write_compiled_data(zoop_data, "compiled_zoop.csv"),
     format = "file"
   ),
   
   tar_target(
-    missing_required,
-    check_missing_required(clean_data)
+    rot_compiled_csv,
+    write_compiled_data(rot_data, "compiled_rot.csv"),
+    format = "file"
+  ),
+  
+  tar_target(zoop_missing_required, check_missing_required(zoop_data)),
+  tar_target(zoop_negative_counts, check_negative_counts(zoop_data)),
+  tar_target(zoop_nonpositive_split_factor, check_nonpositive_split_factor(zoop_data)),
+  tar_target(zoop_unexpected_sex_values, check_unexpected_sex_values(zoop_data)),
+  tar_target(zoop_duplicate_organism_rows, check_duplicate_organism_rows(zoop_data)),
+  tar_target(zoop_station_standardization, check_station_standardization(zoop_data)),
+  tar_target(zoop_qa_link_issues, check_qa_links(zoop_data)),
+  tar_target(zoop_split_factor_consistency, check_split_factor_consistency(zoop_data)),
+  tar_target(zoop_multiple_analyst_dates, check_multiple_analyst_dates(zoop_data)),
+  tar_target(zoop_missing_analyst_date, check_missing_analyst_date(zoop_data)),
+  tar_target(zoop_missing_split_on_counted_rows, check_missing_split_on_counted_rows(zoop_data)),
+  
+  tar_target(rot_missing_required, check_missing_required(rot_data)),
+  tar_target(rot_negative_counts, check_negative_counts(rot_data)),
+  tar_target(rot_nonpositive_split_factor, check_nonpositive_split_factor(rot_data)),
+  tar_target(rot_duplicate_organism_rows, check_duplicate_organism_rows(rot_data)),
+  tar_target(rot_station_standardization, check_station_standardization(rot_data)),
+  tar_target(rot_qa_link_issues, check_qa_links(rot_data)),
+  tar_target(rot_split_factor_consistency, check_split_factor_consistency(rot_data)),
+  tar_target(rot_multiple_analyst_dates, check_multiple_analyst_dates(rot_data)),
+  tar_target(rot_missing_analyst_date, check_missing_analyst_date(rot_data)),
+  tar_target(rot_missing_split_on_counted_rows, check_missing_split_on_counted_rows(rot_data)),
+  tar_target(rot_missing_rotvol, check_rot_missing_rotvol(rot_data)),
+  tar_target(rot_missing_subml, check_rot_missing_subml(rot_data)),
+  tar_target(rot_nonpositive_rotvol, check_rot_nonpositive_rotvol(rot_data)),
+  tar_target(rot_nonpositive_subml, check_rot_nonpositive_subml(rot_data)),
+  tar_target(rot_unexpected_splits, check_rot_unexpected_splits(rot_data)),
+  tar_target(rot_width_without_length, check_rot_width_without_length(rot_data)),
+  
+  tar_target(
+    zoop_qa_summary,
+    make_qa_summary(list(
+      unknown_protocol = unknown_protocol,
+      zoop_missing_required = zoop_missing_required,
+      zoop_negative_counts = zoop_negative_counts,
+      zoop_nonpositive_split_factor = zoop_nonpositive_split_factor,
+      zoop_unexpected_sex_values = zoop_unexpected_sex_values,
+      zoop_duplicate_organism_rows = zoop_duplicate_organism_rows,
+      zoop_station_standardization = zoop_station_standardization,
+      zoop_qa_link_issues = zoop_qa_link_issues,
+      zoop_split_factor_consistency = zoop_split_factor_consistency,
+      zoop_multiple_analyst_dates = zoop_multiple_analyst_dates,
+      zoop_missing_analyst_date = zoop_missing_analyst_date,
+      zoop_missing_split_on_counted_rows = zoop_missing_split_on_counted_rows
+    ))
   ),
   
   tar_target(
-    negative_counts,
-    check_negative_counts(clean_data)
+    rot_qa_summary,
+    make_qa_summary(list(
+      unknown_protocol = unknown_protocol,
+      rot_missing_required = rot_missing_required,
+      rot_negative_counts = rot_negative_counts,
+      rot_nonpositive_split_factor = rot_nonpositive_split_factor,
+      rot_duplicate_organism_rows = rot_duplicate_organism_rows,
+      rot_station_standardization = rot_station_standardization,
+      rot_qa_link_issues = rot_qa_link_issues,
+      rot_split_factor_consistency = rot_split_factor_consistency,
+      rot_multiple_analyst_dates = rot_multiple_analyst_dates,
+      rot_missing_analyst_date = rot_missing_analyst_date,
+      rot_missing_split_on_counted_rows = rot_missing_split_on_counted_rows,
+      rot_missing_rotvol = rot_missing_rotvol,
+      rot_missing_subml = rot_missing_subml,
+      rot_nonpositive_rotvol = rot_nonpositive_rotvol,
+      rot_nonpositive_subml = rot_nonpositive_subml,
+      rot_unexpected_splits = rot_unexpected_splits,
+      rot_width_without_length = rot_width_without_length
+    ))
   ),
   
   tar_target(
-    nonpositive_split_factor,
-    check_nonpositive_split_factor(clean_data)
-  ),
-  
-  tar_target(
-    unexpected_sex_values,
-    check_unexpected_sex_values(clean_data)
-  ),
-  
-  tar_target(
-    duplicate_organism_rows,
-    check_duplicate_organism_rows(clean_data)
-  ),
-  
-  tar_target(
-    station_standardization,
-    check_station_standardization(clean_data)
-  ),
-  
-  tar_target(
-    qa_link_issues,
-    check_qa_links(clean_data)
-  ),
-  
-  tar_target(
-    qa_summary,
-    tibble::tibble(
-      check = c(
-        "missing_required",
-        "negative_counts",
-        "nonpositive_split_factor",
-        "unexpected_sex_values",
-        "duplicate_organism_rows",
-        "station_standardization",
-        "qa_link_issues"
-      ),
-      n_rows_flagged = c(
-        nrow(missing_required),
-        nrow(negative_counts),
-        nrow(nonpositive_split_factor),
-        nrow(unexpected_sex_values),
-        nrow(duplicate_organism_rows),
-        nrow(station_standardization),
-        nrow(qa_link_issues)
-      )
-    )
-  ),
-  
-  tar_target(
-    qa_summary_csv,
-    write_qa_summary(qa_summary),
+    zoop_qa_summary_csv,
+    write_qa_summary(zoop_qa_summary, "zoop_qa_summary.csv"),
     format = "file"
   ),
   
   tar_target(
-    sample_summary,
-    summarize_samples(clean_data)
+    rot_qa_summary_csv,
+    write_qa_summary(rot_qa_summary, "rot_qa_summary.csv"),
+    format = "file"
   ),
   
   tar_target(
-    sample_summary_csv,
-    write_sample_summary(sample_summary),
+    zoop_sample_summary,
+    summarize_samples(zoop_data)
+  ),
+  
+  tar_target(
+    rot_sample_summary,
+    summarize_samples(rot_data)
+  ),
+  
+  tar_target(
+    zoop_sample_summary_csv,
+    write_sample_summary(zoop_sample_summary, "zoop_sample_summary.csv"),
+    format = "file"
+  ),
+  
+  tar_target(
+    rot_sample_summary_csv,
+    write_sample_summary(rot_sample_summary, "rot_sample_summary.csv"),
     format = "file"
   ),
   
@@ -149,23 +198,44 @@ list(
       output_file = "qa_report.html",
       output_dir = here::here("outputs"),
       params = list(
-        clean_data = clean_data,
         raw_files = raw_files,
-        compiled_csv = compiled_csv,
-        missing_required = missing_required,
-        negative_counts = negative_counts,
-        nonpositive_split_factor = nonpositive_split_factor,
-        unexpected_sex_values = unexpected_sex_values,
-        duplicate_organism_rows = duplicate_organism_rows,
-        station_standardization = station_standardization,
-        qa_link_issues = qa_link_issues,
-        qa_summary = qa_summary,
-        sample_summary = sample_summary,
-        sample_summary_csv = sample_summary_csv
+        unknown_protocol = unknown_protocol,
+        zoop_data = zoop_data,
+        rot_data = rot_data,
+        zoop_qa_summary = zoop_qa_summary,
+        rot_qa_summary = rot_qa_summary,
+        zoop_sample_summary = zoop_sample_summary,
+        rot_sample_summary = rot_sample_summary,
+        zoop_missing_required = zoop_missing_required,
+        zoop_negative_counts = zoop_negative_counts,
+        zoop_nonpositive_split_factor = zoop_nonpositive_split_factor,
+        zoop_unexpected_sex_values = zoop_unexpected_sex_values,
+        zoop_duplicate_organism_rows = zoop_duplicate_organism_rows,
+        zoop_station_standardization = zoop_station_standardization,
+        zoop_qa_link_issues = zoop_qa_link_issues,
+        zoop_split_factor_consistency = zoop_split_factor_consistency,
+        zoop_multiple_analyst_dates = zoop_multiple_analyst_dates,
+        zoop_missing_analyst_date = zoop_missing_analyst_date,
+        zoop_missing_split_on_counted_rows = zoop_missing_split_on_counted_rows,
+        rot_missing_required = rot_missing_required,
+        rot_negative_counts = rot_negative_counts,
+        rot_nonpositive_split_factor = rot_nonpositive_split_factor,
+        rot_duplicate_organism_rows = rot_duplicate_organism_rows,
+        rot_station_standardization = rot_station_standardization,
+        rot_qa_link_issues = rot_qa_link_issues,
+        rot_split_factor_consistency = rot_split_factor_consistency,
+        rot_multiple_analyst_dates = rot_multiple_analyst_dates,
+        rot_missing_analyst_date = rot_missing_analyst_date,
+        rot_missing_split_on_counted_rows = rot_missing_split_on_counted_rows,
+        rot_missing_rotvol = rot_missing_rotvol,
+        rot_missing_subml = rot_missing_subml,
+        rot_nonpositive_rotvol = rot_nonpositive_rotvol,
+        rot_nonpositive_subml = rot_nonpositive_subml,
+        rot_unexpected_splits = rot_unexpected_splits,
+        rot_width_without_length = rot_width_without_length
       ),
       envir = new.env(parent = globalenv())
     ),
     format = "file"
   )
 )
-  
