@@ -25,6 +25,16 @@ find_raw_files <- function(include_examples = FALSE) {
   sort(all_files)
 }
 
+classify_protocol <- function(path) {
+  file_name <- fs::path_file(path)
+  
+  dplyr::case_when(
+    stringr::str_detect(file_name, regex("Rot\\.xlsx$", ignore_case = TRUE)) ~ "rot",
+    stringr::str_detect(file_name, regex("Zoop\\.xlsx$", ignore_case = TRUE)) ~ "zoop",
+    TRUE ~ NA_character_
+  )
+}
+
 read_zoop_excel <- function(path, sheet = 1) {
   readxl::read_excel(
     path = path,
@@ -35,6 +45,8 @@ read_zoop_excel <- function(path, sheet = 1) {
     dplyr::select(-dplyr::matches("^unnamed")) |>
     dplyr::mutate(
       source_file = fs::path_rel(path, start = here::here("data", "raw")),
+      source_name = fs::path_file(path),
+      protocol = classify_protocol(path),
       .before = 1
     )
 }
