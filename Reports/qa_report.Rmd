@@ -1,20 +1,42 @@
 ---
-title: "Zooplankton QA Report"
+title: "Zooplankton and Rotifer QA Report"
 output: html_document
 params:
-  clean_data: NULL
   raw_files: NULL
-  compiled_csv: NULL
-  missing_required: NULL
-  negative_counts: NULL
-  nonpositive_split_factor: NULL
-  unexpected_sex_values: NULL
-  duplicate_organism_rows: NULL
-  station_standardization: NULL
-  qa_link_issues: NULL
-  qa_summary: NULL
-  sample_summary: NULL
-  sample_summary_csv: NULL
+  unknown_protocol: NULL
+  zoop_data: NULL
+  rot_data: NULL
+  zoop_qa_summary: NULL
+  rot_qa_summary: NULL
+  zoop_sample_summary: NULL
+  rot_sample_summary: NULL
+  zoop_missing_required: NULL
+  zoop_negative_counts: NULL
+  zoop_nonpositive_split_factor: NULL
+  zoop_unexpected_sex_values: NULL
+  zoop_duplicate_organism_rows: NULL
+  zoop_station_standardization: NULL
+  zoop_qa_link_issues: NULL
+  zoop_split_factor_consistency: NULL
+  zoop_multiple_analyst_dates: NULL
+  zoop_missing_analyst_date: NULL
+  zoop_missing_split_on_counted_rows: NULL
+  rot_missing_required: NULL
+  rot_negative_counts: NULL
+  rot_nonpositive_split_factor: NULL
+  rot_duplicate_organism_rows: NULL
+  rot_station_standardization: NULL
+  rot_qa_link_issues: NULL
+  rot_split_factor_consistency: NULL
+  rot_multiple_analyst_dates: NULL
+  rot_missing_analyst_date: NULL
+  rot_missing_split_on_counted_rows: NULL
+  rot_missing_rotvol: NULL
+  rot_missing_subml: NULL
+  rot_nonpositive_rotvol: NULL
+  rot_nonpositive_subml: NULL
+  rot_unexpected_splits: NULL
+  rot_width_without_length: NULL
 ---
 
 ```{r setup, include=FALSE}
@@ -24,100 +46,352 @@ library(targets)
 library(dplyr)
 library(tibble)
 
-clean_data <- params$clean_data
 raw_files <- params$raw_files
-compiled_csv <- params$compiled_csv
-missing_required <- params$missing_required
-negative_counts <- params$negative_counts
-nonpositive_split_factor <- params$nonpositive_split_factor
-unexpected_sex_values <- params$unexpected_sex_values
-duplicate_organism_rows <- params$duplicate_organism_rows
-station_standardization <- params$station_standardization
-qa_link_issues <- params$qa_link_issues
-qa_summary <- params$qa_summary
-sample_summary <- params$sample_summary
-sample_summary_csv <- params$sample_summary_csv
+unknown_protocol <- params$unknown_protocol
+
+zoop_data <- params$zoop_data
+rot_data <- params$rot_data
+
+zoop_qa_summary <- params$zoop_qa_summary
+rot_qa_summary <- params$rot_qa_summary
+
+zoop_sample_summary <- params$zoop_sample_summary
+rot_sample_summary <- params$rot_sample_summary
+
+zoop_missing_required <- params$zoop_missing_required
+zoop_negative_counts <- params$zoop_negative_counts
+zoop_nonpositive_split_factor <- params$zoop_nonpositive_split_factor
+zoop_unexpected_sex_values <- params$zoop_unexpected_sex_values
+zoop_duplicate_organism_rows <- params$zoop_duplicate_organism_rows
+zoop_station_standardization <- params$zoop_station_standardization
+zoop_qa_link_issues <- params$zoop_qa_link_issues
+zoop_split_factor_consistency <- params$zoop_split_factor_consistency
+zoop_multiple_analyst_dates <- params$zoop_multiple_analyst_dates
+zoop_missing_analyst_date <- params$zoop_missing_analyst_date
+zoop_missing_split_on_counted_rows <- params$zoop_missing_split_on_counted_rows
+
+rot_missing_required <- params$rot_missing_required
+rot_negative_counts <- params$rot_negative_counts
+rot_nonpositive_split_factor <- params$rot_nonpositive_split_factor
+rot_duplicate_organism_rows <- params$rot_duplicate_organism_rows
+rot_station_standardization <- params$rot_station_standardization
+rot_qa_link_issues <- params$rot_qa_link_issues
+rot_split_factor_consistency <- params$rot_split_factor_consistency
+rot_multiple_analyst_dates <- params$rot_multiple_analyst_dates
+rot_missing_analyst_date <- params$rot_missing_analyst_date
+rot_missing_split_on_counted_rows <- params$rot_missing_split_on_counted_rows
+rot_missing_rotvol <- params$rot_missing_rotvol
+rot_missing_subml <- params$rot_missing_subml
+rot_nonpositive_rotvol <- params$rot_nonpositive_rotvol
+rot_nonpositive_subml <- params$rot_nonpositive_subml
+rot_unexpected_splits <- params$rot_unexpected_splits
+rot_width_without_length <- params$rot_width_without_length
 ```
 
 ## Overview
 
 ```{r}
 data.frame(
-  n_rows = nrow(clean_data),
-  n_samples = dplyr::n_distinct(clean_data$sample_num),
-  n_source_files = dplyr::n_distinct(clean_data$source_file),
-  n_taxa = dplyr::n_distinct(clean_data$species_name)
+  metric = c(
+    "Number of raw files",
+    "Unknown protocol files",
+    "Zoop rows",
+    "Rot rows",
+    "Zoop unique samples",
+    "Rot unique samples"
+  ),
+  value = c(
+    length(raw_files),
+    nrow(unknown_protocol),
+    nrow(zoop_data),
+    nrow(rot_data),
+    dplyr::n_distinct(zoop_data$sample_num),
+    dplyr::n_distinct(rot_data$sample_num)
+  )
 ) |>
   knitr::kable()
 ```
 
-## QA summary
+## Unknown protocol files
 
 ```{r}
-qa_summary |>
+if (nrow(unknown_protocol) == 0) {
+  knitr::kable(data.frame(message = "No unknown protocol files detected."))
+} else {
+  knitr::kable(unknown_protocol)
+}
+```
+
+# Zooplankton QA
+## Zoop overview
+
+```{r}
+data.frame(
+  n_rows = nrow(zoop_data),
+  n_samples = dplyr::n_distinct(zoop_data$sample_num),
+  n_source_files = dplyr::n_distinct(zoop_data$source_file),
+  n_taxa = dplyr::n_distinct(zoop_data$species_name)
+) |>
   knitr::kable()
 ```
 
-## Sample summary
+## Zoop QA summary
 
 ```{r}
-sample_summary |>
-  dplyr::arrange(source_file, sample_num) |>
+zoop_qa_summary |>
   knitr::kable()
 ```
 
-## Missing required values
+## Zoop Sample summary
 
 ```{r}
-missing_required |>
+zoop_sample_summary |>
+  dplyr::arrange(source_file, sample_num, split) |>
+  knitr::kable()
+```
+
+## Zoop Missing required values
+
+```{r}
+zoop_missing_required |>
   head(50) |>
   knitr::kable()
 ```
 
-## Negative counts
+## Zoop Negative counts
 
 ```{r}
-negative_counts |>
+zoop_negative_counts |>
   head(50) |>
   knitr::kable()
 ```
 
-## Nonpositive split factor
+## Zoop nonpositive split factor
 
 ```{r}
-nonpositive_split_factor |>
+zoop_nonpositive_split_factor |>
   head(50) |>
   knitr::kable()
 ```
 
-## Unexpected sex values
+## Zoop unexpected sex values
 
 ```{r}
-unexpected_sex_values |>
+zoop_unexpected_sex_values |>
   head(50) |>
   knitr::kable()
 ```
 
-## Duplicate organism rows
+## Zoop duplicate organism rows
 
 ```{r}
-duplicate_organism_rows |>
+zoop_duplicate_organism_rows |>
   head(50) |>
   knitr::kable()
 ```
 
-## Station standardization
+## Zoop Station standardization
 
 ```{r}
-station_standardization |>
+zoop_station_standardization |>
   head(50) |>
   knitr::kable()
 ```
 
-## QA link issues
+## Zoop QA link issues
 
 ```{r}
-qa_link_issues |>
+zoop_qa_link_issues |>
   head(50) |>
   knitr::kable()
 ```
+
+## Zoop split factor consistency
+
+```{r}
+zoop_split_factor_consistency |>
+  head(50) |>
+  knitr::kable()
+```
+
+## Zoop multiple analyst dates
+
+```{r}
+zoop_multiple_analyst_dates |>
+  head(50) |>
+  knitr::kable()
+```
+
+## Zoop missing analyst dates
+
+```{r}
+zoop_missing_analyst_date |>
+  head(50) |>
+  knitr::kable()
+```
+
+## Zoop missing split on counted rows
+
+```{r}
+zoop_missing_split_on_counted_rows |>
+  head(50) |>
+  knitr::kable()
+```
+
+# Rotifer QA
+## Rot overview
+
+```{r}
+data.frame(
+  n_rows = nrow(rot_data),
+  n_samples = dplyr::n_distinct(rot_data$sample_num),
+  n_source_files = dplyr::n_distinct(rot_data$source_file),
+  n_taxa = dplyr::n_distinct(rot_data$species_name)
+) |>
+  knitr::kable()
+```
+
+## Zoop QA summary
+
+```{r}
+rot_sample_summary |>
+  dplyr::arrange(source_file, sample_num, split) |>
+  knitr::kable()
+```
+
+## Zoop Sample summary
+
+```{r}
+zoop_sample_summary |>
+  dplyr::arrange(source_file, sample_num, split) |>
+  knitr::kable()
+```
+
+## Zoop Missing required values
+
+```{r}
+rot_missing_required |>
+  head(50) |>
+  knitr::kable()
+```
+
+## Zoop Negative counts
+
+```{r}
+rot_negative_counts |>
+  head(50) |>
+  knitr::kable()
+```
+
+## Zoop nonpositive split factor
+
+```{r}
+rot_nonpositive_split_factor |>
+  head(50) |>
+  knitr::kable()
+```
+
+## Zoop duplicate organism rows
+
+```{r}
+rot_duplicate_organism_rows |>
+  head(50) |>
+  knitr::kable()
+```
+
+## Zoop Station standardization
+
+```{r}
+rot_station_standardization |>
+  head(50) |>
+  knitr::kable()
+```
+
+## Zoop QA link issues
+
+```{r}
+rot_qa_link_issues |>
+  head(50) |>
+  knitr::kable()
+```
+
+## Zoop split factor consistency
+
+```{r}
+rot_split_factor_consistency |>
+  head(50) |>
+  knitr::kable()
+```
+
+## Zoop multiple analyst dates
+
+```{r}
+rot_multiple_analyst_dates |>
+  head(50) |>
+  knitr::kable()
+```
+
+## Zoop missing analyst dates
+
+```{r}
+rot_missing_analyst_date |>
+  head(50) |>
+  knitr::kable()
+```
+
+## Zoop missing split on counted rows
+
+```{r}
+rot_missing_split_on_counted_rows |>
+  head(50) |>
+  knitr::kable()
+```
+
+## Rot missing ROTVOL
+
+```{r}
+rot_missing_rotvol |>
+  head(50) |>
+  knitr::kable()
+```
+
+## Rot missing split-specific aliquot volume
+
+```{r}
+rot_missing_subml |>
+  head(50) |>
+  knitr::kable()
+```
+
+## Rot nonpositive ROTVOL
+
+```{r}
+rot_nonpositive_rotvol |>
+  head(50) |>
+  knitr::kable()
+```
+
+## Rot nonpositive split-specific aliquot volume
+
+```{r}
+rot_nonpositive_subml |>
+  head(50) |>
+  knitr::kable()
+```
+
+## Rot unexpected splits
+
+```{r}
+rot_unexpected_splits |>
+  head(50) |>
+  knitr::kable()
+```
+
+## Rot width recorded without length
+
+```{r}
+rot_unexpected_splits |>
+  head(50) |>
+  knitr::kable()
+```
+
