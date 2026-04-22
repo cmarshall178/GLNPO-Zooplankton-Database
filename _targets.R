@@ -77,13 +77,13 @@ list(
   
   tar_target(
     zoop_compiled_csv,
-    write_compiled_data(zoop_data, "compiled_zoop.csv"),
+    write_compiled_zoop_data(clean_data),
     format = "file"
   ),
   
   tar_target(
     rot_compiled_csv,
-    write_compiled_data(rot_data, "compiled_rot.csv"),
+    write_compiled_rot_data(clean_data),
     format = "file"
   ),
   
@@ -98,6 +98,7 @@ list(
   tar_target(zoop_multiple_analyst_dates, check_multiple_analyst_dates(zoop_data)),
   tar_target(zoop_missing_analyst_date, check_missing_analyst_date(zoop_data)),
   tar_target(zoop_missing_split_on_counted_rows, check_missing_split_on_counted_rows(zoop_data)),
+  tar_target(zoop_unexpected_power_used, check_unexpected_power_used(zoop_data)),
   
   tar_target(rot_missing_required, check_missing_required(rot_data)),
   tar_target(rot_negative_counts, check_negative_counts(rot_data)),
@@ -114,8 +115,11 @@ list(
   tar_target(rot_nonpositive_rotvol, check_rot_nonpositive_rotvol(rot_data)),
   tar_target(rot_nonpositive_subml, check_rot_nonpositive_subml(rot_data)),
   tar_target(rot_unexpected_splits, check_rot_unexpected_splits(rot_data)),
-  tar_target(rot_width_without_length, check_rot_width_without_length(rot_data)),
-  
+  tar_target(rot_unexpected_width_without_length, check_rot_unexpected_width_without_length(rot_data)),
+  tar_target(rot_unexpected_power_used, check_unexpected_power_used(rot_data)),
+  tar_target(rot_collotheca_width_only, check_rot_collotheca_width_only(rot_data)),
+  tar_target(rot_required_length_and_width, check_rot_required_length_and_width(rot_data)), 
+    
   tar_target(
     zoop_qa_summary,
     make_qa_summary(list(
@@ -130,7 +134,8 @@ list(
       zoop_split_factor_consistency = zoop_split_factor_consistency,
       zoop_multiple_analyst_dates = zoop_multiple_analyst_dates,
       zoop_missing_analyst_date = zoop_missing_analyst_date,
-      zoop_missing_split_on_counted_rows = zoop_missing_split_on_counted_rows
+      zoop_missing_split_on_counted_rows = zoop_missing_split_on_counted_rows,
+      zoop_unexpected_power_used = zoop_unexpected_power_used
     ))
   ),
   
@@ -153,7 +158,10 @@ list(
       rot_nonpositive_rotvol = rot_nonpositive_rotvol,
       rot_nonpositive_subml = rot_nonpositive_subml,
       rot_unexpected_splits = rot_unexpected_splits,
-      rot_width_without_length = rot_width_without_length
+      rot_required_length_and_width = rot_required_length_and_width,
+      rot_collotheca_width_only = rot_collotheca_width_only,
+      rot_unexpected_width_without_length = rot_unexpected_width_without_length,
+      rot_unexpected_power_used = rot_unexpected_power_used
     ))
   ),
   
@@ -171,12 +179,12 @@ list(
   
   tar_target(
     zoop_sample_summary,
-    summarize_samples(zoop_data)
+    summarize_zoop_samples(zoop_data)
   ),
   
   tar_target(
     rot_sample_summary,
-    summarize_samples(rot_data)
+    summarize_rot_samples(rot_data)
   ),
   
   tar_target(
@@ -217,6 +225,7 @@ list(
         zoop_multiple_analyst_dates = zoop_multiple_analyst_dates,
         zoop_missing_analyst_date = zoop_missing_analyst_date,
         zoop_missing_split_on_counted_rows = zoop_missing_split_on_counted_rows,
+        zoop_unexpected_power_used = zoop_unexpected_power_used,
         rot_missing_required = rot_missing_required,
         rot_negative_counts = rot_negative_counts,
         rot_nonpositive_split_factor = rot_nonpositive_split_factor,
@@ -232,7 +241,8 @@ list(
         rot_nonpositive_rotvol = rot_nonpositive_rotvol,
         rot_nonpositive_subml = rot_nonpositive_subml,
         rot_unexpected_splits = rot_unexpected_splits,
-        rot_width_without_length = rot_width_without_length
+        rot_width_without_length = rot_width_without_length,
+        rot_unexpected_power_used = rot_unexpected_power_used
       ),
       envir = new.env(parent = globalenv())
     ),
