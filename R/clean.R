@@ -36,6 +36,9 @@ clean_zoop <- function(df) {
       sex = dplyr::na_if(stringr::str_squish(as.character(sex)), ""),
       comment = dplyr::na_if(stringr::str_squish(as.character(comment)), ""),
       
+      scope_used = dplyr::na_if(stringr::str_squish(as.character(scope_used)), ""),
+      power_used = dplyr::na_if(stringr::str_squish(as.character(power_used)), ""),
+      
       split_factor = readr::parse_number(as.character(split_factor)),
       
       analyst_date_raw = dplyr::na_if(as.character(analyst_date), ""),
@@ -64,12 +67,6 @@ clean_zoop <- function(df) {
       submla_ml = suppressWarnings(as.numeric(submla)),
       submlb_ml = suppressWarnings(as.numeric(submlb)),
       
-      tow_type = dplyr::case_when(
-        stringr::str_detect(station, "D100") ~ "D100",
-        stringr::str_detect(station, "D20") ~ "D20",
-        TRUE ~ NA_character_
-      ),
-      
       is_qa_sample = !is.na(qa_link)
     ) |>
     dplyr::group_by(source_file, sample_num, split) |>
@@ -78,17 +75,14 @@ clean_zoop <- function(df) {
         split_factor,
         dplyr::first(split_factor[!is.na(split_factor)], default = NA_real_)
       ),
-      
       rotvol_ml = dplyr::coalesce(
         rotvol_ml,
         dplyr::first(rotvol_ml[!is.na(rotvol_ml)], default = NA_real_)
       ),
-      
       submla_ml = dplyr::coalesce(
         submla_ml,
         dplyr::first(submla_ml[!is.na(submla_ml)], default = NA_real_)
       ),
-      
       submlb_ml = dplyr::coalesce(
         submlb_ml,
         dplyr::first(submlb_ml[!is.na(submlb_ml)], default = NA_real_)
@@ -104,7 +98,7 @@ clean_zoop <- function(df) {
     ) |>
     dplyr::select(
       protocol, source_file, source_name, sample_num, station, station_raw,
-      tow_type, sample_type, qa_link, split, split_factor, analyst,
+      sample_type, qa_link, split, split_factor, analyst,
       analyst_date, analyst_date_raw, scope_used, power_used, species_name,
       species_code, subgroup, group_code, length_mm, width_mm, sex,
       organism_count, rotvol_ml, submla_ml, submlb_ml, rot_subml_ml,

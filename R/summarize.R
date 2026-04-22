@@ -1,11 +1,33 @@
-summarize_samples <- function(df) {
+summarize_zoop_samples <- function(df) {
   df |>
+    dplyr::filter(protocol == "zoop") |>
     dplyr::group_by(
       protocol,
       source_file,
       sample_num,
       station,
-      tow_type,
+      sample_type,
+      split,
+      split_factor,
+      is_qa_sample
+    ) |>
+    dplyr::summarise(
+      n_rows = dplyr::n(),
+      total_organisms = sum(organism_count, na.rm = TRUE),
+      n_taxa = dplyr::n_distinct(species_name),
+      n_length_measured = sum(!is.na(length_mm)),
+      .groups = "drop"
+    )
+}
+
+summarize_rot_samples <- function(df) {
+  df |>
+    dplyr::filter(protocol == "rot") |>
+    dplyr::group_by(
+      protocol,
+      source_file,
+      sample_num,
+      station,
       sample_type,
       split,
       split_factor,

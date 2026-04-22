@@ -174,8 +174,71 @@ check_rot_unexpected_splits <- function(df) {
     dplyr::distinct(source_file, sample_num, split)
 }
 
-check_rot_width_without_length <- function(df) {
+check_rot_unexpected_width_without_length <- function(df) {
   df |>
     dplyr::filter(protocol == "rot", !is.na(width_mm), is.na(length_mm)) |>
-    dplyr::distinct(source_file, sample_num, split, species_name, width_mm, length_mm)
+    dplyr::mutate(
+      species_code = stringr::str_to_upper(as.character(species_code))
+    ) |>
+    dplyr::filter(
+      !stringr::str_starts(species_code, "COL")
+    ) |>
+    dplyr::distinct(
+      source_file, sample_num, split, species_name, species_code, width_mm, length_mm
+    )
 }
+
+check_unexpected_power_used <- function(df) {
+  df |>
+    dplyr::mutate(
+      power_used_num = readr::parse_number(as.character(power_used))
+    ) |>
+    dplyr::filter(
+      (protocol == "rot" & !is.na(power_used_num) & power_used_num != 100) |
+        (protocol == "zoop" & !is.na(power_used_num) & power_used_num != 30)
+    ) |>
+    dplyr::distinct(
+      protocol, source_file, sample_num, split, power_used
+    )
+}
+
+check_rot_required_length_and_width <- function(df) {
+  df |>
+    dplyr::filter(protocol == "rot") |>
+    dplyr::mutate(
+      species_code = stringr::str_to_upper(as.character(species_code))
+    ) |>
+    dplyr::filter(
+      stringr::str_starts(species_code, "TRI") |
+        stringr::str_starts(species_code, "CON") |
+        stringr::str_starts(species_code, "COO") |
+        stringr::str_starts(species_code, "FIL")
+    ) |>
+    dplyr::filter(is.na(length_mm) | is.na(width_mm)) |>
+    dplyr::mutate(
+      expected_measurement_rule = "Both length_mm and width_mm required"
+    ) |>
+    dplyr::distinct(
+      source_file, sample_num, split, species_name, species_code,
+      length_mm, width_mm, expected_measurement_rule
+    )
+}
+
+check_rot_collotheca_width_only <- function(df) {
+  df |>
+    dplyr::filter(protocol == "rot") |>
+    dplyr::mutate(
+      species_code = stringr::str_to_upper(as.character(species_code))
+    ) |>
+    dplyr::filter(stringr::str_starts(species_code, "COL")) |>
+    dplyr::filter(is.na(width_mm)) |>
+    dplyr::mutate(
+      expected_measurement_rule = "Width_mm required; length_mm not required"
+    ) |>
+    dplyr::distinct(
+      source_file, sample_num, split, species_name, species_code,
+      length_mm, width_mm, expected_measurement_rule
+    )
+}
+
+
