@@ -21,6 +21,8 @@ params:
   zoop_multiple_analyst_dates: NULL
   zoop_missing_analyst_date: NULL
   zoop_missing_split_on_counted_rows: NULL
+  zoop_unexpected_power_used: NULL
+  zoop_d_split_allowed_taxa: NULL
   rot_missing_required: NULL
   rot_negative_counts: NULL
   rot_nonpositive_split_factor: NULL
@@ -36,15 +38,25 @@ params:
   rot_nonpositive_rotvol: NULL
   rot_nonpositive_subml: NULL
   rot_unexpected_splits: NULL
-  rot_width_without_length: NULL
+  rot_required_length_and_width: NULL
+  rot_collotheca_width_only: NULL
+  rot_unexpected_width_without_length: NULL
+  rot_unexpected_power_used: NULL
+  sample_not_in_master: NULL
+  master_sample_missing_in_data: NULL
+  station_mismatch_vs_master: NULL
+  depth_mismatch_vs_master: NULL
+  d20_sample_id_suffix: NULL
+  d100_sample_id_suffix: NULL
+  rot_not_allowed_in_d100: NULL
+  d20_missing_protocol_pair: NULL
+  zoop_flagged_data: NULL
+  rot_flagged_data: NULL
+  
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
-
-library(targets)
-library(dplyr)
-library(tibble)
 
 raw_files <- params$raw_files
 unknown_protocol <- params$unknown_protocol
@@ -69,7 +81,11 @@ zoop_split_factor_consistency <- params$zoop_split_factor_consistency
 zoop_multiple_analyst_dates <- params$zoop_multiple_analyst_dates
 zoop_missing_analyst_date <- params$zoop_missing_analyst_date
 zoop_missing_split_on_counted_rows <- params$zoop_missing_split_on_counted_rows
+zoop_unexpected_power_used <- params$zoop_unexpected_power_used
+zoop_d_split_allowed_taxa <- params$zoop_d_split_allowed_taxa
+zoop_flagged_data <- params$zoop_flagged_data
 
+rot_flagged_data <- params$rot_flagged_data
 rot_missing_required <- params$rot_missing_required
 rot_negative_counts <- params$rot_negative_counts
 rot_nonpositive_split_factor <- params$rot_nonpositive_split_factor
@@ -85,7 +101,19 @@ rot_missing_subml <- params$rot_missing_subml
 rot_nonpositive_rotvol <- params$rot_nonpositive_rotvol
 rot_nonpositive_subml <- params$rot_nonpositive_subml
 rot_unexpected_splits <- params$rot_unexpected_splits
-rot_width_without_length <- params$rot_width_without_length
+rot_required_length_and_width <- params$rot_required_length_and_width
+rot_collotheca_width_only <- params$rot_collotheca_width_only
+rot_unexpected_width_without_length <- params$rot_unexpected_width_without_length
+rot_unexpected_power_used <- params$rot_unexpected_power_used
+
+sample_not_in_master <- params$sample_not_in_master
+master_sample_missing_in_data <- params$master_sample_missing_in_data
+station_mismatch_vs_master <- params$station_mismatch_vs_master
+depth_mismatch_vs_master <- params$depth_mismatch_vs_master
+d20_sample_id_suffix <- params$d20_sample_id_suffix
+d100_sample_id_suffix <- params$d100_sample_id_suffix
+rot_not_allowed_in_d100 <- params$rot_not_allowed_in_d100
+d20_missing_protocol_pair <- params$d20_missing_protocol_pair
 ```
 
 ## Overview
@@ -121,6 +149,72 @@ if (nrow(unknown_protocol) == 0) {
   knitr::kable(unknown_protocol)
 }
 ```
+
+# Master List Validation
+## Samples not in master list
+
+```{r}
+sample_not_in_master |>
+  head(50) |>
+  knitr::kable()
+```
+
+## Master samples missing in compiled data
+
+```{r}
+master_sample_missing_in_data |>
+  head(50) |>
+  knitr::kable()
+```
+
+## Station mismatches vs master list
+
+```{r}
+station_mismatch_vs_master |>
+  head(50) |>
+  knitr::kable()
+```
+
+## Depth mismatches vs master list
+
+```{r}
+depth_mismatch_vs_master |>
+  head(50) |>
+  knitr::kable()
+```
+
+## D20 sample IDs not ending in 4
+
+```{r}
+d20_sample_id_suffix |>
+  head(50) |>
+  knitr::kable()
+```
+
+## D100 Zoop sample IDs not ending in 3
+
+```{r}
+d100_sample_id_suffix |>
+  head(50) |>
+  knitr::kable()
+```
+
+## Rot samples incorrectly present for D100
+
+```{r}
+rot_not_allowed_in_d100 |>
+  head(50) |>
+  knitr::kable()
+```
+
+## D20 missing required Zoop/Rot protocol pair
+
+```{r}
+rot_not_allowed_in_d100 |>
+  head(50) |>
+  knitr::kable()
+```
+
 
 # Zooplankton QA
 ## Zoop overview
@@ -238,6 +332,22 @@ zoop_missing_split_on_counted_rows |>
   knitr::kable()
 ```
 
+## Zoop unexpected power used
+
+```{r}
+zoop_unexpected_power_used |>
+  head(50) |>
+  knitr::kable()
+```
+
+## Zoop split taxa outside allowed adult list
+
+```{r}
+zoop_d_split_allowed_taxa |>
+  head(50) |>
+  knitr::kable()
+```
+
 # Rotifer QA
 ## Rot overview
 
@@ -251,7 +361,14 @@ data.frame(
   knitr::kable()
 ```
 
-## Zoop QA summary
+## Rot QA summary
+
+```{r}
+rot_qa_summary |>
+  knitr::kable()
+```
+
+## Rot Sample summary
 
 ```{r}
 rot_sample_summary |>
@@ -259,15 +376,7 @@ rot_sample_summary |>
   knitr::kable()
 ```
 
-## Zoop Sample summary
-
-```{r}
-zoop_sample_summary |>
-  dplyr::arrange(source_file, sample_num, split) |>
-  knitr::kable()
-```
-
-## Zoop Missing required values
+## Rot Missing required values
 
 ```{r}
 rot_missing_required |>
@@ -275,7 +384,7 @@ rot_missing_required |>
   knitr::kable()
 ```
 
-## Zoop Negative counts
+## Rot negative counts
 
 ```{r}
 rot_negative_counts |>
@@ -283,7 +392,7 @@ rot_negative_counts |>
   knitr::kable()
 ```
 
-## Zoop nonpositive split factor
+## Rot nonpositive split factor
 
 ```{r}
 rot_nonpositive_split_factor |>
@@ -291,7 +400,7 @@ rot_nonpositive_split_factor |>
   knitr::kable()
 ```
 
-## Zoop duplicate organism rows
+## Rot duplicate organism rows
 
 ```{r}
 rot_duplicate_organism_rows |>
@@ -299,7 +408,7 @@ rot_duplicate_organism_rows |>
   knitr::kable()
 ```
 
-## Zoop Station standardization
+## Rot Station standardization
 
 ```{r}
 rot_station_standardization |>
@@ -307,7 +416,7 @@ rot_station_standardization |>
   knitr::kable()
 ```
 
-## Zoop QA link issues
+## Rot QA link issues
 
 ```{r}
 rot_qa_link_issues |>
@@ -315,7 +424,7 @@ rot_qa_link_issues |>
   knitr::kable()
 ```
 
-## Zoop split factor consistency
+## Rot split factor consistency
 
 ```{r}
 rot_split_factor_consistency |>
@@ -323,7 +432,7 @@ rot_split_factor_consistency |>
   knitr::kable()
 ```
 
-## Zoop multiple analyst dates
+## Rot multiple analyst dates
 
 ```{r}
 rot_multiple_analyst_dates |>
@@ -331,7 +440,7 @@ rot_multiple_analyst_dates |>
   knitr::kable()
 ```
 
-## Zoop missing analyst dates
+## Rot missing analyst dates
 
 ```{r}
 rot_missing_analyst_date |>
@@ -339,7 +448,7 @@ rot_missing_analyst_date |>
   knitr::kable()
 ```
 
-## Zoop missing split on counted rows
+## Rot missing split on counted rows
 
 ```{r}
 rot_missing_split_on_counted_rows |>
@@ -387,11 +496,47 @@ rot_unexpected_splits |>
   knitr::kable()
 ```
 
-## Rot width recorded without length
+## Rot unexpected width without length
 
 ```{r}
-rot_unexpected_splits |>
+rot_unexpected_width_without_length |>
   head(50) |>
   knitr::kable()
 ```
 
+## Rot unexpected power used
+
+```{r}
+rot_unexpected_power_used |>
+  head(50) |>
+  knitr::kable()
+```
+
+## Rot taxa requiring both length and width
+
+```{r}
+rot_required_length_and_width |>
+  head(50) |>
+  knitr::kable()
+```
+
+## Rot Collotheca rows missing required width
+
+```{r}
+rot_collotheca_width_only |>
+  head(50) |>
+  knitr::kable()
+```
+
+## Flagged row overview
+
+```{r}
+data.frame(
+  dataset = c("Zoop", "Rot"),
+  flagged_rows = c(
+    sum(zoop_flagged_data$any_flag, na.rm = TRUE),
+    sum(rot_flagged_data$any_flag, na.rm = TRUE)
+  )
+) |>
+  knitr::kable()
+```
