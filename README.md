@@ -118,7 +118,7 @@ The pipeline will automatically read from this folder.
 
 ## How to Run the Pipeline
 
-Open the `.Rproj` file, then run:
+Open the `.Rproj` file, then run in the console:
 
 ```r
 targets::tar_make()
