@@ -110,8 +110,12 @@ check_split_factor_consistency <- function(df) {
 
 check_multiple_analyst_dates <- function(df) {
   df |>
-    dplyr::filter(!is.na(analyst_date), !is.na(split), split != "") |>
-    dplyr::group_by(protocol, source_file, sample_num, split) |>
+    dplyr::filter(
+      !is.na(analyst_date),
+      !is.na(split),
+      split != ""
+    ) |>
+    dplyr::group_by(source_file, sample_num, split) |>
     dplyr::summarise(
       n_distinct_dates = dplyr::n_distinct(analyst_date),
       dates = paste(sort(unique(as.character(analyst_date))), collapse = ", "),
@@ -122,8 +126,21 @@ check_multiple_analyst_dates <- function(df) {
 
 check_missing_analyst_date <- function(df) {
   df |>
-    dplyr::filter(is.na(analyst_date)) |>
-    dplyr::distinct(protocol, source_file, sample_num, split, analyst_date_raw)
+    dplyr::filter(
+      !is.na(row_id),
+      is.na(analyst_date),
+      !is.na(analyst_date_raw),
+      stringr::str_trim(as.character(analyst_date_raw)) != ""
+    ) |>
+    dplyr::select(
+      row_id,
+      protocol,
+      source_file,
+      sample_num,
+      split,
+      analyst_date_raw
+    ) |>
+    dplyr::distinct()
 }
 
 check_missing_split_on_counted_rows <- function(df) {
@@ -176,15 +193,26 @@ check_rot_unexpected_splits <- function(df) {
 
 check_rot_unexpected_width_without_length <- function(df) {
   df |>
-    dplyr::filter(protocol == "rot", !is.na(width_mm), is.na(length_mm)) |>
+    dplyr::filter(protocol == "rot") |>
     dplyr::mutate(
       species_code = stringr::str_to_upper(as.character(species_code))
+    ) |>
+    dplyr::filter(
+      !is.na(width_mm),
+      width_mm > 0,
+      is.na(length_mm)
     ) |>
     dplyr::filter(
       !stringr::str_starts(species_code, "COL")
     ) |>
     dplyr::distinct(
-      source_file, sample_num, split, species_name, species_code, width_mm, length_mm
+      source_file,
+      sample_num,
+      split,
+      species_name,
+      species_code,
+      width_mm,
+      length_mm
     )
 }
 
@@ -241,4 +269,143 @@ check_rot_collotheca_width_only <- function(df) {
     )
 }
 
+check_zoop_d_split_allowed_taxa <- function(df) {
+  allowed_speccodes <- c(
+    "LIMMACR",
+    "SENCALA",
+    "EPILACU",
+    "HOLGIBB",
+    "DIPBIRG",
+    "DIPSP",
+    "DIPFLUV",
+    "LETKIND",
+    "POLPEDI",
+    "EURLAME",
+    "SIDCRYS",
+    "DAPLUMH"
+  )
+  
+  df |>
+    dplyr::filter(protocol == "zoop") |>
+    dplyr::mutate(
+      split = stringr::str_to_upper(as.character(split)),
+      species_code = stringr::str_to_upper(
+        stringr::str_squish(as.character(species_code))
+      )
+    ) |>
+    dplyr::filter(split == "D") |>
+    dplyr::filter(
+      is.na(species_code) | !(species_code %in% allowed_speccodes)
+    ) |>
+    dplyr::distinct(
+      source_file,
+      sample_num,
+      split,
+      species_name,
+      species_code,
+      organism_count
+    )
+}
 
+check_sample_not_in_master <- function(df, master) {
+  df |>
+    dplyr::filter(!stringr::str_detect(sample_num, "Q")) |>
+    dplyr::filter(!(sample_num %in% master$sample_num)) |>
+    dplyr::distinct(
+      protocol,
+      source_file,
+      sample_num,
+      station,
+      sample_type
+    )
+}
+
+check_master_sample_missing_in_data <- function(df, master) {
+  master |>
+    dplyr::filter(!(sample_num %in% df$sample_num)) |>
+    dplyr::distinct(
+      sample_num,
+      station_master,
+      depth_code
+    )
+}
+
+check_station_mismatch_vs_master <- function(df, master) {
+  df |>
+    dplyr::filter(!stringr::str_detect(sample_num, "Q")) |>
+    dplyr::inner_join(master, by = "sample_num") |>
+    dplyr::filter(station != station_master) |>
+    dplyr::distinct(
+      protocol,
+      source_file,
+      sample_num,
+      station,
+      station_master
+    )
+}
+
+check_depth_mismatch_vs_master <- function(df, master) {
+  df |>
+    dplyr::filter(!stringr::str_detect(sample_num, "Q")) |>
+    dplyr::inner_join(master, by = "sample_num") |>
+    dplyr::filter(sample_type != depth_code) |>
+    dplyr::distinct(
+      protocol,
+      source_file,
+      sample_num,
+      sample_type,
+      depth_code
+    )
+}
+
+check_d20_sample_id_suffix <- function(df) {
+  df |>
+    dplyr::filter(sample_type == "D20") |>
+    dplyr::filter(!stringr::str_detect(sample_num, "4$")) |>
+    dplyr::distinct(
+      protocol,
+      source_file,
+      sample_num,
+      station,
+      sample_type
+    )
+}
+
+check_d100_sample_id_suffix <- function(df) {
+  df |>
+    dplyr::filter(protocol == "zoop", sample_type == "D100") |>
+    dplyr::filter(!stringr::str_detect(sample_num, "3$")) |>
+    dplyr::distinct(
+      protocol,
+      source_file,
+      sample_num,
+      station,
+      sample_type
+    )
+}
+
+check_rot_not_allowed_in_d100 <- function(df) {
+  df |>
+    dplyr::filter(protocol == "rot", sample_type == "D100") |>
+    dplyr::distinct(
+      protocol,
+      source_file,
+      sample_num,
+      station,
+      sample_type
+    )
+}
+
+check_d20_missing_protocol_pair <- function(df) {
+  d20_pairs <- df |>
+    dplyr::filter(sample_type == "D20") |>
+    dplyr::distinct(station, sample_num, protocol)
+  
+  d20_expected <- d20_pairs |>
+    dplyr::distinct(station, sample_num) |>
+    tidyr::crossing(protocol = c("zoop", "rot"))
+  
+  d20_expected |>
+    dplyr::anti_join(d20_pairs, by = c("station", "sample_num", "protocol")) |>
+    dplyr::distinct(station, sample_num, protocol)
+}

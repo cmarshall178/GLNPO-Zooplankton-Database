@@ -37,7 +37,9 @@ clean_zoop <- function(df) {
       comment = dplyr::na_if(stringr::str_squish(as.character(comment)), ""),
       
       scope_used = dplyr::na_if(stringr::str_squish(as.character(scope_used)), ""),
+      
       power_used = dplyr::na_if(stringr::str_squish(as.character(power_used)), ""),
+      power_used = readr::parse_number(power_used),
       
       split_factor = readr::parse_number(as.character(split_factor)),
       
@@ -63,9 +65,9 @@ clean_zoop <- function(df) {
       width_mm = suppressWarnings(as.numeric(width)),
       organism_count = suppressWarnings(as.numeric(organism_count)),
       
-      rotvol_ml = suppressWarnings(as.numeric(rotvol)),
-      submla_ml = suppressWarnings(as.numeric(submla)),
-      submlb_ml = suppressWarnings(as.numeric(submlb)),
+      rotvol_ml = readr::parse_number(as.character(rotvol)),
+      submla_ml = readr::parse_number(as.character(submla)),
+      submlb_ml = readr::parse_number(as.character(submlb)),
       
       is_qa_sample = !is.na(qa_link)
     ) |>
@@ -96,7 +98,9 @@ clean_zoop <- function(df) {
         TRUE ~ NA_real_
       )
     ) |>
+    dplyr::mutate(row_id = dplyr::row_number(), .before = 1) |>
     dplyr::select(
+      row_id,
       protocol, source_file, source_name, sample_num, station, station_raw,
       sample_type, qa_link, split, split_factor, analyst,
       analyst_date, analyst_date_raw, scope_used, power_used, species_name,
