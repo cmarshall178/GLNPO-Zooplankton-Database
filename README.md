@@ -89,6 +89,8 @@ GLNPO Zooplankton Database/
 ---
 
 ## Data Source (Box Integration)
+## Optional if instead using Locally downloaded files
+## Pipeline currently pulls from local sources - can be adjusted after discussion
 
 Raw files are typically stored in a **shared, password-protected Box folder**.
 
