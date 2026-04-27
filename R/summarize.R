@@ -1,3 +1,13 @@
+# This script creates sample-level summaries.
+#
+# Main jobs:
+#   - Summarize Zoop samples separately from Rot samples
+#   - Count rows, organisms, and taxa
+#   - Count length and width measurements
+#   - Include Rot-specific volume fields in Rot summaries only
+#
+# These summaries are written to outputs/tables/.
+
 summarize_zoop_samples <- function(df) {
   df |>
     dplyr::filter(protocol == "zoop") |>

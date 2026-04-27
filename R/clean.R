@@ -1,3 +1,14 @@
+# This script standardizes raw imported data into a consistent format.
+#
+# Main jobs:
+#   - Standardize station names, e.g. ER09 -> ER 09
+#   - Clean sample IDs, split values, comments, and analyst fields
+#   - Convert counts, lengths, widths, split factors, and Rot volumes to numbers
+#   - Parse analyst dates
+#   - Preserve Rot-specific fields such as ROTVOL, SUBMLA, and SUBMLB
+#   - Add row_id, a unique row identifier used for row-level QA flags
+#
+# This script prepares data for QA checks and compiled outputs.
 
 clean_zoop <- function(df) {
   if (nrow(df) == 0) {

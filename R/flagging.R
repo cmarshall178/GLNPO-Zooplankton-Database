@@ -1,3 +1,14 @@
+# This script adds QA results back onto the compiled data.
+#
+# Main jobs:
+#   - Create TRUE/FALSE flag columns for each QA check
+#   - Add any_flag to identify rows with one or more issues
+#   - Add flag_count to show how many flags a row has
+#   - Add flag_notes to list which checks flagged the row
+#   - Write review-ready flagged datasets
+#
+# These flagged files are useful for manual review in Excel.
+
 flag_from_row_id <- function(df, flagged_df, flag_name) {
   flagged_ids <- flagged_df |>
     dplyr::filter(!is.na(row_id)) |>

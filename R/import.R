@@ -1,5 +1,14 @@
-# Find raw Excel files placed in data/raw/.
-# Example files stored in data/raw/examples/ are excluded by default.
+# This script finds and imports raw Excel files.
+#
+# Main jobs:
+#   - Search data/raw/ and subfolders for Excel files
+#   - Read all columns as text to avoid Excel type-guessing problems
+#   - Clean column names
+#   - Identify each file as either Zoop or Rot based on the filename
+#   - Import the master sample list used to validate sample IDs
+#
+# No QA decisions are made here. This script only brings data into R.
+
 find_raw_files <- function(include_examples = FALSE) {
   raw_dir <- here::here("data", "raw")
   

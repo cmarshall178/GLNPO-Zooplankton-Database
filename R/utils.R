@@ -1,3 +1,13 @@
+# This script contains helper functions used across the pipeline.
+#
+# Main jobs:
+#   - Create required folders if they do not already exist
+#   - Write compiled CSV files
+#   - Write QA summary tables
+#   - Write sample summary tables
+#
+# These functions help keep _targets.R cleaner and easier to read.
+
 ensure_project_dirs <- function() {
   fs::dir_create(here::here("data", "raw"))
   fs::dir_create(here::here("data", "processed"))

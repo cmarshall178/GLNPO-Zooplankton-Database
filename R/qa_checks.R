@@ -1,11 +1,18 @@
-# Current Checks
-# missing required fields
-# negative organism counts
-# missing or nonpositive split factors
-# unexpected sex values
-# duplicate organism rows
-# station-name standardization issues
-# broken or self-referential QA links
+# This script contains QA rules.
+#
+# Each function checks for one type of issue and returns the rows or samples
+# that should be reviewed.
+#
+# Examples:
+#   - missing required values
+#   - negative organism counts
+#   - inconsistent split factors
+#   - sample IDs not found in the master list
+#   - Zoop D-split taxa outside the allowed list
+#   - Rot measurement rules for length and width
+#   - incorrect power used by protocol
+#
+# These functions do not edit the data. They only identify possible problems.
 
 required_columns <- c(
   "sample_num",
