@@ -1,7 +1,7 @@
 # This the control center of the entire workflow. It tells R:
 # What to run, in what order, and when something needs to be re-run.
 # This allows the project to have a reproducible pipeline.
-# This creates a dependency chain: raw_data → clean_data → outliers
+# This creates a dependency chain: raw_data → clean_data → QA Flags and Report
 
 # The workflow:
 # find raw Excel files
@@ -11,6 +11,19 @@
 #run QA checks
 # write QA summary tables
 # render a report
+
+#Users usually do not need to run individual scripts manually.
+# Instead, run:
+#
+#   targets::tar_make()
+#
+# The pipeline will:
+#   1. Find raw Excel files
+#   2. Import and clean the data
+#   3. Separate Zoop and Rot protocols
+#   4. Run QA checks
+#   5. Write compiled and flagged CSV files
+#   6. Generate the HTML QA report
 
 library(targets)
 library(here)
