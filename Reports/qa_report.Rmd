@@ -55,6 +55,21 @@ params:
   
 ---
 
+# This file creates the HTML QA report.
+#
+# The report does not import raw data directly.
+# Instead, _targets.R passes cleaned data, QA tables, and summaries into it.
+#
+# The report provides:
+#   - project overview
+#   - Zoop QA summary
+#   - Rot QA summary
+#   - master-list validation results
+#   - examples of flagged records for review
+#
+# The output is written to:
+#   outputs/qa_report.html
+
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
 
