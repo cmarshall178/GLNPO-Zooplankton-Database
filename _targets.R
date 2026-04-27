@@ -20,6 +20,7 @@ source(here::here("R", "clean.R"))
 source(here::here("R", "qa_checks.R"))
 source(here::here("R", "summarize.R"))
 source(here::here("R", "utils.R"))
+source(here::here("R", "flagging.R"))
 
 tar_option_set(
   packages = c(
@@ -46,6 +47,11 @@ list(
   ),
   
   tar_target(
+    master_zoop,
+    read_master_zoop(here::here("data", "metadata", "ALL 241 Sample ID_FINAL_03202024.xlsx"))
+  ),
+  
+  tar_target(
     raw_files,
     find_raw_files(include_examples = FALSE)
   ),
@@ -63,6 +69,46 @@ list(
   tar_target(
     clean_data,
     clean_zoop(raw_data)
+  ),
+  
+  tar_target(
+    sample_not_in_master,
+    check_sample_not_in_master(clean_data, master_zoop)
+  ),
+  
+  tar_target(
+    master_sample_missing_in_data,
+    check_master_sample_missing_in_data(clean_data, master_zoop)
+  ),
+  
+  tar_target(
+    station_mismatch_vs_master,
+    check_station_mismatch_vs_master(clean_data, master_zoop)
+  ),
+  
+  tar_target(
+    depth_mismatch_vs_master,
+    check_depth_mismatch_vs_master(clean_data, master_zoop)
+  ),
+  
+  tar_target(
+    d20_sample_id_suffix,
+    check_d20_sample_id_suffix(clean_data)
+  ),
+  
+  tar_target(
+    d100_sample_id_suffix,
+    check_d100_sample_id_suffix(clean_data)
+  ),
+  
+  tar_target(
+    rot_not_allowed_in_d100,
+    check_rot_not_allowed_in_d100(clean_data)
+  ),
+  
+  tar_target(
+    d20_missing_protocol_pair,
+    check_d20_missing_protocol_pair(clean_data)
   ),
   
   tar_target(
@@ -85,6 +131,11 @@ list(
     rot_compiled_csv,
     write_compiled_rot_data(clean_data),
     format = "file"
+  ),
+  
+  tar_target(
+    zoop_d_split_allowed_taxa,
+    check_zoop_d_split_allowed_taxa(zoop_data)
   ),
   
   tar_target(zoop_missing_required, check_missing_required(zoop_data)),
@@ -115,11 +166,11 @@ list(
   tar_target(rot_nonpositive_rotvol, check_rot_nonpositive_rotvol(rot_data)),
   tar_target(rot_nonpositive_subml, check_rot_nonpositive_subml(rot_data)),
   tar_target(rot_unexpected_splits, check_rot_unexpected_splits(rot_data)),
+  tar_target(rot_required_length_and_width, check_rot_required_length_and_width(rot_data)),
+  tar_target(rot_collotheca_width_only, check_rot_collotheca_width_only(rot_data)),
   tar_target(rot_unexpected_width_without_length, check_rot_unexpected_width_without_length(rot_data)),
   tar_target(rot_unexpected_power_used, check_unexpected_power_used(rot_data)),
-  tar_target(rot_collotheca_width_only, check_rot_collotheca_width_only(rot_data)),
-  tar_target(rot_required_length_and_width, check_rot_required_length_and_width(rot_data)), 
-    
+  
   tar_target(
     zoop_qa_summary,
     make_qa_summary(list(
@@ -135,7 +186,16 @@ list(
       zoop_multiple_analyst_dates = zoop_multiple_analyst_dates,
       zoop_missing_analyst_date = zoop_missing_analyst_date,
       zoop_missing_split_on_counted_rows = zoop_missing_split_on_counted_rows,
-      zoop_unexpected_power_used = zoop_unexpected_power_used
+      zoop_unexpected_power_used = zoop_unexpected_power_used,
+      zoop_d_split_allowed_taxa = zoop_d_split_allowed_taxa,
+      sample_not_in_master = sample_not_in_master,
+      master_sample_missing_in_data = master_sample_missing_in_data,
+      station_mismatch_vs_master = station_mismatch_vs_master,
+      depth_mismatch_vs_master = depth_mismatch_vs_master,
+      d20_sample_id_suffix = d20_sample_id_suffix,
+      d100_sample_id_suffix = d100_sample_id_suffix,
+      rot_not_allowed_in_d100 = rot_not_allowed_in_d100,
+      d20_missing_protocol_pair = d20_missing_protocol_pair
     ))
   ),
   
@@ -161,7 +221,15 @@ list(
       rot_required_length_and_width = rot_required_length_and_width,
       rot_collotheca_width_only = rot_collotheca_width_only,
       rot_unexpected_width_without_length = rot_unexpected_width_without_length,
-      rot_unexpected_power_used = rot_unexpected_power_used
+      rot_unexpected_power_used = rot_unexpected_power_used,
+      sample_not_in_master = sample_not_in_master,
+      master_sample_missing_in_data = master_sample_missing_in_data,
+      station_mismatch_vs_master = station_mismatch_vs_master,
+      depth_mismatch_vs_master = depth_mismatch_vs_master,
+      d20_sample_id_suffix = d20_sample_id_suffix,
+      d100_sample_id_suffix = d100_sample_id_suffix,
+      rot_not_allowed_in_d100 = rot_not_allowed_in_d100,
+      d20_missing_protocol_pair = d20_missing_protocol_pair
     ))
   ),
   
@@ -200,6 +268,86 @@ list(
   ),
   
   tar_target(
+    zoop_flagged_data,
+    build_zoop_flagged_data(
+      zoop_data = zoop_data,
+      zoop_missing_required = zoop_missing_required,
+      zoop_negative_counts = zoop_negative_counts,
+      zoop_nonpositive_split_factor = zoop_nonpositive_split_factor,
+      zoop_unexpected_sex_values = zoop_unexpected_sex_values,
+      zoop_duplicate_organism_rows = zoop_duplicate_organism_rows,
+      zoop_station_standardization = zoop_station_standardization,
+      zoop_qa_link_issues = zoop_qa_link_issues,
+      zoop_split_factor_consistency = zoop_split_factor_consistency,
+      zoop_multiple_analyst_dates = zoop_multiple_analyst_dates,
+      zoop_missing_analyst_date = zoop_missing_analyst_date,
+      zoop_missing_split_on_counted_rows = zoop_missing_split_on_counted_rows,
+      zoop_unexpected_power_used = zoop_unexpected_power_used,
+      zoop_d_split_allowed_taxa = zoop_d_split_allowed_taxa,
+      sample_not_in_master = sample_not_in_master,
+      station_mismatch_vs_master = station_mismatch_vs_master,
+      depth_mismatch_vs_master = depth_mismatch_vs_master,
+      d20_sample_id_suffix = d20_sample_id_suffix,
+      d100_sample_id_suffix = d100_sample_id_suffix
+    )
+  ),
+  
+  tar_target(
+    rot_flagged_data,
+    build_rot_flagged_data(
+      rot_data = rot_data,
+      rot_missing_required = rot_missing_required,
+      rot_negative_counts = rot_negative_counts,
+      rot_nonpositive_split_factor = rot_nonpositive_split_factor,
+      rot_duplicate_organism_rows = rot_duplicate_organism_rows,
+      rot_station_standardization = rot_station_standardization,
+      rot_qa_link_issues = rot_qa_link_issues,
+      rot_split_factor_consistency = rot_split_factor_consistency,
+      rot_multiple_analyst_dates = rot_multiple_analyst_dates,
+      rot_missing_analyst_date = rot_missing_analyst_date,
+      rot_missing_split_on_counted_rows = rot_missing_split_on_counted_rows,
+      rot_missing_rotvol = rot_missing_rotvol,
+      rot_missing_subml = rot_missing_subml,
+      rot_nonpositive_rotvol = rot_nonpositive_rotvol,
+      rot_nonpositive_subml = rot_nonpositive_subml,
+      rot_unexpected_splits = rot_unexpected_splits,
+      rot_required_length_and_width = rot_required_length_and_width,
+      rot_collotheca_width_only = rot_collotheca_width_only,
+      rot_unexpected_width_without_length = rot_unexpected_width_without_length,
+      rot_unexpected_power_used = rot_unexpected_power_used,
+      sample_not_in_master = sample_not_in_master,
+      station_mismatch_vs_master = station_mismatch_vs_master,
+      depth_mismatch_vs_master = depth_mismatch_vs_master,
+      d20_sample_id_suffix = d20_sample_id_suffix,
+      rot_not_allowed_in_d100 = rot_not_allowed_in_d100
+    )
+  ),
+  
+  tar_target(
+    zoop_flagged_csv,
+    write_flagged_zoop_data(zoop_flagged_data),
+    format = "file"
+  ),
+  
+  tar_target(
+    rot_flagged_csv,
+    write_flagged_rot_data(rot_flagged_data),
+    format = "file"
+  ),
+  
+  tar_target(
+    zoop_flagged_only_csv,
+    write_zoop_flagged_only(zoop_flagged_data),
+    format = "file"
+  ),
+  
+  tar_target(
+    rot_flagged_only_csv,
+    write_rot_flagged_only(rot_flagged_data),
+    format = "file"
+  ),
+  
+  tar_target(
     qa_report,
     rmarkdown::render(
       input = here::here("reports", "qa_report.Rmd"),
@@ -226,6 +374,9 @@ list(
         zoop_missing_analyst_date = zoop_missing_analyst_date,
         zoop_missing_split_on_counted_rows = zoop_missing_split_on_counted_rows,
         zoop_unexpected_power_used = zoop_unexpected_power_used,
+        zoop_d_split_allowed_taxa = zoop_d_split_allowed_taxa,
+        zoop_flagged_data = zoop_flagged_data,
+        rot_flagged_data = rot_flagged_data,
         rot_missing_required = rot_missing_required,
         rot_negative_counts = rot_negative_counts,
         rot_nonpositive_split_factor = rot_nonpositive_split_factor,
@@ -241,8 +392,18 @@ list(
         rot_nonpositive_rotvol = rot_nonpositive_rotvol,
         rot_nonpositive_subml = rot_nonpositive_subml,
         rot_unexpected_splits = rot_unexpected_splits,
-        rot_width_without_length = rot_width_without_length,
-        rot_unexpected_power_used = rot_unexpected_power_used
+        rot_required_length_and_width = rot_required_length_and_width,
+        rot_collotheca_width_only = rot_collotheca_width_only,
+        rot_unexpected_width_without_length = rot_unexpected_width_without_length,
+        rot_unexpected_power_used = rot_unexpected_power_used,
+        sample_not_in_master = sample_not_in_master,
+        master_sample_missing_in_data = master_sample_missing_in_data,
+        station_mismatch_vs_master = station_mismatch_vs_master,
+        depth_mismatch_vs_master = depth_mismatch_vs_master,
+        d20_sample_id_suffix = d20_sample_id_suffix,
+        d100_sample_id_suffix = d100_sample_id_suffix,
+        rot_not_allowed_in_d100 = rot_not_allowed_in_d100,
+        d20_missing_protocol_pair = d20_missing_protocol_pair
       ),
       envir = new.env(parent = globalenv())
     ),
