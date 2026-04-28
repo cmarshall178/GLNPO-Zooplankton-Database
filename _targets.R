@@ -65,6 +65,11 @@ list(
   ),
   
   tar_target(
+    species_key,
+    read_species_key(here::here("data", "metadata", "GLNPO Species List.xlsx"))
+  ),
+  
+  tar_target(
     raw_files,
     find_raw_files(include_examples = FALSE)
   ),
@@ -102,6 +107,16 @@ list(
   tar_target(
     depth_mismatch_vs_master,
     check_depth_mismatch_vs_master(clean_data, master_zoop)
+  ),
+  
+  tar_target(
+    species_code_not_in_key,
+    check_species_code_not_in_key(clean_data, species_key)
+  ),
+  
+  tar_target(
+    species_metadata_mismatch,
+    check_species_metadata_mismatch(clean_data, species_key)
   ),
   
   tar_target(
@@ -300,6 +315,8 @@ list(
       sample_not_in_master = sample_not_in_master,
       station_mismatch_vs_master = station_mismatch_vs_master,
       depth_mismatch_vs_master = depth_mismatch_vs_master,
+      species_code_not_in_key = species_code_not_in_key,
+      species_metadata_mismatch = species_metadata_mismatch,
       d20_sample_id_suffix = d20_sample_id_suffix,
       d100_sample_id_suffix = d100_sample_id_suffix
     )
@@ -331,6 +348,8 @@ list(
       sample_not_in_master = sample_not_in_master,
       station_mismatch_vs_master = station_mismatch_vs_master,
       depth_mismatch_vs_master = depth_mismatch_vs_master,
+      species_code_not_in_key = species_code_not_in_key,
+      species_metadata_mismatch = species_metadata_mismatch,
       d20_sample_id_suffix = d20_sample_id_suffix,
       rot_not_allowed_in_d100 = rot_not_allowed_in_d100
     )
@@ -413,6 +432,8 @@ list(
         master_sample_missing_in_data = master_sample_missing_in_data,
         station_mismatch_vs_master = station_mismatch_vs_master,
         depth_mismatch_vs_master = depth_mismatch_vs_master,
+        species_code_not_in_key = species_code_not_in_key,
+        species_metadata_mismatch = species_metadata_mismatch,
         d20_sample_id_suffix = d20_sample_id_suffix,
         d100_sample_id_suffix = d100_sample_id_suffix,
         rot_not_allowed_in_d100 = rot_not_allowed_in_d100,
