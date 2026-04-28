@@ -273,6 +273,8 @@ Identifies issues such as:
 * Raw Excel files should remain unchanged
 * Always open the `.Rproj` file before running the pipeline
 * QA flags indicate records for review, not guaranteed errors
+* Columns starting with flag_ indicate issues requiring correction
+* Columns starting with review_ indicate reviews but not necessarily errors
 
 ---
 
