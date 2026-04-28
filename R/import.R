@@ -96,3 +96,29 @@ read_master_zoop <- function(path) {
     ) |>
     dplyr::select(sample_num, station_master, depth_code)
 }
+
+read_species_key <- function(path) {
+  zoop_key <- readxl::read_excel(path, sheet = "Zoops", col_types = "text") |>
+    janitor::clean_names() |>
+    dplyr::mutate(protocol = "zoop", .before = 1)
+  
+  rot_key <- readxl::read_excel(path, sheet = "Rots", col_types = "text") |>
+    janitor::clean_names() |>
+    dplyr::mutate(protocol = "rot", .before = 1)
+  
+  dplyr::bind_rows(zoop_key, rot_key) |>
+    dplyr::rename(
+      key_species_name = combo,
+      key_species_code = speccode,
+      key_subgroup = subgroup,
+      key_group_code = group
+    ) |>
+    dplyr::mutate(
+      protocol = stringr::str_to_lower(protocol),
+      key_species_name = stringr::str_squish(as.character(key_species_name)),
+      key_species_code = stringr::str_to_upper(stringr::str_squish(as.character(key_species_code))),
+      key_subgroup = stringr::str_to_upper(stringr::str_squish(as.character(key_subgroup))),
+      key_group_code = stringr::str_to_upper(stringr::str_squish(as.character(key_group_code)))
+    ) |>
+    dplyr::distinct()
+}

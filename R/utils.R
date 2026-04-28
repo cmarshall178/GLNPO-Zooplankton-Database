@@ -22,34 +22,30 @@ write_compiled_zoop_data <- function(df) {
   df |>
     dplyr::filter(protocol == "zoop") |>
     dplyr::select(
-      protocol, source_file, source_name, sample_num, station, station_raw,
-      sample_type, qa_link, split, split_factor, analyst,
-      analyst_date, analyst_date_raw, scope_used, power_used, species_name,
-      species_code, subgroup, group_code, length_mm, sex,
-      organism_count, comment, is_qa_sample
+      -rotvol_ml,
+      -submla_ml,
+      -submlb_ml,
+      -rot_subml_ml,
+      -width_mm
     ) |>
     readr::write_csv(out_path)
   
   out_path
 }
 
+
 write_compiled_rot_data <- function(df) {
   out_path <- here::here("data", "processed", "compiled_rot.csv")
-  
-  df |>
-    dplyr::filter(protocol == "rot") |>
-    dplyr::select(
-      protocol, source_file, source_name, sample_num, station, station_raw,
-      sample_type, qa_link, split, split_factor, analyst,
-      analyst_date, analyst_date_raw, scope_used, power_used, species_name,
-      species_code, subgroup, group_code, length_mm, width_mm, sex,
-      organism_count, rotvol_ml, submla_ml, submlb_ml, rot_subml_ml,
-      comment, is_qa_sample
-    ) |>
-    readr::write_csv(out_path)
-  
-  out_path
-}
+    
+    df |>
+      dplyr::filter(protocol == "rot") |>
+      dplyr::select(
+        -sex
+      ) |>
+      readr::write_csv(out_path)
+    
+    out_path
+  }
 
 write_qa_summary <- function(df, file_name) {
   out_path <- here::here("outputs", "tables", file_name)

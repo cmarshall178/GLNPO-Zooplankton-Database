@@ -38,25 +38,43 @@ flag_from_keys <- function(df, flagged_df, by, flag_name) {
 
 add_flag_summary_columns <- function(df) {
   flag_cols <- names(df)[stringr::str_starts(names(df), "flag_")]
+  review_cols <- names(df)[stringr::str_starts(names(df), "review_")]
   
   if (length(flag_cols) == 0) {
-    return(
-      df |>
-        dplyr::mutate(any_flag = FALSE, flag_count = 0L, flag_notes = "")
-    )
+    df <- df |>
+      dplyr::mutate(
+        any_flag = FALSE,
+        flag_count = 0L,
+        flag_notes = ""
+      )
+  } else {
+    df <- df |>
+      dplyr::rowwise() |>
+      dplyr::mutate(
+        any_flag = any(dplyr::c_across(dplyr::all_of(flag_cols))),
+        flag_count = sum(dplyr::c_across(dplyr::all_of(flag_cols))),
+        flag_notes = paste(
+          flag_cols[as.logical(dplyr::c_across(dplyr::all_of(flag_cols)))],
+          collapse = "; "
+        )
+      ) |>
+      dplyr::ungroup()
   }
   
+  summary_cols <- c("any_flag", "flag_count", "flag_notes")
+  
+  core_cols <- setdiff(
+    names(df),
+    c(summary_cols, flag_cols, review_cols)
+  )
+  
   df |>
-    dplyr::rowwise() |>
-    dplyr::mutate(
-      any_flag = any(c_across(dplyr::all_of(flag_cols))),
-      flag_count = sum(c_across(dplyr::all_of(flag_cols))),
-      flag_notes = paste(
-        names(which(unlist(dplyr::c_across(dplyr::all_of(flag_cols))))),
-        collapse = "; "
-      )
-    ) |>
-    dplyr::ungroup()
+    dplyr::select(
+      dplyr::all_of(core_cols),
+      dplyr::all_of(summary_cols),
+      dplyr::all_of(flag_cols),
+      dplyr::all_of(review_cols)
+    )
 }
 
 build_zoop_flagged_data <- function(
@@ -77,6 +95,8 @@ build_zoop_flagged_data <- function(
     sample_not_in_master,
     station_mismatch_vs_master,
     depth_mismatch_vs_master,
+    species_code_not_in_key,
+    species_metadata_mismatch,
     d20_sample_id_suffix,
     d100_sample_id_suffix
 ) {
@@ -104,13 +124,13 @@ build_zoop_flagged_data <- function(
       "species_name", "species_code", "subgroup", "group_code",
       "length_mm", "width_mm", "sex", "organism_count", "analyst_date"
     ),
-    flag_name = "flag_duplicate_organism_rows"
+    flag_name = "review_duplicate_organism_rows"
   )
   
   out <- flag_from_keys(
     out, zoop_station_standardization,
     by = c("source_file", "sample_num", "station_raw", "station"),
-    flag_name = "flag_station_standardized"
+    flag_name = "review_station_standardized"
   )
   
   out <- flag_from_keys(
@@ -133,7 +153,7 @@ build_zoop_flagged_data <- function(
   
   out <- flag_from_row_id(
     out, zoop_missing_analyst_date,
-    flag_name = "flag_missing_analyst_date"
+    flag_name = "review_missing_analyst_date"
   )
   
   out <- flag_from_keys(
@@ -177,6 +197,18 @@ build_zoop_flagged_data <- function(
     flag_name = "flag_depth_mismatch_vs_master"
   )
   
+  out <- flag_from_row_id(
+    out,
+    species_code_not_in_key |> dplyr::filter(protocol == unique(out$protocol)),
+    "flag_species_code_not_in_key"
+  )
+  
+  out <- flag_from_row_id(
+    out,
+    species_metadata_mismatch |> dplyr::filter(protocol == unique(out$protocol)),
+    "flag_species_metadata_mismatch"
+  )
+  
   out <- flag_from_keys(
     out, d20_sample_id_suffix |>
       dplyr::filter(protocol == "zoop"),
@@ -218,6 +250,8 @@ build_rot_flagged_data <- function(
     sample_not_in_master,
     station_mismatch_vs_master,
     depth_mismatch_vs_master,
+    species_code_not_in_key,
+    species_metadata_mismatch,
     d20_sample_id_suffix,
     rot_not_allowed_in_d100
 ) {
@@ -239,13 +273,13 @@ build_rot_flagged_data <- function(
       "species_name", "species_code", "subgroup", "group_code",
       "length_mm", "width_mm", "sex", "organism_count", "analyst_date"
     ),
-    flag_name = "flag_duplicate_organism_rows"
+    flag_name = "review_duplicate_organism_rows"
   )
   
   out <- flag_from_keys(
     out, rot_station_standardization,
     by = c("source_file", "sample_num", "station_raw", "station"),
-    flag_name = "flag_station_standardized"
+    flag_name = "review_station_standardized"
   )
   
   out <- flag_from_keys(
@@ -268,7 +302,7 @@ build_rot_flagged_data <- function(
   
   out <- flag_from_row_id(
     out, rot_missing_analyst_date,
-    flag_name = "flag_missing_analyst_date"
+    flag_name = "review_missing_analyst_date"
   )
   
   out <- flag_from_keys(
@@ -354,6 +388,18 @@ build_rot_flagged_data <- function(
     flag_name = "flag_depth_mismatch_vs_master"
   )
   
+  out <- flag_from_row_id(
+    out,
+    species_code_not_in_key |> dplyr::filter(protocol == unique(out$protocol)),
+    "flag_species_code_not_in_key"
+  )
+  
+  out <- flag_from_row_id(
+    out,
+    species_metadata_mismatch |> dplyr::filter(protocol == unique(out$protocol)),
+    "flag_species_metadata_mismatch"
+  )
+  
   out <- flag_from_keys(
     out, d20_sample_id_suffix |>
       dplyr::filter(protocol == "rot"),
@@ -372,13 +418,30 @@ build_rot_flagged_data <- function(
 
 write_flagged_zoop_data <- function(df) {
   out_path <- here::here("data", "processed", "compiled_zoop_flagged.csv")
-  readr::write_csv(df, out_path)
+  
+  df |>
+    dplyr::select(
+      -rotvol_ml,
+      -submla_ml,
+      -submlb_ml,
+      -rot_subml_ml,
+      -width_mm
+    ) |>
+    readr::write_csv(out_path)
+  
   out_path
 }
 
 write_flagged_rot_data <- function(df) {
   out_path <- here::here("data", "processed", "compiled_rot_flagged.csv")
-  readr::write_csv(df, out_path)
+  
+  df |>
+    dplyr::filter(protocol == "rot") |>
+    dplyr::select(
+      -sex
+    ) |>
+    readr::write_csv(out_path)
+  
   out_path
 }
 

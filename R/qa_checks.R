@@ -416,3 +416,57 @@ check_d20_missing_protocol_pair <- function(df) {
     dplyr::anti_join(d20_pairs, by = c("station", "sample_num", "protocol")) |>
     dplyr::distinct(station, sample_num, protocol)
 }
+
+check_species_code_not_in_key <- function(df, species_key) {
+  valid_codes <- species_key |>
+    dplyr::distinct(protocol, key_species_code)
+  
+  df |>
+    dplyr::mutate(
+      species_code = stringr::str_to_upper(
+        stringr::str_squish(as.character(species_code))
+      )
+    ) |>
+    dplyr::anti_join(
+      valid_codes,
+      by = c("protocol" = "protocol", "species_code" = "key_species_code")
+    ) |>
+    dplyr::distinct(
+      row_id, protocol, source_file, sample_num, split,
+      species_name, species_code, subgroup, group_code
+    )
+}
+
+check_species_metadata_mismatch <- function(df, species_key) {
+  df_standard <- df |>
+    dplyr::mutate(
+      species_name = stringr::str_squish(as.character(species_name)),
+      species_code = stringr::str_to_upper(
+        stringr::str_squish(as.character(species_code))
+      ),
+      subgroup = stringr::str_to_upper(
+        stringr::str_squish(as.character(subgroup))
+      ),
+      group_code = stringr::str_to_upper(
+        stringr::str_squish(as.character(group_code))
+      )
+    )
+  
+  df_standard |>
+    dplyr::inner_join(
+      species_key,
+      by = c("protocol" = "protocol", "species_code" = "key_species_code")
+    ) |>
+    dplyr::filter(
+      species_name != key_species_name |
+        subgroup != key_subgroup |
+        group_code != key_group_code
+    ) |>
+    dplyr::distinct(
+      row_id, protocol, source_file, sample_num, split,
+      species_name, key_species_name,
+      species_code,
+      subgroup, key_subgroup,
+      group_code, key_group_code
+    )
+}
