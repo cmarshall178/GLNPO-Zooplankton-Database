@@ -46,6 +46,8 @@ params:
   master_sample_missing_in_data: NULL
   station_mismatch_vs_master: NULL
   depth_mismatch_vs_master: NULL
+  species_code_not_in_key: NULL
+  species_metadata_mismatch: NULL
   d20_sample_id_suffix: NULL
   d100_sample_id_suffix: NULL
   rot_not_allowed_in_d100: NULL
@@ -125,6 +127,8 @@ sample_not_in_master <- params$sample_not_in_master
 master_sample_missing_in_data <- params$master_sample_missing_in_data
 station_mismatch_vs_master <- params$station_mismatch_vs_master
 depth_mismatch_vs_master <- params$depth_mismatch_vs_master
+species_code_not_in_key <- params$species_code_not_in_key
+species_metadata_mismatch <- params$species_metadata_mismatch
 d20_sample_id_suffix <- params$d20_sample_id_suffix
 d100_sample_id_suffix <- params$d100_sample_id_suffix
 rot_not_allowed_in_d100 <- params$rot_not_allowed_in_d100
@@ -226,6 +230,23 @@ rot_not_allowed_in_d100 |>
 
 ```{r}
 rot_not_allowed_in_d100 |>
+  head(50) |>
+  knitr::kable()
+```
+
+# Species Key Validation
+## Species codes not found in GLNPO species key
+
+```{r}
+species_code_not_in_key |>
+  head(50) |>
+  knitr::kable()
+```
+
+# Species metadata mismatches
+
+```{r}
+species_metadata_mismatch |>
   head(50) |>
   knitr::kable()
 ```
