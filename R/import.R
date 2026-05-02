@@ -1,16 +1,21 @@
-# This script finds and imports raw Excel files.
-#
-# Main jobs:
-#   - Search data/raw/ and subfolders for Excel files
-#   - Read all columns as text to avoid Excel type-guessing problems
-#   - Clean column names
-#   - Identify each file as either Zoop or Rot based on the filename
-#   - Import the master sample list used to validate sample IDs
-#
-# No QA decisions are made here. This script only brings data into R.
+# This script finds and imports raw Excel files and metadata workbooks.
+# Raw counting sheets are read as text to avoid Excel type-guessing issues.
+# Clean column names
+# Protocol is inferred from file names ending in Zoop.xlsx or Rot.xlsx.
+# Import the master sample list used to validate sample IDs
 
 find_raw_files <- function(include_examples = FALSE) {
-  raw_dir <- here::here("data", "raw")
+  default_raw_dir <- here::here("data", "raw")
+  
+  # Optional Box Drive path.
+  # Set in .Renviron as:
+  # GLNPO_BOX_PATH=C:/Users/yourname/Box/GLNPO Zooplankton
+  box_dir <- Sys.getenv("GLNPO_BOX_PATH", unset = "")
+  
+  raw_dir <- dplyr::case_when(
+    nzchar(box_dir) && fs::dir_exists(box_dir) ~ box_dir,
+    TRUE ~ default_raw_dir
+  )
   
   if (!fs::dir_exists(raw_dir)) {
     stop("Raw data directory does not exist: ", raw_dir)
@@ -31,6 +36,9 @@ find_raw_files <- function(include_examples = FALSE) {
     )]
   }
   
+  # Ignore temporary Excel lock files.
+  all_files <- all_files[!stringr::str_detect(fs::path_file(all_files), "^~\\$")]
+  
   sort(all_files)
 }
 
@@ -38,13 +46,19 @@ classify_protocol <- function(path) {
   file_name <- fs::path_file(path)
   
   dplyr::case_when(
-    stringr::str_detect(file_name, regex("Rot\\.xlsx$", ignore_case = TRUE)) ~ "rot",
-    stringr::str_detect(file_name, regex("Zoop\\.xlsx$", ignore_case = TRUE)) ~ "zoop",
+    stringr::str_detect(file_name, stringr::regex("Rot\\.xlsx$", ignore_case = TRUE)) ~ "rot",
+    stringr::str_detect(file_name, stringr::regex("Zoop\\.xlsx$", ignore_case = TRUE)) ~ "zoop",
     TRUE ~ NA_character_
   )
 }
 
 read_zoop_excel <- function(path, sheet = 1) {
+  raw_root <- Sys.getenv("GLNPO_BOX_PATH", unset = "")
+  
+  if (!nzchar(raw_root) || !fs::dir_exists(raw_root)) {
+    raw_root <- here::here("data", "raw")
+  }
+  
   readxl::read_excel(
     path = path,
     sheet = sheet,
@@ -55,7 +69,7 @@ read_zoop_excel <- function(path, sheet = 1) {
     ) |>
     dplyr::select(-dplyr::matches("^unnamed")) |>
     dplyr::mutate(
-      source_file = fs::path_rel(path, start = here::here("data", "raw")),
+      source_file = fs::path_rel(path, start = raw_root),
       source_name = fs::path_file(path),
       protocol = classify_protocol(path),
       .before = 1
@@ -73,7 +87,11 @@ read_all_zoop <- function(include_examples = FALSE) {
 }
 
 read_master_zoop <- function(path) {
-  readxl::read_excel(path, sheet = "Zooplankton") |>
+  readxl::read_excel(
+    path = path,
+    sheet = "Zooplankton",
+    col_types = "text"
+  ) |>
     janitor::clean_names(
       replace = c("µ" = "u")
     ) |>
@@ -92,18 +110,37 @@ read_master_zoop <- function(path) {
         "^([A-Z]+)([0-9].*)$",
         "\\1 \\2"
       ),
-      depth_code = stringr::str_to_upper(stringr::str_squish(as.character(depth_code)))
+      depth_code = stringr::str_to_upper(
+        stringr::str_squish(as.character(depth_code))
+      )
     ) |>
-    dplyr::select(sample_num, station_master, depth_code)
+    dplyr::select(
+      sample_num,
+      station_master,
+      depth_code
+    ) |>
+    dplyr::distinct()
 }
 
 read_species_key <- function(path) {
-  zoop_key <- readxl::read_excel(path, sheet = "Zoops", col_types = "text") |>
-    janitor::clean_names() |>
+  zoop_key <- readxl::read_excel(
+    path = path,
+    sheet = "Zoops",
+    col_types = "text"
+  ) |>
+    janitor::clean_names(
+      replace = c("µ" = "u")
+    ) |>
     dplyr::mutate(protocol = "zoop", .before = 1)
   
-  rot_key <- readxl::read_excel(path, sheet = "Rots", col_types = "text") |>
-    janitor::clean_names() |>
+  rot_key <- readxl::read_excel(
+    path = path,
+    sheet = "Rots",
+    col_types = "text"
+  ) |>
+    janitor::clean_names(
+      replace = c("µ" = "u")
+    ) |>
     dplyr::mutate(protocol = "rot", .before = 1)
   
   dplyr::bind_rows(zoop_key, rot_key) |>
@@ -116,9 +153,22 @@ read_species_key <- function(path) {
     dplyr::mutate(
       protocol = stringr::str_to_lower(protocol),
       key_species_name = stringr::str_squish(as.character(key_species_name)),
-      key_species_code = stringr::str_to_upper(stringr::str_squish(as.character(key_species_code))),
-      key_subgroup = stringr::str_to_upper(stringr::str_squish(as.character(key_subgroup))),
-      key_group_code = stringr::str_to_upper(stringr::str_squish(as.character(key_group_code)))
+      key_species_code = stringr::str_to_upper(
+        stringr::str_squish(as.character(key_species_code))
+      ),
+      key_subgroup = stringr::str_to_upper(
+        stringr::str_squish(as.character(key_subgroup))
+      ),
+      key_group_code = stringr::str_to_upper(
+        stringr::str_squish(as.character(key_group_code))
+      )
+    ) |>
+    dplyr::select(
+      protocol,
+      key_species_name,
+      key_species_code,
+      key_subgroup,
+      key_group_code
     ) |>
     dplyr::distinct()
 }

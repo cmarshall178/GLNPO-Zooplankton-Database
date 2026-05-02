@@ -50,7 +50,7 @@ summarize_rot_samples <- function(df) {
       rotvol_ml = dplyr::first(rotvol_ml[!is.na(rotvol_ml)], default = NA_real_),
       rot_subml_ml = dplyr::first(rot_subml_ml[!is.na(rot_subml_ml)], default = NA_real_),
       n_length_measured = sum(!is.na(length_mm)),
-      n_width_measured = sum(!is.na(width_mm)),
+      n_width_measured = sum(!is.na(width_mm) & width_mm > 0),
       .groups = "drop"
     )
 }
