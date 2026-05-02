@@ -7,6 +7,19 @@
 #   - removes "x" from power_used by storing it as numeric
 #   - adds row_id for row-level QA flagging
 
+parse_numeric_clean <- function(x) {
+  x <- stringr::str_squish(as.character(x))
+  
+  x <- dplyr::case_when(
+    is.na(x) ~ NA_character_,
+    x == "" ~ NA_character_,
+    stringr::str_to_upper(x) %in% c("NA", "N/A", "NA.", "NAN", "NULL") ~ NA_character_,
+    TRUE ~ x
+  )
+  
+  suppressWarnings(readr::parse_number(x))
+}
+
 clean_zoop <- function(df) {
   if (nrow(df) == 0) {
     return(tibble::tibble())
@@ -51,7 +64,10 @@ clean_zoop <- function(df) {
       qa_link = dplyr::na_if(qa_link, "-1"),
       
       analyst = dplyr::na_if(stringr::str_squish(as.character(analyst)), ""),
-      sex = dplyr::na_if(stringr::str_to_upper(stringr::str_squish(as.character(sex))), ""),
+      sex = dplyr::na_if(
+        stringr::str_to_upper(stringr::str_squish(as.character(sex))),
+        ""
+      ),
       comment = dplyr::na_if(stringr::str_squish(as.character(comment)), ""),
       
       scope_used = dplyr::na_if(stringr::str_squish(as.character(scope_used)), ""),
@@ -59,9 +75,9 @@ clean_zoop <- function(df) {
       # Store magnification as numeric.
       # Examples: "30x" -> 30, "100X" -> 100.
       power_used = dplyr::na_if(stringr::str_squish(as.character(power_used)), ""),
-      power_used = readr::parse_number(power_used),
+      power_used = parse_numeric_clean(power_used),
       
-      split_factor = readr::parse_number(as.character(split_factor)),
+      split_factor = parse_numeric_clean(split_factor),
       
       analyst_date_raw = dplyr::na_if(as.character(analyst_date), ""),
       analyst_date_raw = dplyr::if_else(
@@ -91,15 +107,16 @@ clean_zoop <- function(df) {
         )
       ),
       
-      length_mm = readr::parse_number(as.character(length_mm)),
-      width_mm = readr::parse_number(as.character(width)),
-      organism_count = readr::parse_number(as.character(organism_count)),
+      length_mm = parse_numeric_clean(length_mm),
+      width_mm = parse_numeric_clean(width),
+      organism_count = parse_numeric_clean(organism_count),
       
       # Rotifer-specific fields.
-      # parse_number() handles values like "33 mL", "235.5 mL", and mistyped units.
-      rotvol_ml = readr::parse_number(as.character(rotvol)),
-      submla_ml = readr::parse_number(as.character(submla)),
-      submlb_ml = readr::parse_number(as.character(submlb)),
+      # parse_numeric_clean() handles values like "33 mL", "235.5 mL",
+      # "235.5ml", and placeholder text such as "NA" or "Na".
+      rotvol_ml = parse_numeric_clean(rotvol),
+      submla_ml = parse_numeric_clean(submla),
+      submlb_ml = parse_numeric_clean(submlb),
       
       is_qa_sample = stringr::str_detect(sample_num, "Q") | !is.na(qa_link)
     ) |>

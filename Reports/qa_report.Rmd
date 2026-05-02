@@ -124,6 +124,22 @@ rot_unexpected_power_used <- params$rot_unexpected_power_used
 # Overview
 
 ```{r}
+safe_nrow <- function(x) {
+  if (is.null(x)) return(0)
+  if (is.data.frame(x)) return(nrow(x))
+  length(x)
+}
+
+safe_distinct <- function(x, col) {
+  if (is.null(x) || !(col %in% names(x))) return(0)
+  dplyr::n_distinct(x[[col]])
+}
+
+safe_flag_sum <- function(x) {
+  if (is.null(x) || !("any_flag" %in% names(x))) return(0)
+  sum(x$any_flag, na.rm = TRUE)
+}
+
 data.frame(
   metric = c(
     "Raw files processed",
@@ -137,13 +153,13 @@ data.frame(
   ),
   value = c(
     length(raw_files),
-    nrow(unknown_protocol),
-    nrow(zoop_data),
-    nrow(rot_data),
-    dplyr::n_distinct(zoop_data$sample_num),
-    dplyr::n_distinct(rot_data$sample_num),
-    sum(zoop_flagged_data$any_flag, na.rm = TRUE),
-    sum(rot_flagged_data$any_flag, na.rm = TRUE)
+    safe_nrow(unknown_protocol),
+    safe_nrow(zoop_data),
+    safe_nrow(rot_data),
+    safe_distinct(zoop_data, "sample_num"),
+    safe_distinct(rot_data, "sample_num"),
+    safe_flag_sum(zoop_flagged_data),
+    safe_flag_sum(rot_flagged_data)
   )
 ) |>
   knitr::kable()

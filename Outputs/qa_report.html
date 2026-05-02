@@ -11,7 +11,7 @@
 
 
 
-<title>Zooplankton and Rotifer QA Report</title>
+<title>GLNPO Zooplankton and Rotifer QA Report</title>
 
 <script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
 // be compatible with the behavior of Pandoc < 2.8).
@@ -348,55 +348,14 @@ display: none;
 
 
 
-<h1 class="title toc-ignore">Zooplankton and Rotifer QA Report</h1>
+<h1 class="title toc-ignore">GLNPO Zooplankton and Rotifer QA
+Report</h1>
 
 </div>
 
 
-<div id="this-file-creates-the-html-qa-report." class="section level1">
-<h1>This file creates the HTML QA report.</h1>
-</div>
-<div id="section" class="section level1">
-<h1></h1>
-</div>
-<div id="the-report-does-not-import-raw-data-directly." class="section level1">
-<h1>The report does not import raw data directly.</h1>
-</div>
-<div id="instead-_targets.r-passes-cleaned-data-qa-tables-and-summaries-into-it." class="section level1">
-<h1>Instead, _targets.R passes cleaned data, QA tables, and summaries
-into it.</h1>
-</div>
-<div id="section-1" class="section level1">
-<h1></h1>
-</div>
-<div id="the-report-provides" class="section level1">
-<h1>The report provides:</h1>
-</div>
-<div id="project-overview" class="section level1">
-<h1>- project overview</h1>
-</div>
-<div id="zoop-qa-summary" class="section level1">
-<h1>- Zoop QA summary</h1>
-</div>
-<div id="rot-qa-summary" class="section level1">
-<h1>- Rot QA summary</h1>
-</div>
-<div id="master-list-validation-results" class="section level1">
-<h1>- master-list validation results</h1>
-</div>
-<div id="examples-of-flagged-records-for-review" class="section level1">
-<h1>- examples of flagged records for review</h1>
-</div>
-<div id="section-2" class="section level1">
-<h1></h1>
-</div>
-<div id="the-output-is-written-to" class="section level1">
-<h1>The output is written to:</h1>
-</div>
-<div id="outputsqa_report.html" class="section level1">
-<h1>outputs/qa_report.html</h1>
-<div id="overview" class="section level2">
-<h2>Overview</h2>
+<div id="overview" class="section level1">
+<h1>Overview</h1>
 <table>
 <thead>
 <tr class="header">
@@ -406,7 +365,7 @@ into it.</h1>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">Number of raw files</td>
+<td align="left">Raw files processed</td>
 <td align="right">251</td>
 </tr>
 <tr class="even">
@@ -429,91 +388,16 @@ into it.</h1>
 <td align="left">Rot unique samples</td>
 <td align="right">81</td>
 </tr>
-</tbody>
-</table>
-</div>
-<div id="unknown-protocol-files" class="section level2">
-<h2>Unknown protocol files</h2>
-<table>
-<colgroup>
-<col width="67%" />
-<col width="32%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="left">source_file</th>
-<th align="left">source_name</th>
-</tr>
-</thead>
-<tbody>
 <tr class="odd">
-<td align="left">GLNPO 2024 Spring/GLNPO 2024 Spring/Erie/D100/ER 30
-D100 Spring 2024 24GE02I33 Zoops.xlsx</td>
-<td align="left">ER 30 D100 Spring 2024 24GE02I33 Zoops.xlsx</td>
+<td align="left">Zoop rows with correction flags</td>
+<td align="right">13821</td>
 </tr>
 <tr class="even">
-<td align="left">GLNPO 2024 Spring/GLNPO 2024 Spring/Erie/D100/ER 32
-D100 Spring 2024 24GE02I73.xlsx</td>
-<td align="left">ER 32 D100 Spring 2024 24GE02I73.xlsx</td>
-</tr>
-<tr class="odd">
-<td align="left">GLNPO 2024 Spring/GLNPO 2024 Spring/Erie/D100/ER 63
-D100 Spring 202424GE00I33 Zoops.xlsx</td>
-<td align="left">ER 63 D100 Spring 202424GE00I33 Zoops.xlsx</td>
-</tr>
-<tr class="even">
-<td align="left">GLNPO 2024 Spring/GLNPO 2024 Spring/Huron/D100/HU 06
-D100 QA Spring 2024 24GH00Q13.xlsx</td>
-<td align="left">HU 06 D100 QA Spring 2024 24GH00Q13.xlsx</td>
-</tr>
-<tr class="odd">
-<td align="left">GLNPO 2024 Spring/GLNPO 2024 Spring/Huron/D100/HU 06
-D100 Spring 2024 24GH00I13.xlsx</td>
-<td align="left">HU 06 D100 Spring 2024 24GH00I13.xlsx</td>
-</tr>
-<tr class="even">
-<td align="left">GLNPO 2024 Spring/GLNPO 2024 Spring/Huron/D100/HU 15M
-D100 Spring 2024 24G400I73 Zoops.xlsx</td>
-<td align="left">HU 15M D100 Spring 2024 24G400I73 Zoops.xlsx</td>
-</tr>
-<tr class="odd">
-<td align="left">GLNPO 2024 Spring/GLNPO 2024 Spring/Michigan/D100/MI 11
-D100 QA Spring 2024 24GM00I13.xlsx</td>
-<td align="left">MI 11 D100 QA Spring 2024 24GM00I13.xlsx</td>
-</tr>
-<tr class="even">
-<td align="left">GLNPO 2024 Spring/GLNPO 2024 Spring/Michigan/D100/MI 11
-D100 Spring 2024 24GM00I13.xlsx</td>
-<td align="left">MI 11 D100 Spring 2024 24GM00I13.xlsx</td>
-</tr>
-<tr class="odd">
-<td align="left">GLNPO 2024 Spring/GLNPO 2024 Spring/Michigan/D100/MI 19
-D100 Spring 2024 24GM00I73 Zoops.xlsx</td>
-<td align="left">MI 19 D100 Spring 2024 24GM00I73 Zoops.xlsx</td>
-</tr>
-<tr class="even">
-<td align="left">GLNPO 2024 Spring/GLNPO 2024 Spring/Ontario/D100/ON 49
-D100 Spring 2024 24GO00I13 Zoop (1).xlsx</td>
-<td align="left">ON 49 D100 Spring 2024 24GO00I13 Zoop (1).xlsx</td>
-</tr>
-<tr class="odd">
-<td align="left">GLNPO 2024 Spring/GLNPO 2024 Spring/Ontario/D100/ON 55M
-Spring 2024 24GO00I33 Zoops.xlsx</td>
-<td align="left">ON 55M Spring 2024 24GO00I33 Zoops.xlsx</td>
-</tr>
-<tr class="even">
-<td align="left">GLNPO 2024 Spring/GLNPO 2024 Spring/Superior/D100/SU
-08M D100 Spring 2024 24GS01I53.xlsx</td>
-<td align="left">SU 08M D100 Spring 2024 24GS01I53.xlsx</td>
-</tr>
-<tr class="odd">
-<td align="left">GLNPO 2024 Spring/GLNPO 2024 Spring/Superior/D100/SU 16
-D100 QA Spring 2024 24GS03Q13 Zoops.xlsx</td>
-<td align="left">SU 16 D100 QA Spring 2024 24GS03Q13 Zoops.xlsx</td>
+<td align="left">Rot rows with correction flags</td>
+<td align="right">1</td>
 </tr>
 </tbody>
 </table>
-</div>
 </div>
 <div id="master-list-validation" class="section level1">
 <h1>Master List Validation</h1>
@@ -940,125 +824,6 @@ D100 Spring 2024 24GE02I33 Zoops.xlsx</td>
 </tbody>
 </table>
 </div>
-<div id="master-samples-missing-in-compiled-data" class="section level2">
-<h2>Master samples missing in compiled data</h2>
-<table>
-<thead>
-<tr class="header">
-<th align="left">sample_num</th>
-<th align="left">station_master</th>
-<th align="left">depth_code</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">24GS00F53</td>
-<td align="left">SU 03</td>
-<td align="left">D100</td>
-</tr>
-<tr class="even">
-<td align="left">24GS00F93</td>
-<td align="left">SU 05</td>
-<td align="left">D100</td>
-</tr>
-<tr class="odd">
-<td align="left">24GS01F33</td>
-<td align="left">SU 07</td>
-<td align="left">D100</td>
-</tr>
-<tr class="even">
-<td align="left">24GS01F73</td>
-<td align="left">SU 09</td>
-<td align="left">D100</td>
-</tr>
-<tr class="odd">
-<td align="left">24GS02F13</td>
-<td align="left">SU 11</td>
-<td align="left">D100</td>
-</tr>
-<tr class="even">
-<td align="left">24GS02F53</td>
-<td align="left">SU 13</td>
-<td align="left">D100</td>
-</tr>
-<tr class="odd">
-<td align="left">24GS02F93</td>
-<td align="left">SU 15</td>
-<td align="left">D100</td>
-</tr>
-<tr class="even">
-<td align="left">24GS03F33</td>
-<td align="left">SU 17M</td>
-<td align="left">D100</td>
-</tr>
-<tr class="odd">
-<td align="left">24GS03F73</td>
-<td align="left">SU 19</td>
-<td align="left">D100</td>
-</tr>
-<tr class="even">
-<td align="left">24GE04I14</td>
-<td align="left">ECSER 932N</td>
-<td align="left">D20</td>
-</tr>
-<tr class="odd">
-<td align="left">24GE04I34</td>
-<td align="left">ECSER 936N</td>
-<td align="left">D20</td>
-</tr>
-<tr class="even">
-<td align="left">24GE04I54</td>
-<td align="left">ECSER 937N</td>
-<td align="left">D20</td>
-</tr>
-<tr class="odd">
-<td align="left">24GE04I74</td>
-<td align="left">ECSER 951N</td>
-<td align="left">D20</td>
-</tr>
-<tr class="even">
-<td align="left">24GE04I94</td>
-<td align="left">ECSER 958N</td>
-<td align="left">D20</td>
-</tr>
-<tr class="odd">
-<td align="left">24GE05I14</td>
-<td align="left">ECSER 959N</td>
-<td align="left">D20</td>
-</tr>
-<tr class="even">
-<td align="left">24GE05I34</td>
-<td align="left">ER 95B</td>
-<td align="left">D20</td>
-</tr>
-<tr class="odd">
-<td align="left">24GE05I54</td>
-<td align="left">ECSER 964N</td>
-<td align="left">D20</td>
-</tr>
-<tr class="even">
-<td align="left">24GE05I74</td>
-<td align="left">ECSER 966N</td>
-<td align="left">D20</td>
-</tr>
-<tr class="odd">
-<td align="left">24GE05I94</td>
-<td align="left">ECSERG 09N</td>
-<td align="left">D20</td>
-</tr>
-<tr class="even">
-<td align="left">24GE06I14</td>
-<td align="left">ECSERI 28N</td>
-<td align="left">D20</td>
-</tr>
-<tr class="odd">
-<td align="left">24GE06I34</td>
-<td align="left">ECSERN 22N</td>
-<td align="left">D20</td>
-</tr>
-</tbody>
-</table>
-</div>
 <div id="station-mismatches-vs-master-list" class="section level2">
 <h2>Station mismatches vs master list</h2>
 <table style="width:100%;">
@@ -1238,11 +1003,9 @@ D100 Spring 2024 24GE02I33 Zoops.xlsx</td>
 <table>
 <thead>
 <tr class="header">
-<th align="left">protocol</th>
-<th align="left">source_file</th>
-<th align="left">sample_num</th>
 <th align="left">station</th>
-<th align="left">sample_type</th>
+<th align="left">sample_num</th>
+<th align="left">protocol</th>
 </tr>
 </thead>
 <tbody>
@@ -1883,9 +1646,8 @@ D100 Spring 2024 24GE02I33 Zoops.xlsx</td>
 </tbody>
 </table>
 </div>
-</div>
-<div id="species-metadata-mismatches" class="section level1">
-<h1>Species metadata mismatches</h1>
+<div id="species-metadata-mismatches" class="section level2">
+<h2>Species metadata mismatches</h2>
 <table>
 <colgroup>
 <col width="2%" />
@@ -2671,30 +2433,3176 @@ D100 Spring 2024 24GE00I53 Zoop.xlsx</td>
 </tbody>
 </table>
 </div>
-<div id="zooplankton-qa" class="section level1">
-<h1>Zooplankton QA</h1>
-<div id="zoop-overview" class="section level2">
-<h2>Zoop overview</h2>
+</div>
+<div id="flagged-row-summary" class="section level1">
+<h1>Flagged Row Summary</h1>
+<div id="flagged-row-counts" class="section level2">
+<h2>Flagged row counts</h2>
 <table>
 <thead>
 <tr class="header">
-<th align="right">n_rows</th>
-<th align="right">n_samples</th>
-<th align="right">n_source_files</th>
-<th align="right">n_taxa</th>
+<th align="left">dataset</th>
+<th align="right">rows</th>
+<th align="right">flagged_rows</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
+<td align="left">Zoop</td>
 <td align="right">28862</td>
-<td align="right">156</td>
-<td align="right">157</td>
-<td align="right">44</td>
+<td align="right">13821</td>
+</tr>
+<tr class="even">
+<td align="left">Rot</td>
+<td align="right">5628</td>
+<td align="right">1</td>
 </tr>
 </tbody>
 </table>
 </div>
-<div id="zoop-qa-summary-1" class="section level2">
+<div id="example-flagged-zoop-rows" class="section level2">
+<h2>Example flagged Zoop rows</h2>
+<table>
+<colgroup>
+<col width="0%" />
+<col width="0%" />
+<col width="8%" />
+<col width="4%" />
+<col width="0%" />
+<col width="0%" />
+<col width="1%" />
+<col width="1%" />
+<col width="0%" />
+<col width="0%" />
+<col width="1%" />
+<col width="0%" />
+<col width="1%" />
+<col width="1%" />
+<col width="0%" />
+<col width="0%" />
+<col width="2%" />
+<col width="1%" />
+<col width="0%" />
+<col width="0%" />
+<col width="0%" />
+<col width="0%" />
+<col width="0%" />
+<col width="1%" />
+<col width="0%" />
+<col width="0%" />
+<col width="0%" />
+<col width="1%" />
+<col width="0%" />
+<col width="1%" />
+<col width="0%" />
+<col width="0%" />
+<col width="5%" />
+<col width="1%" />
+<col width="1%" />
+<col width="2%" />
+<col width="2%" />
+<col width="1%" />
+<col width="2%" />
+<col width="3%" />
+<col width="2%" />
+<col width="2%" />
+<col width="2%" />
+<col width="2%" />
+<col width="2%" />
+<col width="2%" />
+<col width="2%" />
+<col width="2%" />
+<col width="2%" />
+<col width="2%" />
+<col width="2%" />
+<col width="3%" />
+<col width="2%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="right">row_id</th>
+<th align="left">protocol</th>
+<th align="left">source_file</th>
+<th align="left">source_name</th>
+<th align="left">sample_num</th>
+<th align="left">station</th>
+<th align="left">station_raw</th>
+<th align="left">sample_type</th>
+<th align="left">qa_link</th>
+<th align="left">split</th>
+<th align="right">split_factor</th>
+<th align="left">analyst</th>
+<th align="left">analyst_date</th>
+<th align="left">analyst_date_raw</th>
+<th align="left">scope_used</th>
+<th align="right">power_used</th>
+<th align="left">species_name</th>
+<th align="left">species_code</th>
+<th align="left">subgroup</th>
+<th align="left">group_code</th>
+<th align="right">length_mm</th>
+<th align="right">width_mm</th>
+<th align="left">sex</th>
+<th align="right">organism_count</th>
+<th align="right">rotvol_ml</th>
+<th align="right">submla_ml</th>
+<th align="right">submlb_ml</th>
+<th align="right">rot_subml_ml</th>
+<th align="left">comment</th>
+<th align="left">is_qa_sample</th>
+<th align="left">any_flag</th>
+<th align="right">flag_count</th>
+<th align="left">flag_notes</th>
+<th align="left">flag_missing_required</th>
+<th align="left">flag_negative_counts</th>
+<th align="left">flag_nonpositive_split_factor</th>
+<th align="left">flag_unexpected_sex_values</th>
+<th align="left">flag_qa_link_issue</th>
+<th align="left">flag_split_factor_consistency</th>
+<th align="left">flag_missing_split_on_counted_rows</th>
+<th align="left">flag_unexpected_power_used</th>
+<th align="left">flag_d_split_taxon_not_allowed</th>
+<th align="left">flag_sample_not_in_master</th>
+<th align="left">flag_station_mismatch_vs_master</th>
+<th align="left">flag_depth_mismatch_vs_master</th>
+<th align="left">flag_bad_d20_sample_id_suffix</th>
+<th align="left">flag_bad_d100_sample_id_suffix</th>
+<th align="left">flag_species_code_not_in_key</th>
+<th align="left">flag_species_metadata_mismatch</th>
+<th align="left">review_duplicate_organism_rows</th>
+<th align="left">review_station_standardized</th>
+<th align="left">review_multiple_analyst_dates_in_split</th>
+<th align="left">review_missing_analyst_date</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">2</td>
+<td align="left">zoop</td>
+<td align="left">GLNPO 2024 Spring/GLNPO 2024 Spring/Erie/D100/ER 09
+D100 QA Spring 2024 24GE00Q53 Zoop.xlsx</td>
+<td align="left">ER 09 D100 QA Spring 2024 24GE00Q53 Zoop.xlsx</td>
+<td align="left">24GE00Q53</td>
+<td align="left">ER 09</td>
+<td align="left">ER 09</td>
+<td align="left">D100</td>
+<td align="left">24GE00I53</td>
+<td align="left">A</td>
+<td align="right">128</td>
+<td align="left">JKC</td>
+<td align="left">2024-09-19</td>
+<td align="left">2024-09-19</td>
+<td align="left">GARNEAU</td>
+<td align="right">30</td>
+<td align="left">Cyclops copepodites</td>
+<td align="left">CYCCOPE</td>
+<td align="left">CYCIMM</td>
+<td align="left">IMM</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="left">NA</td>
+<td align="right">1</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="left">Crushed</td>
+<td align="left">TRUE</td>
+<td align="left">TRUE</td>
+<td align="right">2</td>
+<td align="left">flag_unexpected_sex_values;
+flag_species_metadata_mismatch</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+</tr>
+<tr class="even">
+<td align="right">6</td>
+<td align="left">zoop</td>
+<td align="left">GLNPO 2024 Spring/GLNPO 2024 Spring/Erie/D100/ER 09
+D100 QA Spring 2024 24GE00Q53 Zoop.xlsx</td>
+<td align="left">ER 09 D100 QA Spring 2024 24GE00Q53 Zoop.xlsx</td>
+<td align="left">24GE00Q53</td>
+<td align="left">ER 09</td>
+<td align="left">ER 09</td>
+<td align="left">D100</td>
+<td align="left">24GE00I53</td>
+<td align="left">A</td>
+<td align="right">128</td>
+<td align="left">JKC</td>
+<td align="left">2024-09-19</td>
+<td align="left">2024-09-19</td>
+<td align="left">GARNEAU</td>
+<td align="right">30</td>
+<td align="left">Bosmina longirostris</td>
+<td align="left">BOSLONG</td>
+<td align="left">NDAP</td>
+<td align="left">CLA</td>
+<td align="right">0.374</td>
+<td align="right">NA</td>
+<td align="left">NA</td>
+<td align="right">1</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="left">NA</td>
+<td align="left">TRUE</td>
+<td align="left">TRUE</td>
+<td align="right">1</td>
+<td align="left">flag_unexpected_sex_values</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+</tr>
+<tr class="odd">
+<td align="right">10</td>
+<td align="left">zoop</td>
+<td align="left">GLNPO 2024 Spring/GLNPO 2024 Spring/Erie/D100/ER 09
+D100 QA Spring 2024 24GE00Q53 Zoop.xlsx</td>
+<td align="left">ER 09 D100 QA Spring 2024 24GE00Q53 Zoop.xlsx</td>
+<td align="left">24GE00Q53</td>
+<td align="left">ER 09</td>
+<td align="left">ER 09</td>
+<td align="left">D100</td>
+<td align="left">24GE00I53</td>
+<td align="left">A</td>
+<td align="right">128</td>
+<td align="left">JKC</td>
+<td align="left">2024-09-19</td>
+<td align="left">2024-09-19</td>
+<td align="left">GARNEAU</td>
+<td align="right">30</td>
+<td align="left">Cyclops copepodites</td>
+<td align="left">CYCCOPE</td>
+<td align="left">CYCIMM</td>
+<td align="left">IMM</td>
+<td align="right">0.498</td>
+<td align="right">NA</td>
+<td align="left">NA</td>
+<td align="right">1</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="left">NA</td>
+<td align="left">TRUE</td>
+<td align="left">TRUE</td>
+<td align="right">2</td>
+<td align="left">flag_unexpected_sex_values;
+flag_species_metadata_mismatch</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+</tr>
+<tr class="even">
+<td align="right">12</td>
+<td align="left">zoop</td>
+<td align="left">GLNPO 2024 Spring/GLNPO 2024 Spring/Erie/D100/ER 09
+D100 QA Spring 2024 24GE00Q53 Zoop.xlsx</td>
+<td align="left">ER 09 D100 QA Spring 2024 24GE00Q53 Zoop.xlsx</td>
+<td align="left">24GE00Q53</td>
+<td align="left">ER 09</td>
+<td align="left">ER 09</td>
+<td align="left">D100</td>
+<td align="left">24GE00I53</td>
+<td align="left">A</td>
+<td align="right">128</td>
+<td align="left">JKC</td>
+<td align="left">2024-09-19</td>
+<td align="left">2024-09-19</td>
+<td align="left">GARNEAU</td>
+<td align="right">30</td>
+<td align="left">Cyclops copepodites</td>
+<td align="left">CYCCOPE</td>
+<td align="left">CYCIMM</td>
+<td align="left">IMM</td>
+<td align="right">0.981</td>
+<td align="right">NA</td>
+<td align="left">NA</td>
+<td align="right">1</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="left">NA</td>
+<td align="left">TRUE</td>
+<td align="left">TRUE</td>
+<td align="right">2</td>
+<td align="left">flag_unexpected_sex_values;
+flag_species_metadata_mismatch</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+</tr>
+<tr class="odd">
+<td align="right">16</td>
+<td align="left">zoop</td>
+<td align="left">GLNPO 2024 Spring/GLNPO 2024 Spring/Erie/D100/ER 09
+D100 QA Spring 2024 24GE00Q53 Zoop.xlsx</td>
+<td align="left">ER 09 D100 QA Spring 2024 24GE00Q53 Zoop.xlsx</td>
+<td align="left">24GE00Q53</td>
+<td align="left">ER 09</td>
+<td align="left">ER 09</td>
+<td align="left">D100</td>
+<td align="left">24GE00I53</td>
+<td align="left">A</td>
+<td align="right">128</td>
+<td align="left">JKC</td>
+<td align="left">2024-09-19</td>
+<td align="left">2024-09-19</td>
+<td align="left">GARNEAU</td>
+<td align="right">30</td>
+<td align="left">Cyclops copepodites</td>
+<td align="left">CYCCOPE</td>
+<td align="left">CYCIMM</td>
+<td align="left">IMM</td>
+<td align="right">0.603</td>
+<td align="right">NA</td>
+<td align="left">NA</td>
+<td align="right">1</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="left">NA</td>
+<td align="left">TRUE</td>
+<td align="left">TRUE</td>
+<td align="right">2</td>
+<td align="left">flag_unexpected_sex_values;
+flag_species_metadata_mismatch</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+</tr>
+<tr class="even">
+<td align="right">17</td>
+<td align="left">zoop</td>
+<td align="left">GLNPO 2024 Spring/GLNPO 2024 Spring/Erie/D100/ER 09
+D100 QA Spring 2024 24GE00Q53 Zoop.xlsx</td>
+<td align="left">ER 09 D100 QA Spring 2024 24GE00Q53 Zoop.xlsx</td>
+<td align="left">24GE00Q53</td>
+<td align="left">ER 09</td>
+<td align="left">ER 09</td>
+<td align="left">D100</td>
+<td align="left">24GE00I53</td>
+<td align="left">A</td>
+<td align="right">128</td>
+<td align="left">JKC</td>
+<td align="left">2024-09-19</td>
+<td align="left">2024-09-19</td>
+<td align="left">GARNEAU</td>
+<td align="right">30</td>
+<td align="left">Cyclops copepodites</td>
+<td align="left">CYCCOPE</td>
+<td align="left">CYCIMM</td>
+<td align="left">IMM</td>
+<td align="right">0.748</td>
+<td align="right">NA</td>
+<td align="left">NA</td>
+<td align="right">1</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="left">NA</td>
+<td align="left">TRUE</td>
+<td align="left">TRUE</td>
+<td align="right">2</td>
+<td align="left">flag_unexpected_sex_values;
+flag_species_metadata_mismatch</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+</tr>
+<tr class="odd">
+<td align="right">19</td>
+<td align="left">zoop</td>
+<td align="left">GLNPO 2024 Spring/GLNPO 2024 Spring/Erie/D100/ER 09
+D100 QA Spring 2024 24GE00Q53 Zoop.xlsx</td>
+<td align="left">ER 09 D100 QA Spring 2024 24GE00Q53 Zoop.xlsx</td>
+<td align="left">24GE00Q53</td>
+<td align="left">ER 09</td>
+<td align="left">ER 09</td>
+<td align="left">D100</td>
+<td align="left">24GE00I53</td>
+<td align="left">A</td>
+<td align="right">128</td>
+<td align="left">JKC</td>
+<td align="left">2024-09-19</td>
+<td align="left">2024-09-19</td>
+<td align="left">GARNEAU</td>
+<td align="right">30</td>
+<td align="left">Cyclops copepodites</td>
+<td align="left">CYCCOPE</td>
+<td align="left">CYCIMM</td>
+<td align="left">IMM</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="left">NA</td>
+<td align="right">1</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="left">Crushed</td>
+<td align="left">TRUE</td>
+<td align="left">TRUE</td>
+<td align="right">2</td>
+<td align="left">flag_unexpected_sex_values;
+flag_species_metadata_mismatch</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+</tr>
+<tr class="even">
+<td align="right">20</td>
+<td align="left">zoop</td>
+<td align="left">GLNPO 2024 Spring/GLNPO 2024 Spring/Erie/D100/ER 09
+D100 QA Spring 2024 24GE00Q53 Zoop.xlsx</td>
+<td align="left">ER 09 D100 QA Spring 2024 24GE00Q53 Zoop.xlsx</td>
+<td align="left">24GE00Q53</td>
+<td align="left">ER 09</td>
+<td align="left">ER 09</td>
+<td align="left">D100</td>
+<td align="left">24GE00I53</td>
+<td align="left">A</td>
+<td align="right">128</td>
+<td align="left">JKC</td>
+<td align="left">2024-09-19</td>
+<td align="left">2024-09-19</td>
+<td align="left">GARNEAU</td>
+<td align="right">30</td>
+<td align="left">Cyclops copepodites</td>
+<td align="left">CYCCOPE</td>
+<td align="left">CYCIMM</td>
+<td align="left">IMM</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="left">NA</td>
+<td align="right">1</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="left">Crushed</td>
+<td align="left">TRUE</td>
+<td align="left">TRUE</td>
+<td align="right">2</td>
+<td align="left">flag_unexpected_sex_values;
+flag_species_metadata_mismatch</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+</tr>
+<tr class="odd">
+<td align="right">24</td>
+<td align="left">zoop</td>
+<td align="left">GLNPO 2024 Spring/GLNPO 2024 Spring/Erie/D100/ER 09
+D100 QA Spring 2024 24GE00Q53 Zoop.xlsx</td>
+<td align="left">ER 09 D100 QA Spring 2024 24GE00Q53 Zoop.xlsx</td>
+<td align="left">24GE00Q53</td>
+<td align="left">ER 09</td>
+<td align="left">ER 09</td>
+<td align="left">D100</td>
+<td align="left">24GE00I53</td>
+<td align="left">A</td>
+<td align="right">128</td>
+<td align="left">JKC</td>
+<td align="left">2024-09-19</td>
+<td align="left">2024-09-19</td>
+<td align="left">GARNEAU</td>
+<td align="right">30</td>
+<td align="left">Cyclops copepodites</td>
+<td align="left">CYCCOPE</td>
+<td align="left">CYCIMM</td>
+<td align="left">IMM</td>
+<td align="right">0.730</td>
+<td align="right">NA</td>
+<td align="left">NA</td>
+<td align="right">1</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="left">NA</td>
+<td align="left">TRUE</td>
+<td align="left">TRUE</td>
+<td align="right">2</td>
+<td align="left">flag_unexpected_sex_values;
+flag_species_metadata_mismatch</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+</tr>
+<tr class="even">
+<td align="right">25</td>
+<td align="left">zoop</td>
+<td align="left">GLNPO 2024 Spring/GLNPO 2024 Spring/Erie/D100/ER 09
+D100 QA Spring 2024 24GE00Q53 Zoop.xlsx</td>
+<td align="left">ER 09 D100 QA Spring 2024 24GE00Q53 Zoop.xlsx</td>
+<td align="left">24GE00Q53</td>
+<td align="left">ER 09</td>
+<td align="left">ER 09</td>
+<td align="left">D100</td>
+<td align="left">24GE00I53</td>
+<td align="left">A</td>
+<td align="right">128</td>
+<td align="left">JKC</td>
+<td align="left">2024-09-19</td>
+<td align="left">2024-09-19</td>
+<td align="left">GARNEAU</td>
+<td align="right">30</td>
+<td align="left">Cyclops copepodites</td>
+<td align="left">CYCCOPE</td>
+<td align="left">CYCIMM</td>
+<td align="left">IMM</td>
+<td align="right">0.918</td>
+<td align="right">NA</td>
+<td align="left">NA</td>
+<td align="right">1</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="left">NA</td>
+<td align="left">TRUE</td>
+<td align="left">TRUE</td>
+<td align="right">2</td>
+<td align="left">flag_unexpected_sex_values;
+flag_species_metadata_mismatch</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+</tr>
+<tr class="odd">
+<td align="right">26</td>
+<td align="left">zoop</td>
+<td align="left">GLNPO 2024 Spring/GLNPO 2024 Spring/Erie/D100/ER 09
+D100 QA Spring 2024 24GE00Q53 Zoop.xlsx</td>
+<td align="left">ER 09 D100 QA Spring 2024 24GE00Q53 Zoop.xlsx</td>
+<td align="left">24GE00Q53</td>
+<td align="left">ER 09</td>
+<td align="left">ER 09</td>
+<td align="left">D100</td>
+<td align="left">24GE00I53</td>
+<td align="left">A</td>
+<td align="right">128</td>
+<td align="left">JKC</td>
+<td align="left">2024-09-19</td>
+<td align="left">2024-09-19</td>
+<td align="left">GARNEAU</td>
+<td align="right">30</td>
+<td align="left">Cyclops copepodites</td>
+<td align="left">CYCCOPE</td>
+<td align="left">CYCIMM</td>
+<td align="left">IMM</td>
+<td align="right">0.876</td>
+<td align="right">NA</td>
+<td align="left">NA</td>
+<td align="right">1</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="left">NA</td>
+<td align="left">TRUE</td>
+<td align="left">TRUE</td>
+<td align="right">2</td>
+<td align="left">flag_unexpected_sex_values;
+flag_species_metadata_mismatch</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+</tr>
+<tr class="even">
+<td align="right">29</td>
+<td align="left">zoop</td>
+<td align="left">GLNPO 2024 Spring/GLNPO 2024 Spring/Erie/D100/ER 09
+D100 QA Spring 2024 24GE00Q53 Zoop.xlsx</td>
+<td align="left">ER 09 D100 QA Spring 2024 24GE00Q53 Zoop.xlsx</td>
+<td align="left">24GE00Q53</td>
+<td align="left">ER 09</td>
+<td align="left">ER 09</td>
+<td align="left">D100</td>
+<td align="left">24GE00I53</td>
+<td align="left">A</td>
+<td align="right">128</td>
+<td align="left">JKC</td>
+<td align="left">2024-09-19</td>
+<td align="left">2024-09-19</td>
+<td align="left">GARNEAU</td>
+<td align="right">30</td>
+<td align="left">Mesocyclops copepodites</td>
+<td align="left">MESCOPE</td>
+<td align="left">CYCIMM</td>
+<td align="left">IMM</td>
+<td align="right">0.756</td>
+<td align="right">NA</td>
+<td align="left">NA</td>
+<td align="right">1</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="left">NA</td>
+<td align="left">TRUE</td>
+<td align="left">TRUE</td>
+<td align="right">2</td>
+<td align="left">flag_unexpected_sex_values;
+flag_species_metadata_mismatch</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+</tr>
+<tr class="odd">
+<td align="right">30</td>
+<td align="left">zoop</td>
+<td align="left">GLNPO 2024 Spring/GLNPO 2024 Spring/Erie/D100/ER 09
+D100 QA Spring 2024 24GE00Q53 Zoop.xlsx</td>
+<td align="left">ER 09 D100 QA Spring 2024 24GE00Q53 Zoop.xlsx</td>
+<td align="left">24GE00Q53</td>
+<td align="left">ER 09</td>
+<td align="left">ER 09</td>
+<td align="left">D100</td>
+<td align="left">24GE00I53</td>
+<td align="left">A</td>
+<td align="right">128</td>
+<td align="left">JKC</td>
+<td align="left">2024-09-19</td>
+<td align="left">2024-09-19</td>
+<td align="left">GARNEAU</td>
+<td align="right">30</td>
+<td align="left">Daphnia longiremis</td>
+<td align="left">DAPLONG</td>
+<td align="left">DAP</td>
+<td align="left">CLA</td>
+<td align="right">0.919</td>
+<td align="right">NA</td>
+<td align="left">NA</td>
+<td align="right">1</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="left">NA</td>
+<td align="left">TRUE</td>
+<td align="left">TRUE</td>
+<td align="right">1</td>
+<td align="left">flag_unexpected_sex_values</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+</tr>
+<tr class="even">
+<td align="right">31</td>
+<td align="left">zoop</td>
+<td align="left">GLNPO 2024 Spring/GLNPO 2024 Spring/Erie/D100/ER 09
+D100 QA Spring 2024 24GE00Q53 Zoop.xlsx</td>
+<td align="left">ER 09 D100 QA Spring 2024 24GE00Q53 Zoop.xlsx</td>
+<td align="left">24GE00Q53</td>
+<td align="left">ER 09</td>
+<td align="left">ER 09</td>
+<td align="left">D100</td>
+<td align="left">24GE00I53</td>
+<td align="left">A</td>
+<td align="right">128</td>
+<td align="left">JKC</td>
+<td align="left">2024-09-19</td>
+<td align="left">2024-09-19</td>
+<td align="left">GARNEAU</td>
+<td align="right">30</td>
+<td align="left">Cyclops copepodites</td>
+<td align="left">CYCCOPE</td>
+<td align="left">CYCIMM</td>
+<td align="left">IMM</td>
+<td align="right">0.601</td>
+<td align="right">NA</td>
+<td align="left">NA</td>
+<td align="right">1</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="left">NA</td>
+<td align="left">TRUE</td>
+<td align="left">TRUE</td>
+<td align="right">2</td>
+<td align="left">flag_unexpected_sex_values;
+flag_species_metadata_mismatch</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+</tr>
+<tr class="odd">
+<td align="right">32</td>
+<td align="left">zoop</td>
+<td align="left">GLNPO 2024 Spring/GLNPO 2024 Spring/Erie/D100/ER 09
+D100 QA Spring 2024 24GE00Q53 Zoop.xlsx</td>
+<td align="left">ER 09 D100 QA Spring 2024 24GE00Q53 Zoop.xlsx</td>
+<td align="left">24GE00Q53</td>
+<td align="left">ER 09</td>
+<td align="left">ER 09</td>
+<td align="left">D100</td>
+<td align="left">24GE00I53</td>
+<td align="left">A</td>
+<td align="right">128</td>
+<td align="left">JKC</td>
+<td align="left">2024-09-19</td>
+<td align="left">2024-09-19</td>
+<td align="left">GARNEAU</td>
+<td align="right">30</td>
+<td align="left">Bosmina longirostris</td>
+<td align="left">BOSLONG</td>
+<td align="left">NDAP</td>
+<td align="left">CLA</td>
+<td align="right">0.411</td>
+<td align="right">NA</td>
+<td align="left">NA</td>
+<td align="right">1</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="left">NA</td>
+<td align="left">TRUE</td>
+<td align="left">TRUE</td>
+<td align="right">1</td>
+<td align="left">flag_unexpected_sex_values</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+</tr>
+<tr class="even">
+<td align="right">37</td>
+<td align="left">zoop</td>
+<td align="left">GLNPO 2024 Spring/GLNPO 2024 Spring/Erie/D100/ER 09
+D100 QA Spring 2024 24GE00Q53 Zoop.xlsx</td>
+<td align="left">ER 09 D100 QA Spring 2024 24GE00Q53 Zoop.xlsx</td>
+<td align="left">24GE00Q53</td>
+<td align="left">ER 09</td>
+<td align="left">ER 09</td>
+<td align="left">D100</td>
+<td align="left">24GE00I53</td>
+<td align="left">A</td>
+<td align="right">128</td>
+<td align="left">JKC</td>
+<td align="left">2024-09-19</td>
+<td align="left">2024-09-19</td>
+<td align="left">GARNEAU</td>
+<td align="right">30</td>
+<td align="left">Bosmina longirostris</td>
+<td align="left">BOSLONG</td>
+<td align="left">NDAP</td>
+<td align="left">CLA</td>
+<td align="right">0.393</td>
+<td align="right">NA</td>
+<td align="left">NA</td>
+<td align="right">1</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="left">NA</td>
+<td align="left">TRUE</td>
+<td align="left">TRUE</td>
+<td align="right">1</td>
+<td align="left">flag_unexpected_sex_values</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+</tr>
+<tr class="odd">
+<td align="right">38</td>
+<td align="left">zoop</td>
+<td align="left">GLNPO 2024 Spring/GLNPO 2024 Spring/Erie/D100/ER 09
+D100 QA Spring 2024 24GE00Q53 Zoop.xlsx</td>
+<td align="left">ER 09 D100 QA Spring 2024 24GE00Q53 Zoop.xlsx</td>
+<td align="left">24GE00Q53</td>
+<td align="left">ER 09</td>
+<td align="left">ER 09</td>
+<td align="left">D100</td>
+<td align="left">24GE00I53</td>
+<td align="left">A</td>
+<td align="right">128</td>
+<td align="left">JKC</td>
+<td align="left">2024-09-19</td>
+<td align="left">2024-09-19</td>
+<td align="left">GARNEAU</td>
+<td align="right">30</td>
+<td align="left">Bosmina longirostris</td>
+<td align="left">BOSLONG</td>
+<td align="left">NDAP</td>
+<td align="left">CLA</td>
+<td align="right">0.324</td>
+<td align="right">NA</td>
+<td align="left">NA</td>
+<td align="right">1</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="left">NA</td>
+<td align="left">TRUE</td>
+<td align="left">TRUE</td>
+<td align="right">1</td>
+<td align="left">flag_unexpected_sex_values</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+</tr>
+<tr class="even">
+<td align="right">40</td>
+<td align="left">zoop</td>
+<td align="left">GLNPO 2024 Spring/GLNPO 2024 Spring/Erie/D100/ER 09
+D100 QA Spring 2024 24GE00Q53 Zoop.xlsx</td>
+<td align="left">ER 09 D100 QA Spring 2024 24GE00Q53 Zoop.xlsx</td>
+<td align="left">24GE00Q53</td>
+<td align="left">ER 09</td>
+<td align="left">ER 09</td>
+<td align="left">D100</td>
+<td align="left">24GE00I53</td>
+<td align="left">A</td>
+<td align="right">128</td>
+<td align="left">JKC</td>
+<td align="left">2024-09-19</td>
+<td align="left">2024-09-19</td>
+<td align="left">GARNEAU</td>
+<td align="right">30</td>
+<td align="left">Bosmina longirostris</td>
+<td align="left">BOSLONG</td>
+<td align="left">NDAP</td>
+<td align="left">CLA</td>
+<td align="right">0.576</td>
+<td align="right">NA</td>
+<td align="left">NA</td>
+<td align="right">1</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="left">NA</td>
+<td align="left">TRUE</td>
+<td align="left">TRUE</td>
+<td align="right">1</td>
+<td align="left">flag_unexpected_sex_values</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+</tr>
+<tr class="odd">
+<td align="right">41</td>
+<td align="left">zoop</td>
+<td align="left">GLNPO 2024 Spring/GLNPO 2024 Spring/Erie/D100/ER 09
+D100 QA Spring 2024 24GE00Q53 Zoop.xlsx</td>
+<td align="left">ER 09 D100 QA Spring 2024 24GE00Q53 Zoop.xlsx</td>
+<td align="left">24GE00Q53</td>
+<td align="left">ER 09</td>
+<td align="left">ER 09</td>
+<td align="left">D100</td>
+<td align="left">24GE00I53</td>
+<td align="left">A</td>
+<td align="right">128</td>
+<td align="left">JKC</td>
+<td align="left">2024-09-19</td>
+<td align="left">2024-09-19</td>
+<td align="left">GARNEAU</td>
+<td align="right">30</td>
+<td align="left">Cyclops copepodites</td>
+<td align="left">CYCCOPE</td>
+<td align="left">CYCIMM</td>
+<td align="left">IMM</td>
+<td align="right">0.968</td>
+<td align="right">NA</td>
+<td align="left">NA</td>
+<td align="right">1</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="left">NA</td>
+<td align="left">TRUE</td>
+<td align="left">TRUE</td>
+<td align="right">2</td>
+<td align="left">flag_unexpected_sex_values;
+flag_species_metadata_mismatch</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+</tr>
+<tr class="even">
+<td align="right">42</td>
+<td align="left">zoop</td>
+<td align="left">GLNPO 2024 Spring/GLNPO 2024 Spring/Erie/D100/ER 09
+D100 QA Spring 2024 24GE00Q53 Zoop.xlsx</td>
+<td align="left">ER 09 D100 QA Spring 2024 24GE00Q53 Zoop.xlsx</td>
+<td align="left">24GE00Q53</td>
+<td align="left">ER 09</td>
+<td align="left">ER 09</td>
+<td align="left">D100</td>
+<td align="left">24GE00I53</td>
+<td align="left">A</td>
+<td align="right">128</td>
+<td align="left">JKC</td>
+<td align="left">2024-09-19</td>
+<td align="left">2024-09-19</td>
+<td align="left">GARNEAU</td>
+<td align="right">30</td>
+<td align="left">Cyclops copepodites</td>
+<td align="left">CYCCOPE</td>
+<td align="left">CYCIMM</td>
+<td align="left">IMM</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="left">NA</td>
+<td align="right">1</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="left">Crushed</td>
+<td align="left">TRUE</td>
+<td align="left">TRUE</td>
+<td align="right">2</td>
+<td align="left">flag_unexpected_sex_values;
+flag_species_metadata_mismatch</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+</tr>
+<tr class="odd">
+<td align="right">43</td>
+<td align="left">zoop</td>
+<td align="left">GLNPO 2024 Spring/GLNPO 2024 Spring/Erie/D100/ER 09
+D100 QA Spring 2024 24GE00Q53 Zoop.xlsx</td>
+<td align="left">ER 09 D100 QA Spring 2024 24GE00Q53 Zoop.xlsx</td>
+<td align="left">24GE00Q53</td>
+<td align="left">ER 09</td>
+<td align="left">ER 09</td>
+<td align="left">D100</td>
+<td align="left">24GE00I53</td>
+<td align="left">A</td>
+<td align="right">128</td>
+<td align="left">JKC</td>
+<td align="left">2024-09-19</td>
+<td align="left">2024-09-19</td>
+<td align="left">GARNEAU</td>
+<td align="right">30</td>
+<td align="left">Cyclops copepodites</td>
+<td align="left">CYCCOPE</td>
+<td align="left">CYCIMM</td>
+<td align="left">IMM</td>
+<td align="right">0.724</td>
+<td align="right">NA</td>
+<td align="left">NA</td>
+<td align="right">1</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="left">NA</td>
+<td align="left">TRUE</td>
+<td align="left">TRUE</td>
+<td align="right">2</td>
+<td align="left">flag_unexpected_sex_values;
+flag_species_metadata_mismatch</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+</tr>
+<tr class="even">
+<td align="right">49</td>
+<td align="left">zoop</td>
+<td align="left">GLNPO 2024 Spring/GLNPO 2024 Spring/Erie/D100/ER 09
+D100 QA Spring 2024 24GE00Q53 Zoop.xlsx</td>
+<td align="left">ER 09 D100 QA Spring 2024 24GE00Q53 Zoop.xlsx</td>
+<td align="left">24GE00Q53</td>
+<td align="left">ER 09</td>
+<td align="left">ER 09</td>
+<td align="left">D100</td>
+<td align="left">24GE00I53</td>
+<td align="left">A</td>
+<td align="right">128</td>
+<td align="left">JKC</td>
+<td align="left">2024-09-19</td>
+<td align="left">2024-09-19</td>
+<td align="left">GARNEAU</td>
+<td align="right">30</td>
+<td align="left">Cyclops copepodites</td>
+<td align="left">CYCCOPE</td>
+<td align="left">CYCIMM</td>
+<td align="left">IMM</td>
+<td align="right">0.696</td>
+<td align="right">NA</td>
+<td align="left">NA</td>
+<td align="right">1</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="left">NA</td>
+<td align="left">TRUE</td>
+<td align="left">TRUE</td>
+<td align="right">2</td>
+<td align="left">flag_unexpected_sex_values;
+flag_species_metadata_mismatch</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+</tr>
+<tr class="odd">
+<td align="right">53</td>
+<td align="left">zoop</td>
+<td align="left">GLNPO 2024 Spring/GLNPO 2024 Spring/Erie/D100/ER 09
+D100 QA Spring 2024 24GE00Q53 Zoop.xlsx</td>
+<td align="left">ER 09 D100 QA Spring 2024 24GE00Q53 Zoop.xlsx</td>
+<td align="left">24GE00Q53</td>
+<td align="left">ER 09</td>
+<td align="left">ER 09</td>
+<td align="left">D100</td>
+<td align="left">24GE00I53</td>
+<td align="left">A</td>
+<td align="right">128</td>
+<td align="left">JKC</td>
+<td align="left">2024-09-19</td>
+<td align="left">2024-09-19</td>
+<td align="left">GARNEAU</td>
+<td align="right">30</td>
+<td align="left">Bosmina longirostris</td>
+<td align="left">BOSLONG</td>
+<td align="left">NDAP</td>
+<td align="left">CLA</td>
+<td align="right">0.383</td>
+<td align="right">NA</td>
+<td align="left">NA</td>
+<td align="right">1</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="left">NA</td>
+<td align="left">TRUE</td>
+<td align="left">TRUE</td>
+<td align="right">1</td>
+<td align="left">flag_unexpected_sex_values</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+</tr>
+<tr class="even">
+<td align="right">54</td>
+<td align="left">zoop</td>
+<td align="left">GLNPO 2024 Spring/GLNPO 2024 Spring/Erie/D100/ER 09
+D100 QA Spring 2024 24GE00Q53 Zoop.xlsx</td>
+<td align="left">ER 09 D100 QA Spring 2024 24GE00Q53 Zoop.xlsx</td>
+<td align="left">24GE00Q53</td>
+<td align="left">ER 09</td>
+<td align="left">ER 09</td>
+<td align="left">D100</td>
+<td align="left">24GE00I53</td>
+<td align="left">A</td>
+<td align="right">128</td>
+<td align="left">JKC</td>
+<td align="left">2024-09-19</td>
+<td align="left">2024-09-19</td>
+<td align="left">GARNEAU</td>
+<td align="right">30</td>
+<td align="left">Daphnia longiremis</td>
+<td align="left">DAPLONG</td>
+<td align="left">DAP</td>
+<td align="left">CLA</td>
+<td align="right">0.650</td>
+<td align="right">NA</td>
+<td align="left">NA</td>
+<td align="right">1</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="left">NA</td>
+<td align="left">TRUE</td>
+<td align="left">TRUE</td>
+<td align="right">1</td>
+<td align="left">flag_unexpected_sex_values</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+</tr>
+<tr class="odd">
+<td align="right">56</td>
+<td align="left">zoop</td>
+<td align="left">GLNPO 2024 Spring/GLNPO 2024 Spring/Erie/D100/ER 09
+D100 QA Spring 2024 24GE00Q53 Zoop.xlsx</td>
+<td align="left">ER 09 D100 QA Spring 2024 24GE00Q53 Zoop.xlsx</td>
+<td align="left">24GE00Q53</td>
+<td align="left">ER 09</td>
+<td align="left">ER 09</td>
+<td align="left">D100</td>
+<td align="left">24GE00I53</td>
+<td align="left">A</td>
+<td align="right">128</td>
+<td align="left">JKC</td>
+<td align="left">2024-09-19</td>
+<td align="left">2024-09-19</td>
+<td align="left">GARNEAU</td>
+<td align="right">30</td>
+<td align="left">Cyclops copepodites</td>
+<td align="left">CYCCOPE</td>
+<td align="left">CYCIMM</td>
+<td align="left">IMM</td>
+<td align="right">1.040</td>
+<td align="right">NA</td>
+<td align="left">NA</td>
+<td align="right">1</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="left">NA</td>
+<td align="left">TRUE</td>
+<td align="left">TRUE</td>
+<td align="right">2</td>
+<td align="left">flag_unexpected_sex_values;
+flag_species_metadata_mismatch</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+</tr>
+<tr class="even">
+<td align="right">58</td>
+<td align="left">zoop</td>
+<td align="left">GLNPO 2024 Spring/GLNPO 2024 Spring/Erie/D100/ER 09
+D100 QA Spring 2024 24GE00Q53 Zoop.xlsx</td>
+<td align="left">ER 09 D100 QA Spring 2024 24GE00Q53 Zoop.xlsx</td>
+<td align="left">24GE00Q53</td>
+<td align="left">ER 09</td>
+<td align="left">ER 09</td>
+<td align="left">D100</td>
+<td align="left">24GE00I53</td>
+<td align="left">A</td>
+<td align="right">128</td>
+<td align="left">JKC</td>
+<td align="left">2024-09-19</td>
+<td align="left">2024-09-19</td>
+<td align="left">GARNEAU</td>
+<td align="right">30</td>
+<td align="left">Cyclops copepodites</td>
+<td align="left">CYCCOPE</td>
+<td align="left">CYCIMM</td>
+<td align="left">IMM</td>
+<td align="right">0.759</td>
+<td align="right">NA</td>
+<td align="left">NA</td>
+<td align="right">1</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="left">NA</td>
+<td align="left">TRUE</td>
+<td align="left">TRUE</td>
+<td align="right">2</td>
+<td align="left">flag_unexpected_sex_values;
+flag_species_metadata_mismatch</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+</tr>
+<tr class="odd">
+<td align="right">59</td>
+<td align="left">zoop</td>
+<td align="left">GLNPO 2024 Spring/GLNPO 2024 Spring/Erie/D100/ER 09
+D100 QA Spring 2024 24GE00Q53 Zoop.xlsx</td>
+<td align="left">ER 09 D100 QA Spring 2024 24GE00Q53 Zoop.xlsx</td>
+<td align="left">24GE00Q53</td>
+<td align="left">ER 09</td>
+<td align="left">ER 09</td>
+<td align="left">D100</td>
+<td align="left">24GE00I53</td>
+<td align="left">A</td>
+<td align="right">128</td>
+<td align="left">JKC</td>
+<td align="left">2024-09-19</td>
+<td align="left">2024-09-19</td>
+<td align="left">GARNEAU</td>
+<td align="right">30</td>
+<td align="left">Cyclops copepodites</td>
+<td align="left">CYCCOPE</td>
+<td align="left">CYCIMM</td>
+<td align="left">IMM</td>
+<td align="right">0.573</td>
+<td align="right">NA</td>
+<td align="left">NA</td>
+<td align="right">1</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="left">NA</td>
+<td align="left">TRUE</td>
+<td align="left">TRUE</td>
+<td align="right">2</td>
+<td align="left">flag_unexpected_sex_values;
+flag_species_metadata_mismatch</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+</tr>
+<tr class="even">
+<td align="right">60</td>
+<td align="left">zoop</td>
+<td align="left">GLNPO 2024 Spring/GLNPO 2024 Spring/Erie/D100/ER 09
+D100 QA Spring 2024 24GE00Q53 Zoop.xlsx</td>
+<td align="left">ER 09 D100 QA Spring 2024 24GE00Q53 Zoop.xlsx</td>
+<td align="left">24GE00Q53</td>
+<td align="left">ER 09</td>
+<td align="left">ER 09</td>
+<td align="left">D100</td>
+<td align="left">24GE00I53</td>
+<td align="left">A</td>
+<td align="right">128</td>
+<td align="left">JKC</td>
+<td align="left">2024-09-19</td>
+<td align="left">2024-09-19</td>
+<td align="left">GARNEAU</td>
+<td align="right">30</td>
+<td align="left">Cyclops copepodites</td>
+<td align="left">CYCCOPE</td>
+<td align="left">CYCIMM</td>
+<td align="left">IMM</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="left">NA</td>
+<td align="right">1</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="left">Crushed</td>
+<td align="left">TRUE</td>
+<td align="left">TRUE</td>
+<td align="right">2</td>
+<td align="left">flag_unexpected_sex_values;
+flag_species_metadata_mismatch</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+</tr>
+<tr class="odd">
+<td align="right">61</td>
+<td align="left">zoop</td>
+<td align="left">GLNPO 2024 Spring/GLNPO 2024 Spring/Erie/D100/ER 09
+D100 QA Spring 2024 24GE00Q53 Zoop.xlsx</td>
+<td align="left">ER 09 D100 QA Spring 2024 24GE00Q53 Zoop.xlsx</td>
+<td align="left">24GE00Q53</td>
+<td align="left">ER 09</td>
+<td align="left">ER 09</td>
+<td align="left">D100</td>
+<td align="left">24GE00I53</td>
+<td align="left">A</td>
+<td align="right">128</td>
+<td align="left">JKC</td>
+<td align="left">2024-09-19</td>
+<td align="left">2024-09-19</td>
+<td align="left">GARNEAU</td>
+<td align="right">30</td>
+<td align="left">Bosmina longirostris</td>
+<td align="left">BOSLONG</td>
+<td align="left">NDAP</td>
+<td align="left">CLA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="left">NA</td>
+<td align="right">1</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="left">Crushed</td>
+<td align="left">TRUE</td>
+<td align="left">TRUE</td>
+<td align="right">1</td>
+<td align="left">flag_unexpected_sex_values</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+</tr>
+<tr class="even">
+<td align="right">63</td>
+<td align="left">zoop</td>
+<td align="left">GLNPO 2024 Spring/GLNPO 2024 Spring/Erie/D100/ER 09
+D100 QA Spring 2024 24GE00Q53 Zoop.xlsx</td>
+<td align="left">ER 09 D100 QA Spring 2024 24GE00Q53 Zoop.xlsx</td>
+<td align="left">24GE00Q53</td>
+<td align="left">ER 09</td>
+<td align="left">ER 09</td>
+<td align="left">D100</td>
+<td align="left">24GE00I53</td>
+<td align="left">A</td>
+<td align="right">128</td>
+<td align="left">JKC</td>
+<td align="left">2024-09-19</td>
+<td align="left">2024-09-19</td>
+<td align="left">GARNEAU</td>
+<td align="right">30</td>
+<td align="left">Bosmina longirostris</td>
+<td align="left">BOSLONG</td>
+<td align="left">NDAP</td>
+<td align="left">CLA</td>
+<td align="right">0.483</td>
+<td align="right">NA</td>
+<td align="left">NA</td>
+<td align="right">1</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="left">NA</td>
+<td align="left">TRUE</td>
+<td align="left">TRUE</td>
+<td align="right">1</td>
+<td align="left">flag_unexpected_sex_values</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+</tr>
+<tr class="odd">
+<td align="right">68</td>
+<td align="left">zoop</td>
+<td align="left">GLNPO 2024 Spring/GLNPO 2024 Spring/Erie/D100/ER 09
+D100 QA Spring 2024 24GE00Q53 Zoop.xlsx</td>
+<td align="left">ER 09 D100 QA Spring 2024 24GE00Q53 Zoop.xlsx</td>
+<td align="left">24GE00Q53</td>
+<td align="left">ER 09</td>
+<td align="left">ER 09</td>
+<td align="left">D100</td>
+<td align="left">24GE00I53</td>
+<td align="left">A</td>
+<td align="right">128</td>
+<td align="left">JKC</td>
+<td align="left">2024-09-19</td>
+<td align="left">2024-09-19</td>
+<td align="left">GARNEAU</td>
+<td align="right">30</td>
+<td align="left">Cyclops copepodites</td>
+<td align="left">CYCCOPE</td>
+<td align="left">CYCIMM</td>
+<td align="left">IMM</td>
+<td align="right">0.778</td>
+<td align="right">NA</td>
+<td align="left">NA</td>
+<td align="right">1</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="left">NA</td>
+<td align="left">TRUE</td>
+<td align="left">TRUE</td>
+<td align="right">2</td>
+<td align="left">flag_unexpected_sex_values;
+flag_species_metadata_mismatch</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+</tr>
+<tr class="even">
+<td align="right">73</td>
+<td align="left">zoop</td>
+<td align="left">GLNPO 2024 Spring/GLNPO 2024 Spring/Erie/D100/ER 09
+D100 QA Spring 2024 24GE00Q53 Zoop.xlsx</td>
+<td align="left">ER 09 D100 QA Spring 2024 24GE00Q53 Zoop.xlsx</td>
+<td align="left">24GE00Q53</td>
+<td align="left">ER 09</td>
+<td align="left">ER 09</td>
+<td align="left">D100</td>
+<td align="left">24GE00I53</td>
+<td align="left">A</td>
+<td align="right">128</td>
+<td align="left">JKC</td>
+<td align="left">2024-09-19</td>
+<td align="left">2024-09-19</td>
+<td align="left">GARNEAU</td>
+<td align="right">30</td>
+<td align="left">Mesocyclops copepodites</td>
+<td align="left">MESCOPE</td>
+<td align="left">CYCIMM</td>
+<td align="left">IMM</td>
+<td align="right">0.760</td>
+<td align="right">NA</td>
+<td align="left">NA</td>
+<td align="right">1</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="left">NA</td>
+<td align="left">TRUE</td>
+<td align="left">TRUE</td>
+<td align="right">2</td>
+<td align="left">flag_unexpected_sex_values;
+flag_species_metadata_mismatch</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+</tr>
+<tr class="odd">
+<td align="right">75</td>
+<td align="left">zoop</td>
+<td align="left">GLNPO 2024 Spring/GLNPO 2024 Spring/Erie/D100/ER 09
+D100 QA Spring 2024 24GE00Q53 Zoop.xlsx</td>
+<td align="left">ER 09 D100 QA Spring 2024 24GE00Q53 Zoop.xlsx</td>
+<td align="left">24GE00Q53</td>
+<td align="left">ER 09</td>
+<td align="left">ER 09</td>
+<td align="left">D100</td>
+<td align="left">24GE00I53</td>
+<td align="left">A</td>
+<td align="right">128</td>
+<td align="left">JKC</td>
+<td align="left">2024-09-19</td>
+<td align="left">2024-09-19</td>
+<td align="left">GARNEAU</td>
+<td align="right">30</td>
+<td align="left">Bosmina longirostris</td>
+<td align="left">BOSLONG</td>
+<td align="left">NDAP</td>
+<td align="left">CLA</td>
+<td align="right">0.325</td>
+<td align="right">NA</td>
+<td align="left">NA</td>
+<td align="right">1</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="left">NA</td>
+<td align="left">TRUE</td>
+<td align="left">TRUE</td>
+<td align="right">1</td>
+<td align="left">flag_unexpected_sex_values</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+</tr>
+<tr class="even">
+<td align="right">77</td>
+<td align="left">zoop</td>
+<td align="left">GLNPO 2024 Spring/GLNPO 2024 Spring/Erie/D100/ER 09
+D100 QA Spring 2024 24GE00Q53 Zoop.xlsx</td>
+<td align="left">ER 09 D100 QA Spring 2024 24GE00Q53 Zoop.xlsx</td>
+<td align="left">24GE00Q53</td>
+<td align="left">ER 09</td>
+<td align="left">ER 09</td>
+<td align="left">D100</td>
+<td align="left">24GE00I53</td>
+<td align="left">A</td>
+<td align="right">128</td>
+<td align="left">JKC</td>
+<td align="left">2024-09-19</td>
+<td align="left">2024-09-19</td>
+<td align="left">GARNEAU</td>
+<td align="right">30</td>
+<td align="left">Bosmina longirostris</td>
+<td align="left">BOSLONG</td>
+<td align="left">NDAP</td>
+<td align="left">CLA</td>
+<td align="right">0.431</td>
+<td align="right">NA</td>
+<td align="left">NA</td>
+<td align="right">1</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="left">NA</td>
+<td align="left">TRUE</td>
+<td align="left">TRUE</td>
+<td align="right">1</td>
+<td align="left">flag_unexpected_sex_values</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+</tr>
+<tr class="odd">
+<td align="right">80</td>
+<td align="left">zoop</td>
+<td align="left">GLNPO 2024 Spring/GLNPO 2024 Spring/Erie/D100/ER 09
+D100 QA Spring 2024 24GE00Q53 Zoop.xlsx</td>
+<td align="left">ER 09 D100 QA Spring 2024 24GE00Q53 Zoop.xlsx</td>
+<td align="left">24GE00Q53</td>
+<td align="left">ER 09</td>
+<td align="left">ER 09</td>
+<td align="left">D100</td>
+<td align="left">24GE00I53</td>
+<td align="left">A</td>
+<td align="right">128</td>
+<td align="left">JKC</td>
+<td align="left">2024-09-19</td>
+<td align="left">2024-09-19</td>
+<td align="left">GARNEAU</td>
+<td align="right">30</td>
+<td align="left">Daphnia longiremis</td>
+<td align="left">DAPLONG</td>
+<td align="left">DAP</td>
+<td align="left">CLA</td>
+<td align="right">1.051</td>
+<td align="right">NA</td>
+<td align="left">NA</td>
+<td align="right">1</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="left">NA</td>
+<td align="left">TRUE</td>
+<td align="left">TRUE</td>
+<td align="right">1</td>
+<td align="left">flag_unexpected_sex_values</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+</tr>
+<tr class="even">
+<td align="right">83</td>
+<td align="left">zoop</td>
+<td align="left">GLNPO 2024 Spring/GLNPO 2024 Spring/Erie/D100/ER 09
+D100 QA Spring 2024 24GE00Q53 Zoop.xlsx</td>
+<td align="left">ER 09 D100 QA Spring 2024 24GE00Q53 Zoop.xlsx</td>
+<td align="left">24GE00Q53</td>
+<td align="left">ER 09</td>
+<td align="left">ER 09</td>
+<td align="left">D100</td>
+<td align="left">24GE00I53</td>
+<td align="left">A</td>
+<td align="right">128</td>
+<td align="left">JKC</td>
+<td align="left">2024-09-19</td>
+<td align="left">2024-09-19</td>
+<td align="left">GARNEAU</td>
+<td align="right">30</td>
+<td align="left">Cyclops copepodites</td>
+<td align="left">CYCCOPE</td>
+<td align="left">CYCIMM</td>
+<td align="left">IMM</td>
+<td align="right">0.661</td>
+<td align="right">NA</td>
+<td align="left">NA</td>
+<td align="right">1</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="left">NA</td>
+<td align="left">TRUE</td>
+<td align="left">TRUE</td>
+<td align="right">2</td>
+<td align="left">flag_unexpected_sex_values;
+flag_species_metadata_mismatch</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+</tr>
+<tr class="odd">
+<td align="right">86</td>
+<td align="left">zoop</td>
+<td align="left">GLNPO 2024 Spring/GLNPO 2024 Spring/Erie/D100/ER 09
+D100 QA Spring 2024 24GE00Q53 Zoop.xlsx</td>
+<td align="left">ER 09 D100 QA Spring 2024 24GE00Q53 Zoop.xlsx</td>
+<td align="left">24GE00Q53</td>
+<td align="left">ER 09</td>
+<td align="left">ER 09</td>
+<td align="left">D100</td>
+<td align="left">24GE00I53</td>
+<td align="left">A</td>
+<td align="right">128</td>
+<td align="left">JKC</td>
+<td align="left">2024-09-19</td>
+<td align="left">2024-09-19</td>
+<td align="left">GARNEAU</td>
+<td align="right">30</td>
+<td align="left">Bosmina longirostris</td>
+<td align="left">BOSLONG</td>
+<td align="left">NDAP</td>
+<td align="left">CLA</td>
+<td align="right">0.384</td>
+<td align="right">NA</td>
+<td align="left">NA</td>
+<td align="right">1</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="left">NA</td>
+<td align="left">TRUE</td>
+<td align="left">TRUE</td>
+<td align="right">1</td>
+<td align="left">flag_unexpected_sex_values</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+</tr>
+<tr class="even">
+<td align="right">87</td>
+<td align="left">zoop</td>
+<td align="left">GLNPO 2024 Spring/GLNPO 2024 Spring/Erie/D100/ER 09
+D100 QA Spring 2024 24GE00Q53 Zoop.xlsx</td>
+<td align="left">ER 09 D100 QA Spring 2024 24GE00Q53 Zoop.xlsx</td>
+<td align="left">24GE00Q53</td>
+<td align="left">ER 09</td>
+<td align="left">ER 09</td>
+<td align="left">D100</td>
+<td align="left">24GE00I53</td>
+<td align="left">A</td>
+<td align="right">128</td>
+<td align="left">JKC</td>
+<td align="left">2024-09-19</td>
+<td align="left">2024-09-19</td>
+<td align="left">GARNEAU</td>
+<td align="right">30</td>
+<td align="left">Daphnia longiremis</td>
+<td align="left">DAPLONG</td>
+<td align="left">DAP</td>
+<td align="left">CLA</td>
+<td align="right">0.725</td>
+<td align="right">NA</td>
+<td align="left">NA</td>
+<td align="right">1</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="left">NA</td>
+<td align="left">TRUE</td>
+<td align="left">TRUE</td>
+<td align="right">1</td>
+<td align="left">flag_unexpected_sex_values</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+</tr>
+<tr class="odd">
+<td align="right">88</td>
+<td align="left">zoop</td>
+<td align="left">GLNPO 2024 Spring/GLNPO 2024 Spring/Erie/D100/ER 09
+D100 QA Spring 2024 24GE00Q53 Zoop.xlsx</td>
+<td align="left">ER 09 D100 QA Spring 2024 24GE00Q53 Zoop.xlsx</td>
+<td align="left">24GE00Q53</td>
+<td align="left">ER 09</td>
+<td align="left">ER 09</td>
+<td align="left">D100</td>
+<td align="left">24GE00I53</td>
+<td align="left">A</td>
+<td align="right">128</td>
+<td align="left">JKC</td>
+<td align="left">2024-09-19</td>
+<td align="left">2024-09-19</td>
+<td align="left">GARNEAU</td>
+<td align="right">30</td>
+<td align="left">Bosmina longirostris</td>
+<td align="left">BOSLONG</td>
+<td align="left">NDAP</td>
+<td align="left">CLA</td>
+<td align="right">0.333</td>
+<td align="right">NA</td>
+<td align="left">NA</td>
+<td align="right">1</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="left">NA</td>
+<td align="left">TRUE</td>
+<td align="left">TRUE</td>
+<td align="right">1</td>
+<td align="left">flag_unexpected_sex_values</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+</tr>
+<tr class="even">
+<td align="right">89</td>
+<td align="left">zoop</td>
+<td align="left">GLNPO 2024 Spring/GLNPO 2024 Spring/Erie/D100/ER 09
+D100 QA Spring 2024 24GE00Q53 Zoop.xlsx</td>
+<td align="left">ER 09 D100 QA Spring 2024 24GE00Q53 Zoop.xlsx</td>
+<td align="left">24GE00Q53</td>
+<td align="left">ER 09</td>
+<td align="left">ER 09</td>
+<td align="left">D100</td>
+<td align="left">24GE00I53</td>
+<td align="left">A</td>
+<td align="right">128</td>
+<td align="left">JKC</td>
+<td align="left">2024-09-19</td>
+<td align="left">2024-09-19</td>
+<td align="left">GARNEAU</td>
+<td align="right">30</td>
+<td align="left">Bosmina longirostris</td>
+<td align="left">BOSLONG</td>
+<td align="left">NDAP</td>
+<td align="left">CLA</td>
+<td align="right">0.638</td>
+<td align="right">NA</td>
+<td align="left">NA</td>
+<td align="right">1</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="left">NA</td>
+<td align="left">TRUE</td>
+<td align="left">TRUE</td>
+<td align="right">1</td>
+<td align="left">flag_unexpected_sex_values</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+</tr>
+<tr class="odd">
+<td align="right">91</td>
+<td align="left">zoop</td>
+<td align="left">GLNPO 2024 Spring/GLNPO 2024 Spring/Erie/D100/ER 09
+D100 QA Spring 2024 24GE00Q53 Zoop.xlsx</td>
+<td align="left">ER 09 D100 QA Spring 2024 24GE00Q53 Zoop.xlsx</td>
+<td align="left">24GE00Q53</td>
+<td align="left">ER 09</td>
+<td align="left">ER 09</td>
+<td align="left">D100</td>
+<td align="left">24GE00I53</td>
+<td align="left">A</td>
+<td align="right">128</td>
+<td align="left">JKC</td>
+<td align="left">2024-09-19</td>
+<td align="left">2024-09-19</td>
+<td align="left">GARNEAU</td>
+<td align="right">30</td>
+<td align="left">Cyclops copepodites</td>
+<td align="left">CYCCOPE</td>
+<td align="left">CYCIMM</td>
+<td align="left">IMM</td>
+<td align="right">0.497</td>
+<td align="right">NA</td>
+<td align="left">NA</td>
+<td align="right">1</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="left">NA</td>
+<td align="left">TRUE</td>
+<td align="left">TRUE</td>
+<td align="right">2</td>
+<td align="left">flag_unexpected_sex_values;
+flag_species_metadata_mismatch</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+</tr>
+<tr class="even">
+<td align="right">94</td>
+<td align="left">zoop</td>
+<td align="left">GLNPO 2024 Spring/GLNPO 2024 Spring/Erie/D100/ER 09
+D100 QA Spring 2024 24GE00Q53 Zoop.xlsx</td>
+<td align="left">ER 09 D100 QA Spring 2024 24GE00Q53 Zoop.xlsx</td>
+<td align="left">24GE00Q53</td>
+<td align="left">ER 09</td>
+<td align="left">ER 09</td>
+<td align="left">D100</td>
+<td align="left">24GE00I53</td>
+<td align="left">A</td>
+<td align="right">128</td>
+<td align="left">JKC</td>
+<td align="left">2024-09-19</td>
+<td align="left">2024-09-19</td>
+<td align="left">GARNEAU</td>
+<td align="right">30</td>
+<td align="left">Daphnia longiremis</td>
+<td align="left">DAPLONG</td>
+<td align="left">DAP</td>
+<td align="left">CLA</td>
+<td align="right">0.491</td>
+<td align="right">NA</td>
+<td align="left">NA</td>
+<td align="right">1</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="left">NA</td>
+<td align="left">TRUE</td>
+<td align="left">TRUE</td>
+<td align="right">1</td>
+<td align="left">flag_unexpected_sex_values</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+</tr>
+<tr class="odd">
+<td align="right">96</td>
+<td align="left">zoop</td>
+<td align="left">GLNPO 2024 Spring/GLNPO 2024 Spring/Erie/D100/ER 09
+D100 QA Spring 2024 24GE00Q53 Zoop.xlsx</td>
+<td align="left">ER 09 D100 QA Spring 2024 24GE00Q53 Zoop.xlsx</td>
+<td align="left">24GE00Q53</td>
+<td align="left">ER 09</td>
+<td align="left">ER 09</td>
+<td align="left">D100</td>
+<td align="left">24GE00I53</td>
+<td align="left">A</td>
+<td align="right">128</td>
+<td align="left">JKC</td>
+<td align="left">2024-09-19</td>
+<td align="left">2024-09-19</td>
+<td align="left">GARNEAU</td>
+<td align="right">30</td>
+<td align="left">Cyclops copepodites</td>
+<td align="left">CYCCOPE</td>
+<td align="left">CYCIMM</td>
+<td align="left">IMM</td>
+<td align="right">0.854</td>
+<td align="right">NA</td>
+<td align="left">NA</td>
+<td align="right">1</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="left">NA</td>
+<td align="left">TRUE</td>
+<td align="left">TRUE</td>
+<td align="right">2</td>
+<td align="left">flag_unexpected_sex_values;
+flag_species_metadata_mismatch</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+</tr>
+<tr class="even">
+<td align="right">99</td>
+<td align="left">zoop</td>
+<td align="left">GLNPO 2024 Spring/GLNPO 2024 Spring/Erie/D100/ER 09
+D100 QA Spring 2024 24GE00Q53 Zoop.xlsx</td>
+<td align="left">ER 09 D100 QA Spring 2024 24GE00Q53 Zoop.xlsx</td>
+<td align="left">24GE00Q53</td>
+<td align="left">ER 09</td>
+<td align="left">ER 09</td>
+<td align="left">D100</td>
+<td align="left">24GE00I53</td>
+<td align="left">A</td>
+<td align="right">128</td>
+<td align="left">JKC</td>
+<td align="left">2024-09-19</td>
+<td align="left">2024-09-19</td>
+<td align="left">GARNEAU</td>
+<td align="right">30</td>
+<td align="left">Daphnia longiremis</td>
+<td align="left">DAPLONG</td>
+<td align="left">DAP</td>
+<td align="left">CLA</td>
+<td align="right">0.518</td>
+<td align="right">NA</td>
+<td align="left">NA</td>
+<td align="right">1</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="left">NA</td>
+<td align="left">TRUE</td>
+<td align="left">TRUE</td>
+<td align="right">1</td>
+<td align="left">flag_unexpected_sex_values</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+</tr>
+<tr class="odd">
+<td align="right">100</td>
+<td align="left">zoop</td>
+<td align="left">GLNPO 2024 Spring/GLNPO 2024 Spring/Erie/D100/ER 09
+D100 QA Spring 2024 24GE00Q53 Zoop.xlsx</td>
+<td align="left">ER 09 D100 QA Spring 2024 24GE00Q53 Zoop.xlsx</td>
+<td align="left">24GE00Q53</td>
+<td align="left">ER 09</td>
+<td align="left">ER 09</td>
+<td align="left">D100</td>
+<td align="left">24GE00I53</td>
+<td align="left">A</td>
+<td align="right">128</td>
+<td align="left">JKC</td>
+<td align="left">2024-09-19</td>
+<td align="left">2024-09-19</td>
+<td align="left">GARNEAU</td>
+<td align="right">30</td>
+<td align="left">Bosmina longirostris</td>
+<td align="left">BOSLONG</td>
+<td align="left">NDAP</td>
+<td align="left">CLA</td>
+<td align="right">0.368</td>
+<td align="right">NA</td>
+<td align="left">NA</td>
+<td align="right">1</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="left">NA</td>
+<td align="left">TRUE</td>
+<td align="left">TRUE</td>
+<td align="right">1</td>
+<td align="left">flag_unexpected_sex_values</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+</tr>
+<tr class="even">
+<td align="right">101</td>
+<td align="left">zoop</td>
+<td align="left">GLNPO 2024 Spring/GLNPO 2024 Spring/Erie/D100/ER 09
+D100 QA Spring 2024 24GE00Q53 Zoop.xlsx</td>
+<td align="left">ER 09 D100 QA Spring 2024 24GE00Q53 Zoop.xlsx</td>
+<td align="left">24GE00Q53</td>
+<td align="left">ER 09</td>
+<td align="left">ER 09</td>
+<td align="left">D100</td>
+<td align="left">24GE00I53</td>
+<td align="left">A</td>
+<td align="right">128</td>
+<td align="left">JKC</td>
+<td align="left">2024-09-19</td>
+<td align="left">2024-09-19</td>
+<td align="left">GARNEAU</td>
+<td align="right">30</td>
+<td align="left">Bosmina longirostris</td>
+<td align="left">BOSLONG</td>
+<td align="left">NDAP</td>
+<td align="left">CLA</td>
+<td align="right">0.279</td>
+<td align="right">NA</td>
+<td align="left">NA</td>
+<td align="right">1</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="left">NA</td>
+<td align="left">TRUE</td>
+<td align="left">TRUE</td>
+<td align="right">1</td>
+<td align="left">flag_unexpected_sex_values</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+</tr>
+<tr class="odd">
+<td align="right">102</td>
+<td align="left">zoop</td>
+<td align="left">GLNPO 2024 Spring/GLNPO 2024 Spring/Erie/D100/ER 09
+D100 QA Spring 2024 24GE00Q53 Zoop.xlsx</td>
+<td align="left">ER 09 D100 QA Spring 2024 24GE00Q53 Zoop.xlsx</td>
+<td align="left">24GE00Q53</td>
+<td align="left">ER 09</td>
+<td align="left">ER 09</td>
+<td align="left">D100</td>
+<td align="left">24GE00I53</td>
+<td align="left">A</td>
+<td align="right">128</td>
+<td align="left">JKC</td>
+<td align="left">2024-09-19</td>
+<td align="left">2024-09-19</td>
+<td align="left">GARNEAU</td>
+<td align="right">30</td>
+<td align="left">Cyclops copepodites</td>
+<td align="left">CYCCOPE</td>
+<td align="left">CYCIMM</td>
+<td align="left">IMM</td>
+<td align="right">0.577</td>
+<td align="right">NA</td>
+<td align="left">NA</td>
+<td align="right">1</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="left">NA</td>
+<td align="left">TRUE</td>
+<td align="left">TRUE</td>
+<td align="right">2</td>
+<td align="left">flag_unexpected_sex_values;
+flag_species_metadata_mismatch</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+</tr>
+<tr class="even">
+<td align="right">105</td>
+<td align="left">zoop</td>
+<td align="left">GLNPO 2024 Spring/GLNPO 2024 Spring/Erie/D100/ER 09
+D100 QA Spring 2024 24GE00Q53 Zoop.xlsx</td>
+<td align="left">ER 09 D100 QA Spring 2024 24GE00Q53 Zoop.xlsx</td>
+<td align="left">24GE00Q53</td>
+<td align="left">ER 09</td>
+<td align="left">ER 09</td>
+<td align="left">D100</td>
+<td align="left">24GE00I53</td>
+<td align="left">A</td>
+<td align="right">128</td>
+<td align="left">JKC</td>
+<td align="left">2024-09-19</td>
+<td align="left">2024-09-19</td>
+<td align="left">GARNEAU</td>
+<td align="right">30</td>
+<td align="left">Bosmina longirostris</td>
+<td align="left">BOSLONG</td>
+<td align="left">NDAP</td>
+<td align="left">CLA</td>
+<td align="right">0.455</td>
+<td align="right">NA</td>
+<td align="left">NA</td>
+<td align="right">1</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="left">NA</td>
+<td align="left">TRUE</td>
+<td align="left">TRUE</td>
+<td align="right">1</td>
+<td align="left">flag_unexpected_sex_values</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+</tr>
+<tr class="odd">
+<td align="right">106</td>
+<td align="left">zoop</td>
+<td align="left">GLNPO 2024 Spring/GLNPO 2024 Spring/Erie/D100/ER 09
+D100 QA Spring 2024 24GE00Q53 Zoop.xlsx</td>
+<td align="left">ER 09 D100 QA Spring 2024 24GE00Q53 Zoop.xlsx</td>
+<td align="left">24GE00Q53</td>
+<td align="left">ER 09</td>
+<td align="left">ER 09</td>
+<td align="left">D100</td>
+<td align="left">24GE00I53</td>
+<td align="left">A</td>
+<td align="right">128</td>
+<td align="left">JKC</td>
+<td align="left">2024-09-19</td>
+<td align="left">2024-09-19</td>
+<td align="left">GARNEAU</td>
+<td align="right">30</td>
+<td align="left">Bosmina longirostris</td>
+<td align="left">BOSLONG</td>
+<td align="left">NDAP</td>
+<td align="left">CLA</td>
+<td align="right">0.571</td>
+<td align="right">NA</td>
+<td align="left">NA</td>
+<td align="right">1</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="left">NA</td>
+<td align="left">TRUE</td>
+<td align="left">TRUE</td>
+<td align="right">1</td>
+<td align="left">flag_unexpected_sex_values</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+</tr>
+<tr class="even">
+<td align="right">108</td>
+<td align="left">zoop</td>
+<td align="left">GLNPO 2024 Spring/GLNPO 2024 Spring/Erie/D100/ER 09
+D100 QA Spring 2024 24GE00Q53 Zoop.xlsx</td>
+<td align="left">ER 09 D100 QA Spring 2024 24GE00Q53 Zoop.xlsx</td>
+<td align="left">24GE00Q53</td>
+<td align="left">ER 09</td>
+<td align="left">ER 09</td>
+<td align="left">D100</td>
+<td align="left">24GE00I53</td>
+<td align="left">A</td>
+<td align="right">128</td>
+<td align="left">JKC</td>
+<td align="left">2024-09-19</td>
+<td align="left">2024-09-19</td>
+<td align="left">GARNEAU</td>
+<td align="right">30</td>
+<td align="left">Cyclops copepodites</td>
+<td align="left">CYCCOPE</td>
+<td align="left">CYCIMM</td>
+<td align="left">IMM</td>
+<td align="right">0.451</td>
+<td align="right">NA</td>
+<td align="left">NA</td>
+<td align="right">1</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="left">NA</td>
+<td align="left">TRUE</td>
+<td align="left">TRUE</td>
+<td align="right">2</td>
+<td align="left">flag_unexpected_sex_values;
+flag_species_metadata_mismatch</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="example-flagged-rot-rows" class="section level2">
+<h2>Example flagged Rot rows</h2>
+<table>
+<colgroup>
+<col width="0%" />
+<col width="0%" />
+<col width="7%" />
+<col width="3%" />
+<col width="0%" />
+<col width="0%" />
+<col width="0%" />
+<col width="0%" />
+<col width="0%" />
+<col width="0%" />
+<col width="1%" />
+<col width="0%" />
+<col width="1%" />
+<col width="1%" />
+<col width="0%" />
+<col width="0%" />
+<col width="1%" />
+<col width="1%" />
+<col width="0%" />
+<col width="0%" />
+<col width="0%" />
+<col width="0%" />
+<col width="0%" />
+<col width="1%" />
+<col width="0%" />
+<col width="0%" />
+<col width="0%" />
+<col width="1%" />
+<col width="0%" />
+<col width="1%" />
+<col width="0%" />
+<col width="0%" />
+<col width="2%" />
+<col width="1%" />
+<col width="1%" />
+<col width="2%" />
+<col width="1%" />
+<col width="2%" />
+<col width="2%" />
+<col width="1%" />
+<col width="1%" />
+<col width="1%" />
+<col width="1%" />
+<col width="1%" />
+<col width="2%" />
+<col width="2%" />
+<col width="3%" />
+<col width="2%" />
+<col width="2%" />
+<col width="2%" />
+<col width="2%" />
+<col width="2%" />
+<col width="2%" />
+<col width="2%" />
+<col width="2%" />
+<col width="2%" />
+<col width="2%" />
+<col width="3%" />
+<col width="2%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="right">row_id</th>
+<th align="left">protocol</th>
+<th align="left">source_file</th>
+<th align="left">source_name</th>
+<th align="left">sample_num</th>
+<th align="left">station</th>
+<th align="left">station_raw</th>
+<th align="left">sample_type</th>
+<th align="left">qa_link</th>
+<th align="left">split</th>
+<th align="right">split_factor</th>
+<th align="left">analyst</th>
+<th align="left">analyst_date</th>
+<th align="left">analyst_date_raw</th>
+<th align="left">scope_used</th>
+<th align="right">power_used</th>
+<th align="left">species_name</th>
+<th align="left">species_code</th>
+<th align="left">subgroup</th>
+<th align="left">group_code</th>
+<th align="right">length_mm</th>
+<th align="right">width_mm</th>
+<th align="left">sex</th>
+<th align="right">organism_count</th>
+<th align="right">rotvol_ml</th>
+<th align="right">submla_ml</th>
+<th align="right">submlb_ml</th>
+<th align="right">rot_subml_ml</th>
+<th align="left">comment</th>
+<th align="left">is_qa_sample</th>
+<th align="left">any_flag</th>
+<th align="right">flag_count</th>
+<th align="left">flag_notes</th>
+<th align="left">flag_missing_required</th>
+<th align="left">flag_negative_counts</th>
+<th align="left">flag_nonpositive_split_factor</th>
+<th align="left">flag_qa_link_issue</th>
+<th align="left">flag_split_factor_consistency</th>
+<th align="left">flag_missing_split_on_counted_rows</th>
+<th align="left">flag_missing_rotvol</th>
+<th align="left">flag_missing_subml</th>
+<th align="left">flag_nonpositive_rotvol</th>
+<th align="left">flag_nonpositive_subml</th>
+<th align="left">flag_unexpected_splits</th>
+<th align="left">flag_required_length_and_width</th>
+<th align="left">flag_collotheca_missing_width</th>
+<th align="left">flag_unexpected_width_without_length</th>
+<th align="left">flag_unexpected_power_used</th>
+<th align="left">flag_sample_not_in_master</th>
+<th align="left">flag_station_mismatch_vs_master</th>
+<th align="left">flag_depth_mismatch_vs_master</th>
+<th align="left">flag_bad_d20_sample_id_suffix</th>
+<th align="left">flag_rot_not_allowed_in_d100</th>
+<th align="left">flag_species_code_not_in_key</th>
+<th align="left">flag_species_metadata_mismatch</th>
+<th align="left">review_duplicate_organism_rows</th>
+<th align="left">review_station_standardized</th>
+<th align="left">review_multiple_analyst_dates_in_split</th>
+<th align="left">review_missing_analyst_date</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">6554</td>
+<td align="left">rot</td>
+<td align="left">GLNPO 2024 Spring/GLNPO 2024 Spring/Erie/D20/Rots/ER 59
+D20 Spring 2024 24GE03I14 Rot.xlsx</td>
+<td align="left">ER 59 D20 Spring 2024 24GE03I14 Rot.xlsx</td>
+<td align="left">24GE03I14</td>
+<td align="left">ER 59</td>
+<td align="left">ER 59</td>
+<td align="left">D20</td>
+<td align="left">NA</td>
+<td align="left">B</td>
+<td align="right">1</td>
+<td align="left">CCM</td>
+<td align="left">2026-04-08</td>
+<td align="left">2026-04-08</td>
+<td align="left">Polaris</td>
+<td align="right">100</td>
+<td align="left">Filinia terminalis</td>
+<td align="left">FILTERM</td>
+<td align="left">ROT</td>
+<td align="left">ROT</td>
+<td align="right">0.18</td>
+<td align="right">0</td>
+<td align="left">NA</td>
+<td align="right">1</td>
+<td align="right">35</td>
+<td align="right">NA</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="left">NA</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="right">1</td>
+<td align="left">flag_required_length_and_width</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="zooplankton-qa" class="section level1">
+<h1>Zooplankton QA</h1>
+<div id="zoop-qa-summary" class="section level2">
 <h2>Zoop QA summary</h2>
 <table>
 <thead>
@@ -2705,8 +5613,32 @@ D100 Spring 2024 24GE00I53 Zoop.xlsx</td>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">unknown_protocol</td>
-<td align="right">13</td>
+<td align="left">sample_not_in_master</td>
+<td align="right">157</td>
+</tr>
+<tr class="even">
+<td align="left">station_mismatch_vs_master</td>
+<td align="right">6</td>
+</tr>
+<tr class="odd">
+<td align="left">depth_mismatch_vs_master</td>
+<td align="right">4</td>
+</tr>
+<tr class="even">
+<td align="left">d20_sample_id_suffix</td>
+<td align="right">0</td>
+</tr>
+<tr class="odd">
+<td align="left">d100_sample_id_suffix</td>
+<td align="right">0</td>
+</tr>
+<tr class="even">
+<td align="left">species_code_not_in_key</td>
+<td align="right">2974</td>
+</tr>
+<tr class="odd">
+<td align="left">species_metadata_mismatch</td>
+<td align="right">9666</td>
 </tr>
 <tr class="even">
 <td align="left">zoop_missing_required</td>
@@ -2734,7 +5666,7 @@ D100 Spring 2024 24GE00I53 Zoop.xlsx</td>
 </tr>
 <tr class="even">
 <td align="left">zoop_qa_link_issues</td>
-<td align="right">3</td>
+<td align="right">2</td>
 </tr>
 <tr class="odd">
 <td align="left">zoop_split_factor_consistency</td>
@@ -2760,43 +5692,11 @@ D100 Spring 2024 24GE00I53 Zoop.xlsx</td>
 <td align="left">zoop_d_split_allowed_taxa</td>
 <td align="right">0</td>
 </tr>
-<tr class="odd">
-<td align="left">sample_not_in_master</td>
-<td align="right">157</td>
-</tr>
-<tr class="even">
-<td align="left">master_sample_missing_in_data</td>
-<td align="right">21</td>
-</tr>
-<tr class="odd">
-<td align="left">station_mismatch_vs_master</td>
-<td align="right">6</td>
-</tr>
-<tr class="even">
-<td align="left">depth_mismatch_vs_master</td>
-<td align="right">4</td>
-</tr>
-<tr class="odd">
-<td align="left">d20_sample_id_suffix</td>
-<td align="right">0</td>
-</tr>
-<tr class="even">
-<td align="left">d100_sample_id_suffix</td>
-<td align="right">0</td>
-</tr>
-<tr class="odd">
-<td align="left">rot_not_allowed_in_d100</td>
-<td align="right">0</td>
-</tr>
-<tr class="even">
-<td align="left">d20_missing_protocol_pair</td>
-<td align="right">2</td>
-</tr>
 </tbody>
 </table>
 </div>
 <div id="zoop-sample-summary" class="section level2">
-<h2>Zoop Sample summary</h2>
+<h2>Zoop sample summary</h2>
 <table>
 <colgroup>
 <col width="4%" />
@@ -10771,12 +13671,12 @@ Spring/Superior/D20/Zoops/SU 19 D20 Spring 2024 24GS03I74 Zoop.xlsx</td>
 </table>
 </div>
 <div id="zoop-missing-required-values" class="section level2">
-<h2>Zoop Missing required values</h2>
+<h2>Zoop missing required values</h2>
 <table>
 <thead>
 <tr class="header">
-<th align="left">protocol</th>
 <th align="right">row_id</th>
+<th align="left">protocol</th>
 <th align="left">source_file</th>
 <th align="left">sample_num</th>
 <th align="left">split</th>
@@ -10788,7 +13688,7 @@ Spring/Superior/D20/Zoops/SU 19 D20 Spring 2024 24GS03I74 Zoop.xlsx</td>
 </table>
 </div>
 <div id="zoop-negative-counts" class="section level2">
-<h2>Zoop Negative counts</h2>
+<h2>Zoop negative counts</h2>
 <table style="width:100%;">
 <colgroup>
 <col width="2%" />
@@ -11351,8 +14251,8 @@ D100 QA Spring 2024 24GE0Q73 Zoop.xlsx</td>
 </tbody>
 </table>
 </div>
-<div id="zoop-duplicate-organism-rows" class="section level2">
-<h2>Zoop duplicate organism rows</h2>
+<div id="zoop-duplicate-organism-rows-for-review" class="section level2">
+<h2>Zoop duplicate organism rows for review</h2>
 <table style="width:100%;">
 <colgroup>
 <col width="3%" />
@@ -12346,8 +15246,8 @@ D100 Spring 2024 24GE00I13 Zoop.xlsx</td>
 </tbody>
 </table>
 </div>
-<div id="zoop-station-standardization" class="section level2">
-<h2>Zoop Station standardization</h2>
+<div id="zoop-station-standardization-for-review" class="section level2">
+<h2>Zoop station standardization for review</h2>
 <table>
 <colgroup>
 <col width="6%" />
@@ -12653,11 +15553,11 @@ Zoop.xlsx</td>
 </div>
 <div id="zoop-qa-link-issues" class="section level2">
 <h2>Zoop QA link issues</h2>
-<table>
+<table style="width:100%;">
 <colgroup>
 <col width="5%" />
-<col width="62%" />
-<col width="6%" />
+<col width="61%" />
+<col width="7%" />
 <col width="6%" />
 <col width="11%" />
 <col width="8%" />
@@ -12691,16 +15591,6 @@ D100 QA Spring 2024 24GM00Q73 Zoop.xlsx</td>
 <td align="left">FALSE</td>
 <td align="left">FALSE</td>
 </tr>
-<tr class="odd">
-<td align="left">zoop</td>
-<td align="left">GLNPO 2024 Spring/GLNPO 2024
-Spring/Michigan/D20/Zoops/MI 19 D20 QA Spring 2024 24GM00Q74
-Zoop.xlsx</td>
-<td align="left">24GM00Q74</td>
-<td align="left">24GM0074</td>
-<td align="left">FALSE</td>
-<td align="left">FALSE</td>
-</tr>
 </tbody>
 </table>
 </div>
@@ -12729,18 +15619,20 @@ Zoop.xlsx</td>
 </tbody>
 </table>
 </div>
-<div id="zoop-multiple-analyst-dates" class="section level2">
-<h2>Zoop multiple analyst dates</h2>
+<div id="zoop-multiple-analyst-dates-for-review" class="section level2">
+<h2>Zoop multiple analyst dates for review</h2>
 <table>
 <colgroup>
-<col width="58%" />
+<col width="5%" />
+<col width="55%" />
 <col width="6%" />
 <col width="3%" />
-<col width="10%" />
-<col width="20%" />
+<col width="9%" />
+<col width="19%" />
 </colgroup>
 <thead>
 <tr class="header">
+<th align="left">protocol</th>
 <th align="left">source_file</th>
 <th align="left">sample_num</th>
 <th align="left">split</th>
@@ -12750,6 +15642,7 @@ Zoop.xlsx</td>
 </thead>
 <tbody>
 <tr class="odd">
+<td align="left">zoop</td>
 <td align="left">GLNPO 2024 Spring/GLNPO 2024 Spring/Erie/D100/ER 09
 D100 QA Spring 2024 24GE00Q53 Zoop.xlsx</td>
 <td align="left">24GE00Q53</td>
@@ -12758,6 +15651,7 @@ D100 QA Spring 2024 24GE00Q53 Zoop.xlsx</td>
 <td align="left">2024-09-19, 2024-09-20</td>
 </tr>
 <tr class="even">
+<td align="left">zoop</td>
 <td align="left">GLNPO 2024 Spring/GLNPO 2024 Spring/Erie/D100/ER 09
 D100 Spring 2024 24GE00I53 Zoop.xlsx</td>
 <td align="left">24GE00I53</td>
@@ -12766,6 +15660,7 @@ D100 Spring 2024 24GE00I53 Zoop.xlsx</td>
 <td align="left">2024-09-19, 2024-09-20</td>
 </tr>
 <tr class="odd">
+<td align="left">zoop</td>
 <td align="left">GLNPO 2024 Spring/GLNPO 2024 Spring/Erie/D100/ER 10
 D100 QA Spring 2024 24GE0Q73 Zoop.xlsx</td>
 <td align="left">24GE00Q73</td>
@@ -12774,6 +15669,7 @@ D100 QA Spring 2024 24GE0Q73 Zoop.xlsx</td>
 <td align="left">2024-09-10, 2024-09-11</td>
 </tr>
 <tr class="even">
+<td align="left">zoop</td>
 <td align="left">GLNPO 2024 Spring/GLNPO 2024 Spring/Erie/D100/ER 10
 D100 Spring 2024 24GE00I73 Zoop.xlsx</td>
 <td align="left">24GE00I73</td>
@@ -12782,6 +15678,7 @@ D100 Spring 2024 24GE00I73 Zoop.xlsx</td>
 <td align="left">2024-09-10, 2024-09-11</td>
 </tr>
 <tr class="odd">
+<td align="left">zoop</td>
 <td align="left">GLNPO 2024 Spring/GLNPO 2024 Spring/Erie/D100/ER 43
 D100 Spring 2024 24GE01I13 Zoop.xlsx</td>
 <td align="left">24GE01I13</td>
@@ -12790,6 +15687,7 @@ D100 Spring 2024 24GE01I13 Zoop.xlsx</td>
 <td align="left">2024-10-02, 2024-10-03</td>
 </tr>
 <tr class="even">
+<td align="left">zoop</td>
 <td align="left">GLNPO 2024 Spring/GLNPO 2024 Spring/Erie/D100/ER 43
 D100 Spring 2024 24GE01I13 Zoop.xlsx</td>
 <td align="left">24GE01I13</td>
@@ -12798,6 +15696,7 @@ D100 Spring 2024 24GE01I13 Zoop.xlsx</td>
 <td align="left">2024-10-02, 2024-10-03</td>
 </tr>
 <tr class="odd">
+<td align="left">zoop</td>
 <td align="left">GLNPO 2024 Spring/GLNPO 2024 Spring/Erie/D100/ER 61
 D100 Spring 2024 24GE03I53 Zoop.xlsx</td>
 <td align="left">24GE03I53</td>
@@ -12806,6 +15705,7 @@ D100 Spring 2024 24GE03I53 Zoop.xlsx</td>
 <td align="left">2024-10-04, 2024-10-07</td>
 </tr>
 <tr class="even">
+<td align="left">zoop</td>
 <td align="left">GLNPO 2024 Spring/GLNPO 2024 Spring/Erie/D100/ER 61
 D100 Spring 2024 24GE03I53 Zoop.xlsx</td>
 <td align="left">24GE03I53</td>
@@ -12814,6 +15714,7 @@ D100 Spring 2024 24GE03I53 Zoop.xlsx</td>
 <td align="left">2024-10-07, 2024-10-08</td>
 </tr>
 <tr class="odd">
+<td align="left">zoop</td>
 <td align="left">GLNPO 2024 Spring/GLNPO 2024 Spring/Erie/D100/ER 78M
 D100 Spring 2024 24G302I13 Zoop.xlsx</td>
 <td align="left">24GE02I13</td>
@@ -12822,6 +15723,7 @@ D100 Spring 2024 24G302I13 Zoop.xlsx</td>
 <td align="left">2024-09-30, 2024-10-01, 2024-10-02</td>
 </tr>
 <tr class="even">
+<td align="left">zoop</td>
 <td align="left">GLNPO 2024 Spring/GLNPO 2024 Spring/Erie/D100/ER 78M
 D100 Spring 2024 24G302I13 Zoop.xlsx</td>
 <td align="left">24GE02I13</td>
@@ -12830,6 +15732,7 @@ D100 Spring 2024 24G302I13 Zoop.xlsx</td>
 <td align="left">2024-09-30, 2024-10-01, 2024-10-02</td>
 </tr>
 <tr class="odd">
+<td align="left">zoop</td>
 <td align="left">GLNPO 2024 Spring/GLNPO 2024 Spring/Erie/D100/ER 78M
 D100 Spring 2024 24G302I13 Zoop.xlsx</td>
 <td align="left">24GE02I13</td>
@@ -12838,6 +15741,7 @@ D100 Spring 2024 24G302I13 Zoop.xlsx</td>
 <td align="left">2024-09-30, 2024-10-01, 2024-10-02</td>
 </tr>
 <tr class="even">
+<td align="left">zoop</td>
 <td align="left">GLNPO 2024 Spring/GLNPO 2024 Spring/Erie/D100/ER 91M
 D100 Spring 2024 24GE03I73 Zoop.xlsx</td>
 <td align="left">24GE03I73</td>
@@ -12846,6 +15750,7 @@ D100 Spring 2024 24GE03I73 Zoop.xlsx</td>
 <td align="left">2024-10-09, 2024-10-10</td>
 </tr>
 <tr class="odd">
+<td align="left">zoop</td>
 <td align="left">GLNPO 2024 Spring/GLNPO 2024 Spring/Erie/D100/ER 91M
 D100 Spring 2024 24GE03I73 Zoop.xlsx</td>
 <td align="left">24GE03I73</td>
@@ -12854,6 +15759,7 @@ D100 Spring 2024 24GE03I73 Zoop.xlsx</td>
 <td align="left">2024-10-10, 2024-10-11</td>
 </tr>
 <tr class="even">
+<td align="left">zoop</td>
 <td align="left">GLNPO 2024 Spring/GLNPO 2024 Spring/Erie/D100/ER 92
 D100 Spring 2024 24GE03I93 Zoop.xlsx</td>
 <td align="left">24GE03I93</td>
@@ -12862,6 +15768,7 @@ D100 Spring 2024 24GE03I93 Zoop.xlsx</td>
 <td align="left">2024-10-04, 2024-10-07, 2024-10-08</td>
 </tr>
 <tr class="odd">
+<td align="left">zoop</td>
 <td align="left">GLNPO 2024 Spring/GLNPO 2024 Spring/Erie/D100/ER 92
 D100 Spring 2024 24GE03I93 Zoop.xlsx</td>
 <td align="left">24GE03I93</td>
@@ -12870,6 +15777,7 @@ D100 Spring 2024 24GE03I93 Zoop.xlsx</td>
 <td align="left">2024-10-07, 2024-10-08</td>
 </tr>
 <tr class="even">
+<td align="left">zoop</td>
 <td align="left">GLNPO 2024 Spring/GLNPO 2024 Spring/Erie/D100/ER 92
 D100 Spring 2024 24GE03I93 Zoop.xlsx</td>
 <td align="left">24GE03I93</td>
@@ -12878,6 +15786,7 @@ D100 Spring 2024 24GE03I93 Zoop.xlsx</td>
 <td align="left">2024-10-07, 2024-10-08</td>
 </tr>
 <tr class="odd">
+<td align="left">zoop</td>
 <td align="left">GLNPO 2024 Spring/GLNPO 2024 Spring/Erie/D20/Zoops/ER
 09 D20 Spring 2024 24GE00I54 Zoop.xlsx</td>
 <td align="left">24GE00I54</td>
@@ -12886,6 +15795,7 @@ D100 Spring 2024 24GE03I93 Zoop.xlsx</td>
 <td align="left">2026-02-10, 2026-02-11</td>
 </tr>
 <tr class="even">
+<td align="left">zoop</td>
 <td align="left">GLNPO 2024 Spring/GLNPO 2024 Spring/Erie/D20/Zoops/ER
 10 D20 Spring 2024 24GE00I74 Zoop.xlsx</td>
 <td align="left">24GE00I74</td>
@@ -12894,6 +15804,7 @@ D100 Spring 2024 24GE03I93 Zoop.xlsx</td>
 <td align="left">2026-02-11, 2026-02-12</td>
 </tr>
 <tr class="odd">
+<td align="left">zoop</td>
 <td align="left">GLNPO 2024 Spring/GLNPO 2024 Spring/Erie/D20/Zoops/ER
 43 D20 Spring 2024 24GE01I14 Zoop.xlsx</td>
 <td align="left">24GE01I14</td>
@@ -12902,6 +15813,7 @@ D100 Spring 2024 24GE03I93 Zoop.xlsx</td>
 <td align="left">2026-02-17, 2026-02-18</td>
 </tr>
 <tr class="even">
+<td align="left">zoop</td>
 <td align="left">GLNPO 2024 Spring/GLNPO 2024 Spring/Erie/D20/Zoops/ER
 58 D20 Spring 2024 24GE02I94 Zoop.xlsx</td>
 <td align="left">24GE02I94</td>
@@ -12910,6 +15822,7 @@ D100 Spring 2024 24GE03I93 Zoop.xlsx</td>
 <td align="left">2026-04-09, 2026-04-10</td>
 </tr>
 <tr class="odd">
+<td align="left">zoop</td>
 <td align="left">GLNPO 2024 Spring/GLNPO 2024 Spring/Huron/D100/HU 06
 D100 QA Spring 2024 24GH00Q13 Zoop.xlsx</td>
 <td align="left">24GH00Q13</td>
@@ -12918,6 +15831,7 @@ D100 QA Spring 2024 24GH00Q13 Zoop.xlsx</td>
 <td align="left">2024-09-05, 2024-09-06</td>
 </tr>
 <tr class="even">
+<td align="left">zoop</td>
 <td align="left">GLNPO 2024 Spring/GLNPO 2024 Spring/Huron/D100/HU 06
 D100 Spring 2024 24GH00I13 Zoop.xlsx</td>
 <td align="left">24GH00I13</td>
@@ -12926,6 +15840,7 @@ D100 Spring 2024 24GH00I13 Zoop.xlsx</td>
 <td align="left">2024-09-05, 2024-09-06</td>
 </tr>
 <tr class="odd">
+<td align="left">zoop</td>
 <td align="left">GLNPO 2024 Spring/GLNPO 2024 Spring/Huron/D100/HU 06
 D100 Spring 2024 24GH00I13 Zoop.xlsx</td>
 <td align="left">24GH00I13</td>
@@ -12934,6 +15849,7 @@ D100 Spring 2024 24GH00I13 Zoop.xlsx</td>
 <td align="left">2024-09-05, 2024-09-06</td>
 </tr>
 <tr class="even">
+<td align="left">zoop</td>
 <td align="left">GLNPO 2024 Spring/GLNPO 2024 Spring/Huron/D100/HU 09
 D100 Spring 2024 24GH00I33 Zoop.xlsx</td>
 <td align="left">24GH00I33</td>
@@ -12942,6 +15858,7 @@ D100 Spring 2024 24GH00I33 Zoop.xlsx</td>
 <td align="left">2024-10-15, 2024-10-16</td>
 </tr>
 <tr class="odd">
+<td align="left">zoop</td>
 <td align="left">GLNPO 2024 Spring/GLNPO 2024 Spring/Huron/D100/HU 12
 D100 Spring 2024 24GH00I53 Zoop.xlsx</td>
 <td align="left">24GH00I53</td>
@@ -12950,6 +15867,7 @@ D100 Spring 2024 24GH00I53 Zoop.xlsx</td>
 <td align="left">2024-10-22, 2024-10-23</td>
 </tr>
 <tr class="even">
+<td align="left">zoop</td>
 <td align="left">GLNPO 2024 Spring/GLNPO 2024 Spring/Huron/D100/HU 15M
 D100 QA Spring 2024 24GH00Q73 Zoop.xlsx</td>
 <td align="left">24GH00Q73</td>
@@ -12958,6 +15876,7 @@ D100 QA Spring 2024 24GH00Q73 Zoop.xlsx</td>
 <td align="left">2024-09-05, 2024-09-09</td>
 </tr>
 <tr class="odd">
+<td align="left">zoop</td>
 <td align="left">GLNPO 2024 Spring/GLNPO 2024 Spring/Huron/D100/HU 27
 D100 Spring 2024 24GH01I13 Zoop.xlsx</td>
 <td align="left">24GH01I13</td>
@@ -12966,6 +15885,7 @@ D100 Spring 2024 24GH01I13 Zoop.xlsx</td>
 <td align="left">2024-10-21, 2024-10-22</td>
 </tr>
 <tr class="even">
+<td align="left">zoop</td>
 <td align="left">GLNPO 2024 Spring/GLNPO 2024 Spring/Huron/D100/HU 48
 D100 Spring 2024 24GH02I13 Zoop.xlsx</td>
 <td align="left">24GH02I13</td>
@@ -12974,6 +15894,7 @@ D100 Spring 2024 24GH02I13 Zoop.xlsx</td>
 <td align="left">2024-10-14, 2024-10-15</td>
 </tr>
 <tr class="odd">
+<td align="left">zoop</td>
 <td align="left">GLNPO 2024 Spring/GLNPO 2024 Spring/Huron/D100/HU 48
 D100 Spring 2024 24GH02I13 Zoop.xlsx</td>
 <td align="left">24GH02I13</td>
@@ -12982,6 +15903,7 @@ D100 Spring 2024 24GH02I13 Zoop.xlsx</td>
 <td align="left">2024-10-14, 2024-10-15</td>
 </tr>
 <tr class="even">
+<td align="left">zoop</td>
 <td align="left">GLNPO 2024 Spring/GLNPO 2024 Spring/Huron/D100/HU 53
 D100 Spring 2024 24GH02I33 Zoop.xlsx</td>
 <td align="left">24GH02I33</td>
@@ -12990,6 +15912,7 @@ D100 Spring 2024 24GH02I33 Zoop.xlsx</td>
 <td align="left">2024-10-16, 2024-10-17</td>
 </tr>
 <tr class="odd">
+<td align="left">zoop</td>
 <td align="left">GLNPO 2024 Spring/GLNPO 2024 Spring/Huron/D100/HU 54M
 D100 Spring 2024 24GH02I53 Zoop.xlsx</td>
 <td align="left">24GH02I53</td>
@@ -12998,6 +15921,7 @@ D100 Spring 2024 24GH02I53 Zoop.xlsx</td>
 <td align="left">2024-10-18, 2024-10-21</td>
 </tr>
 <tr class="even">
+<td align="left">zoop</td>
 <td align="left">GLNPO 2024 Spring/GLNPO 2024 Spring/Huron/D100/HU 54M
 D100 Spring 2024 24GH02I53 Zoop.xlsx</td>
 <td align="left">24GH02I53</td>
@@ -13006,6 +15930,7 @@ D100 Spring 2024 24GH02I53 Zoop.xlsx</td>
 <td align="left">2024-10-21, 2024-10-22</td>
 </tr>
 <tr class="odd">
+<td align="left">zoop</td>
 <td align="left">GLNPO 2024 Spring/GLNPO 2024 Spring/Huron/D20/Zoops/HU
 15M D20 QA Spring 2024 24GH00Q74 Zoop.xlsx</td>
 <td align="left">24GH00Q74</td>
@@ -13014,6 +15939,7 @@ D100 Spring 2024 24GH02I53 Zoop.xlsx</td>
 <td align="left">2026-03-12, 2026-03-13</td>
 </tr>
 <tr class="even">
+<td align="left">zoop</td>
 <td align="left">GLNPO 2024 Spring/GLNPO 2024 Spring/Huron/D20/Zoops/HU
 15M D20 Spring 2024 24GH00I74 Zoop.xlsx</td>
 <td align="left">24GH00I74</td>
@@ -13022,6 +15948,7 @@ D100 Spring 2024 24GH02I53 Zoop.xlsx</td>
 <td align="left">2026-02-23, 2026-02-24</td>
 </tr>
 <tr class="odd">
+<td align="left">zoop</td>
 <td align="left">GLNPO 2024 Spring/GLNPO 2024 Spring/Michigan/D100/MI 11
 D100 QA Spring 2024 24GM00I13 Zoop.xlsx</td>
 <td align="left">24GM00Q13</td>
@@ -13030,6 +15957,7 @@ D100 QA Spring 2024 24GM00I13 Zoop.xlsx</td>
 <td align="left">2024-09-03, 2024-09-04</td>
 </tr>
 <tr class="even">
+<td align="left">zoop</td>
 <td align="left">GLNPO 2024 Spring/GLNPO 2024 Spring/Michigan/D100/MI 11
 D100 QA Spring 2024 24GM00I13 Zoop.xlsx</td>
 <td align="left">24GM00Q13</td>
@@ -13038,6 +15966,7 @@ D100 QA Spring 2024 24GM00I13 Zoop.xlsx</td>
 <td align="left">2024-09-03, 2024-09-04</td>
 </tr>
 <tr class="odd">
+<td align="left">zoop</td>
 <td align="left">GLNPO 2024 Spring/GLNPO 2024 Spring/Michigan/D100/MI 11
 D100 QA Spring 2024 24GM00I13 Zoop.xlsx</td>
 <td align="left">24GM00Q13</td>
@@ -13046,6 +15975,7 @@ D100 QA Spring 2024 24GM00I13 Zoop.xlsx</td>
 <td align="left">2024-09-03, 2024-09-04</td>
 </tr>
 <tr class="even">
+<td align="left">zoop</td>
 <td align="left">GLNPO 2024 Spring/GLNPO 2024 Spring/Michigan/D100/MI 11
 D100 Spring 2024 24GM00I13 Zoop.xlsx</td>
 <td align="left">24GM00I13</td>
@@ -13054,6 +15984,7 @@ D100 Spring 2024 24GM00I13 Zoop.xlsx</td>
 <td align="left">2024-09-03, 2024-09-04</td>
 </tr>
 <tr class="odd">
+<td align="left">zoop</td>
 <td align="left">GLNPO 2024 Spring/GLNPO 2024 Spring/Michigan/D100/MI 11
 D100 Spring 2024 24GM00I13 Zoop.xlsx</td>
 <td align="left">24GM00I13</td>
@@ -13062,6 +15993,7 @@ D100 Spring 2024 24GM00I13 Zoop.xlsx</td>
 <td align="left">2024-09-03, 2024-09-04</td>
 </tr>
 <tr class="even">
+<td align="left">zoop</td>
 <td align="left">GLNPO 2024 Spring/GLNPO 2024 Spring/Michigan/D100/MI 11
 D100 Spring 2024 24GM00I13 Zoop.xlsx</td>
 <td align="left">24GM00I13</td>
@@ -13070,6 +16002,7 @@ D100 Spring 2024 24GM00I13 Zoop.xlsx</td>
 <td align="left">2024-09-03, 2024-09-04</td>
 </tr>
 <tr class="odd">
+<td align="left">zoop</td>
 <td align="left">GLNPO 2024 Spring/GLNPO 2024 Spring/Michigan/D100/MI
 18M D100 Spring 2024 24GM00I53 Zoop.xlsx</td>
 <td align="left">24GM00I53</td>
@@ -13078,6 +16011,7 @@ D100 Spring 2024 24GM00I13 Zoop.xlsx</td>
 <td align="left">2024-10-28, 2024-10-29</td>
 </tr>
 <tr class="even">
+<td align="left">zoop</td>
 <td align="left">GLNPO 2024 Spring/GLNPO 2024 Spring/Michigan/D100/MI
 27M D100 Spring 2024 24GM01I13 Zoop.xlsx</td>
 <td align="left">24GM01I13</td>
@@ -13086,6 +16020,7 @@ D100 Spring 2024 24GM00I13 Zoop.xlsx</td>
 <td align="left">2024-10-28, 2024-10-29</td>
 </tr>
 <tr class="odd">
+<td align="left">zoop</td>
 <td align="left">GLNPO 2024 Spring/GLNPO 2024 Spring/Michigan/D100/MI 34
 D100 Spring 2024 24GM01I53 Zoop.xlsx</td>
 <td align="left">24GM01I53</td>
@@ -13094,6 +16029,7 @@ D100 Spring 2024 24GM01I53 Zoop.xlsx</td>
 <td align="left">2024-10-22, 2024-10-25</td>
 </tr>
 <tr class="even">
+<td align="left">zoop</td>
 <td align="left">GLNPO 2024 Spring/GLNPO 2024 Spring/Michigan/D100/MI 34
 D100 Spring 2024 24GM01I53 Zoop.xlsx</td>
 <td align="left">24GM01I53</td>
@@ -13102,6 +16038,7 @@ D100 Spring 2024 24GM01I53 Zoop.xlsx</td>
 <td align="left">2024-10-22, 2024-10-25</td>
 </tr>
 <tr class="odd">
+<td align="left">zoop</td>
 <td align="left">GLNPO 2024 Spring/GLNPO 2024
 Spring/Michigan/D20/Zoops/MI 23 D20 Spring 2024 24GM00I94 Zoop.xlsx</td>
 <td align="left">24GM00I94</td>
@@ -13110,6 +16047,7 @@ Spring/Michigan/D20/Zoops/MI 23 D20 Spring 2024 24GM00I94 Zoop.xlsx</td>
 <td align="left">2026-02-20, 2026-02-23</td>
 </tr>
 <tr class="even">
+<td align="left">zoop</td>
 <td align="left">GLNPO 2024 Spring/GLNPO 2024 Spring/Ontario/D100/ON 12
 D100 Spring 2024 24GO00I93 Zoop.xlsx</td>
 <td align="left">24GO00I93</td>
@@ -13118,6 +16056,7 @@ D100 Spring 2024 24GO00I93 Zoop.xlsx</td>
 <td align="left">2024-09-18, 2024-09-19</td>
 </tr>
 <tr class="odd">
+<td align="left">zoop</td>
 <td align="left">GLNPO 2024 Spring/GLNPO 2024 Spring/Ontario/D100/ON 12
 D100 Spring 24GO00I93 Zoop.xlsx</td>
 <td align="left">24GO00I93</td>
@@ -13126,6 +16065,7 @@ D100 Spring 24GO00I93 Zoop.xlsx</td>
 <td align="left">2024-09-18, 2024-09-19</td>
 </tr>
 <tr class="even">
+<td align="left">zoop</td>
 <td align="left">GLNPO 2024 Spring/GLNPO 2024 Spring/Ontario/D100/ON 49
 D100 Spring 2024 24GO00I13 Zoop.xlsx</td>
 <td align="left">24GO00I13</td>
@@ -13134,6 +16074,7 @@ D100 Spring 2024 24GO00I13 Zoop.xlsx</td>
 <td align="left">2024-09-20, 2024-09-23</td>
 </tr>
 <tr class="odd">
+<td align="left">zoop</td>
 <td align="left">GLNPO 2024 Spring/GLNPO 2024
 Spring/Ontario/D20/Zoops/ON 12 D20 Spring 2024 24GO00I94 Zoop.xlsx</td>
 <td align="left">24GO00I94</td>
@@ -13142,6 +16083,7 @@ Spring/Ontario/D20/Zoops/ON 12 D20 Spring 2024 24GO00I94 Zoop.xlsx</td>
 <td align="left">2026-02-05, 2026-02-06</td>
 </tr>
 <tr class="even">
+<td align="left">zoop</td>
 <td align="left">GLNPO 2024 Spring/GLNPO 2024
 Spring/Ontario/D20/Zoops/ON 25 D20 QA Spring 2024 24GO01Q14
 Zoop.xlsx</td>
@@ -13153,8 +16095,8 @@ Zoop.xlsx</td>
 </tbody>
 </table>
 </div>
-<div id="zoop-missing-analyst-dates" class="section level2">
-<h2>Zoop missing analyst dates</h2>
+<div id="zoop-missing-analyst-dates-for-review" class="section level2">
+<h2>Zoop missing analyst dates for review</h2>
 <table style="width:100%;">
 <colgroup>
 <col width="4%" />
@@ -13660,8 +16602,8 @@ D100 Spring 2024 24GE01I73 Zoop.xlsx</td>
 </tbody>
 </table>
 </div>
-<div id="zoop-split-taxa-outside-allowed-adult-list" class="section level2">
-<h2>Zoop split taxa outside allowed adult list</h2>
+<div id="zoop-d-split-taxa-outside-allowed-adult-list" class="section level2">
+<h2>Zoop D split taxa outside allowed adult list</h2>
 <table>
 <colgroup>
 <col width="17%" />
@@ -13688,28 +16630,7 @@ D100 Spring 2024 24GE01I73 Zoop.xlsx</td>
 </div>
 <div id="rotifer-qa" class="section level1">
 <h1>Rotifer QA</h1>
-<div id="rot-overview" class="section level2">
-<h2>Rot overview</h2>
-<table>
-<thead>
-<tr class="header">
-<th align="right">n_rows</th>
-<th align="right">n_samples</th>
-<th align="right">n_source_files</th>
-<th align="right">n_taxa</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="right">5628</td>
-<td align="right">81</td>
-<td align="right">81</td>
-<td align="right">42</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div id="rot-qa-summary-1" class="section level2">
+<div id="rot-qa-summary" class="section level2">
 <h2>Rot QA summary</h2>
 <table>
 <thead>
@@ -13720,107 +16641,19 @@ D100 Spring 2024 24GE01I73 Zoop.xlsx</td>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">unknown_protocol</td>
-<td align="right">13</td>
-</tr>
-<tr class="even">
-<td align="left">rot_missing_required</td>
-<td align="right">0</td>
-</tr>
-<tr class="odd">
-<td align="left">rot_negative_counts</td>
-<td align="right">0</td>
-</tr>
-<tr class="even">
-<td align="left">rot_nonpositive_split_factor</td>
-<td align="right">0</td>
-</tr>
-<tr class="odd">
-<td align="left">rot_duplicate_organism_rows</td>
-<td align="right">462</td>
-</tr>
-<tr class="even">
-<td align="left">rot_station_standardization</td>
-<td align="right">7</td>
-</tr>
-<tr class="odd">
-<td align="left">rot_qa_link_issues</td>
-<td align="right">0</td>
-</tr>
-<tr class="even">
-<td align="left">rot_split_factor_consistency</td>
-<td align="right">0</td>
-</tr>
-<tr class="odd">
-<td align="left">rot_multiple_analyst_dates</td>
-<td align="right">0</td>
-</tr>
-<tr class="even">
-<td align="left">rot_missing_analyst_date</td>
-<td align="right">0</td>
-</tr>
-<tr class="odd">
-<td align="left">rot_missing_split_on_counted_rows</td>
-<td align="right">0</td>
-</tr>
-<tr class="even">
-<td align="left">rot_missing_rotvol</td>
-<td align="right">0</td>
-</tr>
-<tr class="odd">
-<td align="left">rot_missing_subml</td>
-<td align="right">0</td>
-</tr>
-<tr class="even">
-<td align="left">rot_nonpositive_rotvol</td>
-<td align="right">0</td>
-</tr>
-<tr class="odd">
-<td align="left">rot_nonpositive_subml</td>
-<td align="right">0</td>
-</tr>
-<tr class="even">
-<td align="left">rot_unexpected_splits</td>
-<td align="right">0</td>
-</tr>
-<tr class="odd">
-<td align="left">rot_required_length_and_width</td>
-<td align="right">0</td>
-</tr>
-<tr class="even">
-<td align="left">rot_collotheca_width_only</td>
-<td align="right">0</td>
-</tr>
-<tr class="odd">
-<td align="left">rot_unexpected_width_without_length</td>
-<td align="right">0</td>
-</tr>
-<tr class="even">
-<td align="left">rot_unexpected_power_used</td>
-<td align="right">0</td>
-</tr>
-<tr class="odd">
 <td align="left">sample_not_in_master</td>
 <td align="right">157</td>
 </tr>
 <tr class="even">
-<td align="left">master_sample_missing_in_data</td>
-<td align="right">21</td>
-</tr>
-<tr class="odd">
 <td align="left">station_mismatch_vs_master</td>
 <td align="right">6</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left">depth_mismatch_vs_master</td>
 <td align="right">4</td>
 </tr>
-<tr class="odd">
-<td align="left">d20_sample_id_suffix</td>
-<td align="right">0</td>
-</tr>
 <tr class="even">
-<td align="left">d100_sample_id_suffix</td>
+<td align="left">d20_sample_id_suffix</td>
 <td align="right">0</td>
 </tr>
 <tr class="odd">
@@ -13829,13 +16662,97 @@ D100 Spring 2024 24GE01I73 Zoop.xlsx</td>
 </tr>
 <tr class="even">
 <td align="left">d20_missing_protocol_pair</td>
-<td align="right">2</td>
+<td align="right">0</td>
+</tr>
+<tr class="odd">
+<td align="left">species_code_not_in_key</td>
+<td align="right">2974</td>
+</tr>
+<tr class="even">
+<td align="left">species_metadata_mismatch</td>
+<td align="right">9666</td>
+</tr>
+<tr class="odd">
+<td align="left">rot_missing_required</td>
+<td align="right">0</td>
+</tr>
+<tr class="even">
+<td align="left">rot_negative_counts</td>
+<td align="right">0</td>
+</tr>
+<tr class="odd">
+<td align="left">rot_nonpositive_split_factor</td>
+<td align="right">0</td>
+</tr>
+<tr class="even">
+<td align="left">rot_duplicate_organism_rows</td>
+<td align="right">462</td>
+</tr>
+<tr class="odd">
+<td align="left">rot_station_standardization</td>
+<td align="right">7</td>
+</tr>
+<tr class="even">
+<td align="left">rot_qa_link_issues</td>
+<td align="right">0</td>
+</tr>
+<tr class="odd">
+<td align="left">rot_split_factor_consistency</td>
+<td align="right">0</td>
+</tr>
+<tr class="even">
+<td align="left">rot_multiple_analyst_dates</td>
+<td align="right">0</td>
+</tr>
+<tr class="odd">
+<td align="left">rot_missing_analyst_date</td>
+<td align="right">0</td>
+</tr>
+<tr class="even">
+<td align="left">rot_missing_split_on_counted_rows</td>
+<td align="right">0</td>
+</tr>
+<tr class="odd">
+<td align="left">rot_missing_rotvol</td>
+<td align="right">0</td>
+</tr>
+<tr class="even">
+<td align="left">rot_missing_subml</td>
+<td align="right">0</td>
+</tr>
+<tr class="odd">
+<td align="left">rot_nonpositive_rotvol</td>
+<td align="right">0</td>
+</tr>
+<tr class="even">
+<td align="left">rot_nonpositive_subml</td>
+<td align="right">0</td>
+</tr>
+<tr class="odd">
+<td align="left">rot_unexpected_splits</td>
+<td align="right">0</td>
+</tr>
+<tr class="even">
+<td align="left">rot_required_length_and_width</td>
+<td align="right">1</td>
+</tr>
+<tr class="odd">
+<td align="left">rot_collotheca_width_only</td>
+<td align="right">0</td>
+</tr>
+<tr class="even">
+<td align="left">rot_unexpected_width_without_length</td>
+<td align="right">0</td>
+</tr>
+<tr class="odd">
+<td align="left">rot_unexpected_power_used</td>
+<td align="right">0</td>
 </tr>
 </tbody>
 </table>
 </div>
 <div id="rot-sample-summary" class="section level2">
-<h2>Rot Sample summary</h2>
+<h2>Rot sample summary</h2>
 <table>
 <colgroup>
 <col width="3%" />
@@ -13890,7 +16807,7 @@ D20 Spring 2024 24GE00I54 Rot.xlsx</td>
 <td align="right">105.0</td>
 <td align="right">1</td>
 <td align="right">75</td>
-<td align="right">78</td>
+<td align="right">0</td>
 </tr>
 <tr class="even">
 <td align="left">rot</td>
@@ -13908,7 +16825,7 @@ D20 Spring 2024 24GE00I54 Rot.xlsx</td>
 <td align="right">105.0</td>
 <td align="right">1</td>
 <td align="right">5</td>
-<td align="right">9</td>
+<td align="right">0</td>
 </tr>
 <tr class="odd">
 <td align="left">rot</td>
@@ -13926,7 +16843,7 @@ D20 Spring 2024 24GE00I74 Rot.xlsx</td>
 <td align="right">348.0</td>
 <td align="right">1</td>
 <td align="right">57</td>
-<td align="right">59</td>
+<td align="right">0</td>
 </tr>
 <tr class="even">
 <td align="left">rot</td>
@@ -13944,7 +16861,7 @@ D20 Spring 2024 24GE00I74 Rot.xlsx</td>
 <td align="right">348.0</td>
 <td align="right">1</td>
 <td align="right">23</td>
-<td align="right">25</td>
+<td align="right">0</td>
 </tr>
 <tr class="odd">
 <td align="left">rot</td>
@@ -13962,7 +16879,7 @@ D20 Spring 2024 24GE00I74 Rot.xlsx</td>
 <td align="right">98.0</td>
 <td align="right">2</td>
 <td align="right">81</td>
-<td align="right">89</td>
+<td align="right">0</td>
 </tr>
 <tr class="even">
 <td align="left">rot</td>
@@ -13980,7 +16897,7 @@ D20 Spring 2024 24GE00I74 Rot.xlsx</td>
 <td align="right">98.0</td>
 <td align="right">2</td>
 <td align="right">15</td>
-<td align="right">39</td>
+<td align="right">1</td>
 </tr>
 <tr class="odd">
 <td align="left">rot</td>
@@ -13998,7 +16915,7 @@ D20 Spring 2024 24GE00I74 Rot.xlsx</td>
 <td align="right">98.0</td>
 <td align="right">2</td>
 <td align="right">81</td>
-<td align="right">81</td>
+<td align="right">1</td>
 </tr>
 <tr class="even">
 <td align="left">rot</td>
@@ -14016,7 +16933,7 @@ D20 Spring 2024 24GE00I74 Rot.xlsx</td>
 <td align="right">98.0</td>
 <td align="right">2</td>
 <td align="right">13</td>
-<td align="right">13</td>
+<td align="right">1</td>
 </tr>
 <tr class="odd">
 <td align="left">rot</td>
@@ -14034,7 +16951,7 @@ D20 Spring 2024 24GE02I34 Rot.xlsx</td>
 <td align="right">1652.0</td>
 <td align="right">1</td>
 <td align="right">74</td>
-<td align="right">77</td>
+<td align="right">0</td>
 </tr>
 <tr class="even">
 <td align="left">rot</td>
@@ -14052,7 +16969,7 @@ D20 Spring 2024 24GE02I34 Rot.xlsx</td>
 <td align="right">1652.0</td>
 <td align="right">1</td>
 <td align="right">14</td>
-<td align="right">17</td>
+<td align="right">1</td>
 </tr>
 <tr class="odd">
 <td align="left">rot</td>
@@ -14070,7 +16987,7 @@ D20 Spring 2024 24GE02I54 Rot.xlsx</td>
 <td align="right">1114.0</td>
 <td align="right">1</td>
 <td align="right">56</td>
-<td align="right">58</td>
+<td align="right">1</td>
 </tr>
 <tr class="even">
 <td align="left">rot</td>
@@ -14088,7 +17005,7 @@ D20 Spring 2024 24GE02I54 Rot.xlsx</td>
 <td align="right">1114.0</td>
 <td align="right">1</td>
 <td align="right">18</td>
-<td align="right">20</td>
+<td align="right">0</td>
 </tr>
 <tr class="odd">
 <td align="left">rot</td>
@@ -14106,7 +17023,7 @@ D20 Spring 2024 24GE02I74 Rot.xlsx</td>
 <td align="right">130.0</td>
 <td align="right">1</td>
 <td align="right">76</td>
-<td align="right">79</td>
+<td align="right">0</td>
 </tr>
 <tr class="even">
 <td align="left">rot</td>
@@ -14124,7 +17041,7 @@ D20 Spring 2024 24GE02I74 Rot.xlsx</td>
 <td align="right">130.0</td>
 <td align="right">1</td>
 <td align="right">12</td>
-<td align="right">15</td>
+<td align="right">0</td>
 </tr>
 <tr class="odd">
 <td align="left">rot</td>
@@ -14142,7 +17059,7 @@ D20 Spring 2024 24GE01I54 Rot.xlsx</td>
 <td align="right">133.5</td>
 <td align="right">2</td>
 <td align="right">73</td>
-<td align="right">76</td>
+<td align="right">0</td>
 </tr>
 <tr class="even">
 <td align="left">rot</td>
@@ -14160,7 +17077,7 @@ D20 Spring 2024 24GE01I54 Rot.xlsx</td>
 <td align="right">133.5</td>
 <td align="right">2</td>
 <td align="right">28</td>
-<td align="right">31</td>
+<td align="right">0</td>
 </tr>
 <tr class="odd">
 <td align="left">rot</td>
@@ -14178,7 +17095,7 @@ D20 Spring 2024 24GE01I74 Rot.xlsx</td>
 <td align="right">1400.0</td>
 <td align="right">1</td>
 <td align="right">75</td>
-<td align="right">78</td>
+<td align="right">0</td>
 </tr>
 <tr class="even">
 <td align="left">rot</td>
@@ -14196,7 +17113,7 @@ D20 Spring 2024 24GE01I74 Rot.xlsx</td>
 <td align="right">1400.0</td>
 <td align="right">1</td>
 <td align="right">17</td>
-<td align="right">20</td>
+<td align="right">0</td>
 </tr>
 <tr class="odd">
 <td align="left">rot</td>
@@ -14214,7 +17131,7 @@ D20 Spring 2024 24GE01I94 Rot.xlsx</td>
 <td align="right">113.5</td>
 <td align="right">1</td>
 <td align="right">66</td>
-<td align="right">69</td>
+<td align="right">0</td>
 </tr>
 <tr class="even">
 <td align="left">rot</td>
@@ -14232,7 +17149,7 @@ D20 Spring 2024 24GE01I94 Rot.xlsx</td>
 <td align="right">113.5</td>
 <td align="right">1</td>
 <td align="right">6</td>
-<td align="right">9</td>
+<td align="right">0</td>
 </tr>
 <tr class="odd">
 <td align="left">rot</td>
@@ -14250,7 +17167,7 @@ D20 Spring 2024 24GE00I94 Rot.xlsx</td>
 <td align="right">140.5</td>
 <td align="right">1</td>
 <td align="right">70</td>
-<td align="right">72</td>
+<td align="right">0</td>
 </tr>
 <tr class="even">
 <td align="left">rot</td>
@@ -14268,7 +17185,7 @@ D20 Spring 2024 24GE00I94 Rot.xlsx</td>
 <td align="right">140.5</td>
 <td align="right">1</td>
 <td align="right">25</td>
-<td align="right">29</td>
+<td align="right">1</td>
 </tr>
 <tr class="odd">
 <td align="left">rot</td>
@@ -14286,7 +17203,7 @@ D20 Spring 2024 24GE01I14 Rot.xlsx</td>
 <td align="right">1075.0</td>
 <td align="right">1</td>
 <td align="right">95</td>
-<td align="right">98</td>
+<td align="right">0</td>
 </tr>
 <tr class="even">
 <td align="left">rot</td>
@@ -14304,7 +17221,7 @@ D20 Spring 2024 24GE01I14 Rot.xlsx</td>
 <td align="right">1075.0</td>
 <td align="right">1</td>
 <td align="right">19</td>
-<td align="right">24</td>
+<td align="right">0</td>
 </tr>
 <tr class="odd">
 <td align="left">rot</td>
@@ -14322,7 +17239,7 @@ D20 Spring 2024 24GE02I94 Rot.xlsx</td>
 <td align="right">31.0</td>
 <td align="right">1</td>
 <td align="right">68</td>
-<td align="right">71</td>
+<td align="right">1</td>
 </tr>
 <tr class="even">
 <td align="left">rot</td>
@@ -14340,7 +17257,7 @@ D20 Spring 2024 24GE02I94 Rot.xlsx</td>
 <td align="right">31.0</td>
 <td align="right">1</td>
 <td align="right">7</td>
-<td align="right">10</td>
+<td align="right">2</td>
 </tr>
 <tr class="odd">
 <td align="left">rot</td>
@@ -14358,7 +17275,7 @@ D20 Spring 2024 24GE03I14 Rot.xlsx</td>
 <td align="right">35.0</td>
 <td align="right">1</td>
 <td align="right">67</td>
-<td align="right">70</td>
+<td align="right">0</td>
 </tr>
 <tr class="even">
 <td align="left">rot</td>
@@ -14376,7 +17293,7 @@ D20 Spring 2024 24GE03I14 Rot.xlsx</td>
 <td align="right">35.0</td>
 <td align="right">1</td>
 <td align="right">3</td>
-<td align="right">6</td>
+<td align="right">0</td>
 </tr>
 <tr class="odd">
 <td align="left">rot</td>
@@ -14394,7 +17311,7 @@ D20 Spring 2024 24GE03I34 Rot.xlsx</td>
 <td align="right">36.5</td>
 <td align="right">2</td>
 <td align="right">87</td>
-<td align="right">89</td>
+<td align="right">1</td>
 </tr>
 <tr class="even">
 <td align="left">rot</td>
@@ -14412,7 +17329,7 @@ D20 Spring 2024 24GE03I34 Rot.xlsx</td>
 <td align="right">36.5</td>
 <td align="right">2</td>
 <td align="right">40</td>
-<td align="right">43</td>
+<td align="right">2</td>
 </tr>
 <tr class="odd">
 <td align="left">rot</td>
@@ -14430,7 +17347,7 @@ D20 Spring 2024 24GE03I54 Rot.xlsx</td>
 <td align="right">51.0</td>
 <td align="right">3</td>
 <td align="right">53</td>
-<td align="right">53</td>
+<td align="right">0</td>
 </tr>
 <tr class="even">
 <td align="left">rot</td>
@@ -14448,7 +17365,7 @@ D20 Spring 2024 24GE03I54 Rot.xlsx</td>
 <td align="right">51.0</td>
 <td align="right">3</td>
 <td align="right">18</td>
-<td align="right">18</td>
+<td align="right">0</td>
 </tr>
 <tr class="odd">
 <td align="left">rot</td>
@@ -14466,7 +17383,7 @@ D20 Spring 2024 24GE00I34 Rot.xlsx</td>
 <td align="right">136.0</td>
 <td align="right">1</td>
 <td align="right">70</td>
-<td align="right">72</td>
+<td align="right">0</td>
 </tr>
 <tr class="even">
 <td align="left">rot</td>
@@ -14484,7 +17401,7 @@ D20 Spring 2024 24GE00I34 Rot.xlsx</td>
 <td align="right">136.0</td>
 <td align="right">1</td>
 <td align="right">24</td>
-<td align="right">28</td>
+<td align="right">0</td>
 </tr>
 <tr class="odd">
 <td align="left">rot</td>
@@ -14502,7 +17419,7 @@ D20 Spring 2024 24GE01I34 Rot.xlsx</td>
 <td align="right">1620.0</td>
 <td align="right">1</td>
 <td align="right">81</td>
-<td align="right">81</td>
+<td align="right">0</td>
 </tr>
 <tr class="even">
 <td align="left">rot</td>
@@ -14520,7 +17437,7 @@ D20 Spring 2024 24GE01I34 Rot.xlsx</td>
 <td align="right">1620.0</td>
 <td align="right">1</td>
 <td align="right">10</td>
-<td align="right">13</td>
+<td align="right">0</td>
 </tr>
 <tr class="odd">
 <td align="left">rot</td>
@@ -14538,7 +17455,7 @@ D20 Spring 2024 24GE01I34 Rot.xlsx</td>
 <td align="right">741.0</td>
 <td align="right">1</td>
 <td align="right">69</td>
-<td align="right">72</td>
+<td align="right">1</td>
 </tr>
 <tr class="even">
 <td align="left">rot</td>
@@ -14556,7 +17473,7 @@ D20 Spring 2024 24GE01I34 Rot.xlsx</td>
 <td align="right">741.0</td>
 <td align="right">1</td>
 <td align="right">13</td>
-<td align="right">22</td>
+<td align="right">0</td>
 </tr>
 <tr class="odd">
 <td align="left">rot</td>
@@ -14574,7 +17491,7 @@ D20 Spring 2024 24GE01I34 Rot.xlsx</td>
 <td align="right">741.0</td>
 <td align="right">1</td>
 <td align="right">71</td>
-<td align="right">84</td>
+<td align="right">1</td>
 </tr>
 <tr class="even">
 <td align="left">rot</td>
@@ -14592,7 +17509,7 @@ D20 Spring 2024 24GE01I34 Rot.xlsx</td>
 <td align="right">741.0</td>
 <td align="right">1</td>
 <td align="right">22</td>
-<td align="right">27</td>
+<td align="right">0</td>
 </tr>
 <tr class="odd">
 <td align="left">rot</td>
@@ -14610,7 +17527,7 @@ D20 Spring 2024 24GE03I74 Rot.xlsx</td>
 <td align="right">23.5</td>
 <td align="right">1</td>
 <td align="right">74</td>
-<td align="right">77</td>
+<td align="right">5</td>
 </tr>
 <tr class="even">
 <td align="left">rot</td>
@@ -14628,7 +17545,7 @@ D20 Spring 2024 24GE03I74 Rot.xlsx</td>
 <td align="right">23.5</td>
 <td align="right">1</td>
 <td align="right">17</td>
-<td align="right">20</td>
+<td align="right">8</td>
 </tr>
 <tr class="odd">
 <td align="left">rot</td>
@@ -14646,7 +17563,7 @@ D20 Spring 2024 24GE03I94 Rot.xlsx</td>
 <td align="right">232.5</td>
 <td align="right">1</td>
 <td align="right">59</td>
-<td align="right">61</td>
+<td align="right">1</td>
 </tr>
 <tr class="even">
 <td align="left">rot</td>
@@ -14664,7 +17581,7 @@ D20 Spring 2024 24GE03I94 Rot.xlsx</td>
 <td align="right">232.5</td>
 <td align="right">1</td>
 <td align="right">15</td>
-<td align="right">17</td>
+<td align="right">4</td>
 </tr>
 <tr class="odd">
 <td align="left">rot</td>
@@ -14682,7 +17599,7 @@ D20 Spring 2024 24GE03I94 Rot.xlsx</td>
 <td align="right">55.5</td>
 <td align="right">1</td>
 <td align="right">21</td>
-<td align="right">22</td>
+<td align="right">0</td>
 </tr>
 <tr class="even">
 <td align="left">rot</td>
@@ -14700,7 +17617,7 @@ D20 Spring 2024 24GE03I94 Rot.xlsx</td>
 <td align="right">55.5</td>
 <td align="right">1</td>
 <td align="right">2</td>
-<td align="right">3</td>
+<td align="right">0</td>
 </tr>
 <tr class="odd">
 <td align="left">rot</td>
@@ -14718,7 +17635,7 @@ D20 Spring 2024 24GE03I94 Rot.xlsx</td>
 <td align="right">75.0</td>
 <td align="right">1</td>
 <td align="right">22</td>
-<td align="right">23</td>
+<td align="right">0</td>
 </tr>
 <tr class="even">
 <td align="left">rot</td>
@@ -14736,7 +17653,7 @@ D20 Spring 2024 24GE03I94 Rot.xlsx</td>
 <td align="right">75.0</td>
 <td align="right">1</td>
 <td align="right">6</td>
-<td align="right">7</td>
+<td align="right">0</td>
 </tr>
 <tr class="odd">
 <td align="left">rot</td>
@@ -14754,7 +17671,7 @@ D20 Spring 2024 24GE03I94 Rot.xlsx</td>
 <td align="right">50.0</td>
 <td align="right">1</td>
 <td align="right">24</td>
-<td align="right">25</td>
+<td align="right">0</td>
 </tr>
 <tr class="even">
 <td align="left">rot</td>
@@ -14772,7 +17689,7 @@ D20 Spring 2024 24GE03I94 Rot.xlsx</td>
 <td align="right">50.0</td>
 <td align="right">1</td>
 <td align="right">6</td>
-<td align="right">7</td>
+<td align="right">0</td>
 </tr>
 <tr class="odd">
 <td align="left">rot</td>
@@ -14790,7 +17707,7 @@ D20 Spring 2024 24GE03I94 Rot.xlsx</td>
 <td align="right">41.0</td>
 <td align="right">2</td>
 <td align="right">21</td>
-<td align="right">22</td>
+<td align="right">0</td>
 </tr>
 <tr class="even">
 <td align="left">rot</td>
@@ -14808,7 +17725,7 @@ D20 Spring 2024 24GE03I94 Rot.xlsx</td>
 <td align="right">41.0</td>
 <td align="right">2</td>
 <td align="right">1</td>
-<td align="right">3</td>
+<td align="right">0</td>
 </tr>
 <tr class="odd">
 <td align="left">rot</td>
@@ -14826,7 +17743,7 @@ D20 Spring 2024 24GE03I94 Rot.xlsx</td>
 <td align="right">41.0</td>
 <td align="right">2</td>
 <td align="right">21</td>
-<td align="right">23</td>
+<td align="right">0</td>
 </tr>
 <tr class="even">
 <td align="left">rot</td>
@@ -14844,7 +17761,7 @@ D20 Spring 2024 24GE03I94 Rot.xlsx</td>
 <td align="right">41.0</td>
 <td align="right">2</td>
 <td align="right">1</td>
-<td align="right">3</td>
+<td align="right">0</td>
 </tr>
 <tr class="odd">
 <td align="left">rot</td>
@@ -14862,7 +17779,7 @@ D20 Spring 2024 24GE03I94 Rot.xlsx</td>
 <td align="right">62.5</td>
 <td align="right">1</td>
 <td align="right">21</td>
-<td align="right">22</td>
+<td align="right">0</td>
 </tr>
 <tr class="even">
 <td align="left">rot</td>
@@ -14880,7 +17797,7 @@ D20 Spring 2024 24GE03I94 Rot.xlsx</td>
 <td align="right">62.5</td>
 <td align="right">1</td>
 <td align="right">0</td>
-<td align="right">1</td>
+<td align="right">0</td>
 </tr>
 <tr class="odd">
 <td align="left">rot</td>
@@ -14898,7 +17815,7 @@ D20 Spring 2024 24GE03I94 Rot.xlsx</td>
 <td align="right">51.0</td>
 <td align="right">1</td>
 <td align="right">21</td>
-<td align="right">22</td>
+<td align="right">0</td>
 </tr>
 <tr class="even">
 <td align="left">rot</td>
@@ -14916,7 +17833,7 @@ D20 Spring 2024 24GE03I94 Rot.xlsx</td>
 <td align="right">51.0</td>
 <td align="right">1</td>
 <td align="right">0</td>
-<td align="right">1</td>
+<td align="right">0</td>
 </tr>
 <tr class="odd">
 <td align="left">rot</td>
@@ -14934,7 +17851,7 @@ D20 Spring 2024 24GE03I94 Rot.xlsx</td>
 <td align="right">43.0</td>
 <td align="right">1</td>
 <td align="right">22</td>
-<td align="right">23</td>
+<td align="right">0</td>
 </tr>
 <tr class="even">
 <td align="left">rot</td>
@@ -14952,7 +17869,7 @@ D20 Spring 2024 24GE03I94 Rot.xlsx</td>
 <td align="right">43.0</td>
 <td align="right">1</td>
 <td align="right">1</td>
-<td align="right">2</td>
+<td align="right">0</td>
 </tr>
 <tr class="odd">
 <td align="left">rot</td>
@@ -14970,7 +17887,7 @@ D20 Spring 2024 24GE03I94 Rot.xlsx</td>
 <td align="right">63.0</td>
 <td align="right">1</td>
 <td align="right">38</td>
-<td align="right">39</td>
+<td align="right">2</td>
 </tr>
 <tr class="even">
 <td align="left">rot</td>
@@ -14988,7 +17905,7 @@ D20 Spring 2024 24GE03I94 Rot.xlsx</td>
 <td align="right">63.0</td>
 <td align="right">1</td>
 <td align="right">16</td>
-<td align="right">17</td>
+<td align="right">1</td>
 </tr>
 <tr class="odd">
 <td align="left">rot</td>
@@ -15006,7 +17923,7 @@ D20 Spring 2024 24GE03I94 Rot.xlsx</td>
 <td align="right">57.5</td>
 <td align="right">1</td>
 <td align="right">23</td>
-<td align="right">24</td>
+<td align="right">0</td>
 </tr>
 <tr class="even">
 <td align="left">rot</td>
@@ -15024,7 +17941,7 @@ D20 Spring 2024 24GE03I94 Rot.xlsx</td>
 <td align="right">57.5</td>
 <td align="right">1</td>
 <td align="right">8</td>
-<td align="right">9</td>
+<td align="right">1</td>
 </tr>
 <tr class="odd">
 <td align="left">rot</td>
@@ -15042,7 +17959,7 @@ D20 Spring 2024 24GE03I94 Rot.xlsx</td>
 <td align="right">62.5</td>
 <td align="right">1</td>
 <td align="right">20</td>
-<td align="right">21</td>
+<td align="right">0</td>
 </tr>
 <tr class="even">
 <td align="left">rot</td>
@@ -15060,7 +17977,7 @@ D20 Spring 2024 24GE03I94 Rot.xlsx</td>
 <td align="right">62.5</td>
 <td align="right">1</td>
 <td align="right">5</td>
-<td align="right">6</td>
+<td align="right">0</td>
 </tr>
 <tr class="odd">
 <td align="left">rot</td>
@@ -15078,7 +17995,7 @@ D20 Spring 2024 24GE03I94 Rot.xlsx</td>
 <td align="right">57.0</td>
 <td align="right">1</td>
 <td align="right">30</td>
-<td align="right">31</td>
+<td align="right">1</td>
 </tr>
 <tr class="even">
 <td align="left">rot</td>
@@ -15096,7 +18013,7 @@ D20 Spring 2024 24GE03I94 Rot.xlsx</td>
 <td align="right">57.0</td>
 <td align="right">1</td>
 <td align="right">6</td>
-<td align="right">7</td>
+<td align="right">0</td>
 </tr>
 <tr class="odd">
 <td align="left">rot</td>
@@ -15114,7 +18031,7 @@ D20 Spring 2024 24GE03I94 Rot.xlsx</td>
 <td align="right">75.0</td>
 <td align="right">1</td>
 <td align="right">24</td>
-<td align="right">25</td>
+<td align="right">0</td>
 </tr>
 <tr class="even">
 <td align="left">rot</td>
@@ -15132,7 +18049,7 @@ D20 Spring 2024 24GE03I94 Rot.xlsx</td>
 <td align="right">75.0</td>
 <td align="right">1</td>
 <td align="right">4</td>
-<td align="right">5</td>
+<td align="right">0</td>
 </tr>
 <tr class="odd">
 <td align="left">rot</td>
@@ -15150,7 +18067,7 @@ D20 Spring 2024 24GE03I94 Rot.xlsx</td>
 <td align="right">22.0</td>
 <td align="right">1</td>
 <td align="right">25</td>
-<td align="right">26</td>
+<td align="right">0</td>
 </tr>
 <tr class="even">
 <td align="left">rot</td>
@@ -15168,7 +18085,7 @@ D20 Spring 2024 24GE03I94 Rot.xlsx</td>
 <td align="right">22.0</td>
 <td align="right">1</td>
 <td align="right">3</td>
-<td align="right">5</td>
+<td align="right">0</td>
 </tr>
 <tr class="odd">
 <td align="left">rot</td>
@@ -15186,7 +18103,7 @@ D20 Spring 2024 24GE03I94 Rot.xlsx</td>
 <td align="right">22.0</td>
 <td align="right">1</td>
 <td align="right">24</td>
-<td align="right">25</td>
+<td align="right">0</td>
 </tr>
 <tr class="even">
 <td align="left">rot</td>
@@ -15204,7 +18121,7 @@ D20 Spring 2024 24GE03I94 Rot.xlsx</td>
 <td align="right">22.0</td>
 <td align="right">1</td>
 <td align="right">3</td>
-<td align="right">5</td>
+<td align="right">0</td>
 </tr>
 <tr class="odd">
 <td align="left">rot</td>
@@ -15222,7 +18139,7 @@ D20 Spring 2024 24GE03I94 Rot.xlsx</td>
 <td align="right">55.5</td>
 <td align="right">1</td>
 <td align="right">23</td>
-<td align="right">24</td>
+<td align="right">0</td>
 </tr>
 <tr class="even">
 <td align="left">rot</td>
@@ -15240,7 +18157,7 @@ D20 Spring 2024 24GE03I94 Rot.xlsx</td>
 <td align="right">55.5</td>
 <td align="right">1</td>
 <td align="right">1</td>
-<td align="right">2</td>
+<td align="right">0</td>
 </tr>
 <tr class="odd">
 <td align="left">rot</td>
@@ -15258,7 +18175,7 @@ Spring/Michigan/D20/Rots/MI 11 D20 Spring 2024 24GM00I14 Rot.xlsx</td>
 <td align="right">60.0</td>
 <td align="right">2</td>
 <td align="right">63</td>
-<td align="right">65</td>
+<td align="right">0</td>
 </tr>
 <tr class="even">
 <td align="left">rot</td>
@@ -15276,7 +18193,7 @@ Spring/Michigan/D20/Rots/MI 11 D20 Spring 2024 24GM00I14 Rot.xlsx</td>
 <td align="right">60.0</td>
 <td align="right">2</td>
 <td align="right">14</td>
-<td align="right">17</td>
+<td align="right">1</td>
 </tr>
 <tr class="odd">
 <td align="left">rot</td>
@@ -15294,7 +18211,7 @@ Spring/Michigan/D20/Rots/MI 17 D20 Spring 2024 24GM00I34 Rot.xlsx</td>
 <td align="right">53.0</td>
 <td align="right">2</td>
 <td align="right">25</td>
-<td align="right">26</td>
+<td align="right">1</td>
 </tr>
 <tr class="even">
 <td align="left">rot</td>
@@ -15312,7 +18229,7 @@ Spring/Michigan/D20/Rots/MI 17 D20 Spring 2024 24GM00I34 Rot.xlsx</td>
 <td align="right">53.0</td>
 <td align="right">2</td>
 <td align="right">3</td>
-<td align="right">4</td>
+<td align="right">0</td>
 </tr>
 <tr class="odd">
 <td align="left">rot</td>
@@ -15330,7 +18247,7 @@ Spring/Michigan/D20/Rots/MI 18M D20 Spring 2024 24GM00I54 Rot.xlsx</td>
 <td align="right">92.0</td>
 <td align="right">1</td>
 <td align="right">66</td>
-<td align="right">68</td>
+<td align="right">0</td>
 </tr>
 <tr class="even">
 <td align="left">rot</td>
@@ -15348,7 +18265,7 @@ Spring/Michigan/D20/Rots/MI 18M D20 Spring 2024 24GM00I54 Rot.xlsx</td>
 <td align="right">92.0</td>
 <td align="right">1</td>
 <td align="right">5</td>
-<td align="right">8</td>
+<td align="right">1</td>
 </tr>
 <tr class="odd">
 <td align="left">rot</td>
@@ -15367,7 +18284,7 @@ Rot.xlsx</td>
 <td align="right">42.0</td>
 <td align="right">1</td>
 <td align="right">31</td>
-<td align="right">37</td>
+<td align="right">0</td>
 </tr>
 <tr class="even">
 <td align="left">rot</td>
@@ -15386,7 +18303,7 @@ Rot.xlsx</td>
 <td align="right">42.0</td>
 <td align="right">1</td>
 <td align="right">8</td>
-<td align="right">8</td>
+<td align="right">1</td>
 </tr>
 <tr class="odd">
 <td align="left">rot</td>
@@ -15404,7 +18321,7 @@ Spring/Michigan/D20/Rots/MI 19 D20 Spring 2024 24GM00I74 Rot.xlsx</td>
 <td align="right">42.0</td>
 <td align="right">1</td>
 <td align="right">30</td>
-<td align="right">31</td>
+<td align="right">1</td>
 </tr>
 <tr class="even">
 <td align="left">rot</td>
@@ -15422,7 +18339,7 @@ Spring/Michigan/D20/Rots/MI 19 D20 Spring 2024 24GM00I74 Rot.xlsx</td>
 <td align="right">42.0</td>
 <td align="right">1</td>
 <td align="right">8</td>
-<td align="right">9</td>
+<td align="right">1</td>
 </tr>
 <tr class="odd">
 <td align="left">rot</td>
@@ -15441,7 +18358,7 @@ Rot.xlsx</td>
 <td align="right">31.0</td>
 <td align="right">1</td>
 <td align="right">28</td>
-<td align="right">28</td>
+<td align="right">0</td>
 </tr>
 <tr class="even">
 <td align="left">rot</td>
@@ -15460,7 +18377,7 @@ Rot.xlsx</td>
 <td align="right">31.0</td>
 <td align="right">1</td>
 <td align="right">9</td>
-<td align="right">9</td>
+<td align="right">0</td>
 </tr>
 <tr class="odd">
 <td align="left">rot</td>
@@ -15478,7 +18395,7 @@ Spring/Michigan/D20/Rots/MI 23 D20 Spring 2024 24GM00I94 Rot.xlsx</td>
 <td align="right">31.0</td>
 <td align="right">1</td>
 <td align="right">27</td>
-<td align="right">27</td>
+<td align="right">0</td>
 </tr>
 <tr class="even">
 <td align="left">rot</td>
@@ -15496,7 +18413,7 @@ Spring/Michigan/D20/Rots/MI 23 D20 Spring 2024 24GM00I94 Rot.xlsx</td>
 <td align="right">31.0</td>
 <td align="right">1</td>
 <td align="right">9</td>
-<td align="right">9</td>
+<td align="right">0</td>
 </tr>
 <tr class="odd">
 <td align="left">rot</td>
@@ -15514,7 +18431,7 @@ Spring/Michigan/D20/Rots/MI 27M D20 Spring 2024 24GM01I14 Rot.xlsx</td>
 <td align="right">89.0</td>
 <td align="right">1</td>
 <td align="right">61</td>
-<td align="right">63</td>
+<td align="right">1</td>
 </tr>
 <tr class="even">
 <td align="left">rot</td>
@@ -15532,7 +18449,7 @@ Spring/Michigan/D20/Rots/MI 27M D20 Spring 2024 24GM01I14 Rot.xlsx</td>
 <td align="right">89.0</td>
 <td align="right">1</td>
 <td align="right">19</td>
-<td align="right">21</td>
+<td align="right">0</td>
 </tr>
 <tr class="odd">
 <td align="left">rot</td>
@@ -15550,7 +18467,7 @@ Spring/Michigan/D20/Rots/MI 32 D20 Spring 2024 24GM01I34 Rot.xlsx</td>
 <td align="right">57.0</td>
 <td align="right">1</td>
 <td align="right">41</td>
-<td align="right">42</td>
+<td align="right">0</td>
 </tr>
 <tr class="even">
 <td align="left">rot</td>
@@ -15568,7 +18485,7 @@ Spring/Michigan/D20/Rots/MI 32 D20 Spring 2024 24GM01I34 Rot.xlsx</td>
 <td align="right">57.0</td>
 <td align="right">1</td>
 <td align="right">12</td>
-<td align="right">13</td>
+<td align="right">2</td>
 </tr>
 <tr class="odd">
 <td align="left">rot</td>
@@ -15586,7 +18503,7 @@ Spring/Michigan/D20/Rots/MI 34 D20 Spring 2024 24GM01I54 Rot.xlsx</td>
 <td align="right">45.5</td>
 <td align="right">1</td>
 <td align="right">56</td>
-<td align="right">58</td>
+<td align="right">2</td>
 </tr>
 <tr class="even">
 <td align="left">rot</td>
@@ -15604,7 +18521,7 @@ Spring/Michigan/D20/Rots/MI 34 D20 Spring 2024 24GM01I54 Rot.xlsx</td>
 <td align="right">45.5</td>
 <td align="right">1</td>
 <td align="right">20</td>
-<td align="right">23</td>
+<td align="right">0</td>
 </tr>
 <tr class="odd">
 <td align="left">rot</td>
@@ -15622,7 +18539,7 @@ Spring/Michigan/D20/Rots/MI 40 D20 Spring 2024 24GM01I74 Rot.xlsx</td>
 <td align="right">64.5</td>
 <td align="right">1</td>
 <td align="right">47</td>
-<td align="right">48</td>
+<td align="right">4</td>
 </tr>
 <tr class="even">
 <td align="left">rot</td>
@@ -15640,7 +18557,7 @@ Spring/Michigan/D20/Rots/MI 40 D20 Spring 2024 24GM01I74 Rot.xlsx</td>
 <td align="right">64.5</td>
 <td align="right">1</td>
 <td align="right">27</td>
-<td align="right">28</td>
+<td align="right">3</td>
 </tr>
 <tr class="odd">
 <td align="left">rot</td>
@@ -15658,7 +18575,7 @@ Spring/Michigan/D20/Rots/MI 41M D20 Spring 2024 24GM01I94 Rot.xlsx</td>
 <td align="right">53.0</td>
 <td align="right">2</td>
 <td align="right">68</td>
-<td align="right">69</td>
+<td align="right">2</td>
 </tr>
 <tr class="even">
 <td align="left">rot</td>
@@ -15676,7 +18593,7 @@ Spring/Michigan/D20/Rots/MI 41M D20 Spring 2024 24GM01I94 Rot.xlsx</td>
 <td align="right">53.0</td>
 <td align="right">2</td>
 <td align="right">35</td>
-<td align="right">38</td>
+<td align="right">0</td>
 </tr>
 <tr class="odd">
 <td align="left">rot</td>
@@ -15694,7 +18611,7 @@ Spring/Michigan/D20/Rots/MI 47 D20 Spring 2024 24GM02I14 Rot.xlsx</td>
 <td align="right">30.0</td>
 <td align="right">1</td>
 <td align="right">57</td>
-<td align="right">58</td>
+<td align="right">1</td>
 </tr>
 <tr class="even">
 <td align="left">rot</td>
@@ -15712,7 +18629,7 @@ Spring/Michigan/D20/Rots/MI 47 D20 Spring 2024 24GM02I14 Rot.xlsx</td>
 <td align="right">30.0</td>
 <td align="right">1</td>
 <td align="right">15</td>
-<td align="right">17</td>
+<td align="right">0</td>
 </tr>
 <tr class="odd">
 <td align="left">rot</td>
@@ -15730,7 +18647,7 @@ Spring/Michigan/D20/Rots/MI 47 D20 Spring 2024 24GM02I14 Rot.xlsx</td>
 <td align="right">37.5</td>
 <td align="right">1</td>
 <td align="right">78</td>
-<td align="right">81</td>
+<td align="right">1</td>
 </tr>
 <tr class="even">
 <td align="left">rot</td>
@@ -15748,7 +18665,7 @@ Spring/Michigan/D20/Rots/MI 47 D20 Spring 2024 24GM02I14 Rot.xlsx</td>
 <td align="right">37.5</td>
 <td align="right">1</td>
 <td align="right">25</td>
-<td align="right">29</td>
+<td align="right">1</td>
 </tr>
 <tr class="odd">
 <td align="left">rot</td>
@@ -15766,7 +18683,7 @@ Spring/Michigan/D20/Rots/MI 47 D20 Spring 2024 24GM02I14 Rot.xlsx</td>
 <td align="right">55.0</td>
 <td align="right">1</td>
 <td align="right">59</td>
-<td align="right">59</td>
+<td align="right">0</td>
 </tr>
 <tr class="even">
 <td align="left">rot</td>
@@ -15784,7 +18701,7 @@ Spring/Michigan/D20/Rots/MI 47 D20 Spring 2024 24GM02I14 Rot.xlsx</td>
 <td align="right">55.0</td>
 <td align="right">1</td>
 <td align="right">4</td>
-<td align="right">4</td>
+<td align="right">0</td>
 </tr>
 <tr class="odd">
 <td align="left">rot</td>
@@ -15802,7 +18719,7 @@ Spring/Michigan/D20/Rots/MI 47 D20 Spring 2024 24GM02I14 Rot.xlsx</td>
 <td align="right">55.0</td>
 <td align="right">1</td>
 <td align="right">60</td>
-<td align="right">60</td>
+<td align="right">0</td>
 </tr>
 <tr class="even">
 <td align="left">rot</td>
@@ -15820,7 +18737,7 @@ Spring/Michigan/D20/Rots/MI 47 D20 Spring 2024 24GM02I14 Rot.xlsx</td>
 <td align="right">55.0</td>
 <td align="right">1</td>
 <td align="right">6</td>
-<td align="right">6</td>
+<td align="right">0</td>
 </tr>
 <tr class="odd">
 <td align="left">rot</td>
@@ -15838,7 +18755,7 @@ Spring/Michigan/D20/Rots/MI 47 D20 Spring 2024 24GM02I14 Rot.xlsx</td>
 <td align="right">53.0</td>
 <td align="right">1</td>
 <td align="right">45</td>
-<td align="right">47</td>
+<td align="right">0</td>
 </tr>
 <tr class="even">
 <td align="left">rot</td>
@@ -15856,7 +18773,7 @@ Spring/Michigan/D20/Rots/MI 47 D20 Spring 2024 24GM02I14 Rot.xlsx</td>
 <td align="right">53.0</td>
 <td align="right">1</td>
 <td align="right">5</td>
-<td align="right">7</td>
+<td align="right">0</td>
 </tr>
 <tr class="odd">
 <td align="left">rot</td>
@@ -15874,7 +18791,7 @@ Spring/Michigan/D20/Rots/MI 47 D20 Spring 2024 24GM02I14 Rot.xlsx</td>
 <td align="right">52.0</td>
 <td align="right">2</td>
 <td align="right">56</td>
-<td align="right">57</td>
+<td align="right">0</td>
 </tr>
 <tr class="even">
 <td align="left">rot</td>
@@ -15892,7 +18809,7 @@ Spring/Michigan/D20/Rots/MI 47 D20 Spring 2024 24GM02I14 Rot.xlsx</td>
 <td align="right">52.0</td>
 <td align="right">2</td>
 <td align="right">4</td>
-<td align="right">7</td>
+<td align="right">0</td>
 </tr>
 <tr class="odd">
 <td align="left">rot</td>
@@ -15910,7 +18827,7 @@ Spring/Michigan/D20/Rots/MI 47 D20 Spring 2024 24GM02I14 Rot.xlsx</td>
 <td align="right">21.5</td>
 <td align="right">1</td>
 <td align="right">42</td>
-<td align="right">44</td>
+<td align="right">0</td>
 </tr>
 <tr class="even">
 <td align="left">rot</td>
@@ -15928,7 +18845,7 @@ Spring/Michigan/D20/Rots/MI 47 D20 Spring 2024 24GM02I14 Rot.xlsx</td>
 <td align="right">21.5</td>
 <td align="right">1</td>
 <td align="right">0</td>
-<td align="right">2</td>
+<td align="right">0</td>
 </tr>
 <tr class="odd">
 <td align="left">rot</td>
@@ -15946,7 +18863,7 @@ Spring/Michigan/D20/Rots/MI 47 D20 Spring 2024 24GM02I14 Rot.xlsx</td>
 <td align="right">38.0</td>
 <td align="right">1</td>
 <td align="right">51</td>
-<td align="right">53</td>
+<td align="right">0</td>
 </tr>
 <tr class="even">
 <td align="left">rot</td>
@@ -15964,7 +18881,7 @@ Spring/Michigan/D20/Rots/MI 47 D20 Spring 2024 24GM02I14 Rot.xlsx</td>
 <td align="right">38.0</td>
 <td align="right">1</td>
 <td align="right">8</td>
-<td align="right">10</td>
+<td align="right">1</td>
 </tr>
 <tr class="odd">
 <td align="left">rot</td>
@@ -15982,7 +18899,7 @@ Spring/Michigan/D20/Rots/MI 47 D20 Spring 2024 24GM02I14 Rot.xlsx</td>
 <td align="right">44.0</td>
 <td align="right">1</td>
 <td align="right">45</td>
-<td align="right">47</td>
+<td align="right">0</td>
 </tr>
 <tr class="even">
 <td align="left">rot</td>
@@ -16000,7 +18917,7 @@ Spring/Michigan/D20/Rots/MI 47 D20 Spring 2024 24GM02I14 Rot.xlsx</td>
 <td align="right">44.0</td>
 <td align="right">1</td>
 <td align="right">6</td>
-<td align="right">8</td>
+<td align="right">0</td>
 </tr>
 <tr class="odd">
 <td align="left">rot</td>
@@ -16018,7 +18935,7 @@ Spring/Michigan/D20/Rots/MI 47 D20 Spring 2024 24GM02I14 Rot.xlsx</td>
 <td align="right">39.0</td>
 <td align="right">1</td>
 <td align="right">46</td>
-<td align="right">46</td>
+<td align="right">1</td>
 </tr>
 <tr class="even">
 <td align="left">rot</td>
@@ -16036,7 +18953,7 @@ Spring/Michigan/D20/Rots/MI 47 D20 Spring 2024 24GM02I14 Rot.xlsx</td>
 <td align="right">39.0</td>
 <td align="right">1</td>
 <td align="right">6</td>
-<td align="right">8</td>
+<td align="right">0</td>
 </tr>
 <tr class="odd">
 <td align="left">rot</td>
@@ -16054,7 +18971,7 @@ Spring/Superior/D20/Rots/SU 01M D20 Spring 2024 24GS00I14 Rot.xlsx</td>
 <td align="right">224.5</td>
 <td align="right">1</td>
 <td align="right">62</td>
-<td align="right">64</td>
+<td align="right">2</td>
 </tr>
 <tr class="even">
 <td align="left">rot</td>
@@ -16072,7 +18989,7 @@ Spring/Superior/D20/Rots/SU 01M D20 Spring 2024 24GS00I14 Rot.xlsx</td>
 <td align="right">224.5</td>
 <td align="right">1</td>
 <td align="right">19</td>
-<td align="right">21</td>
+<td align="right">3</td>
 </tr>
 <tr class="odd">
 <td align="left">rot</td>
@@ -16090,7 +19007,7 @@ Spring/Superior/D20/Rots/SU 02 D20 Spring 2024 24GS00I34 Rot.xlsx</td>
 <td align="right">141.5</td>
 <td align="right">1</td>
 <td align="right">63</td>
-<td align="right">65</td>
+<td align="right">4</td>
 </tr>
 <tr class="even">
 <td align="left">rot</td>
@@ -16108,7 +19025,7 @@ Spring/Superior/D20/Rots/SU 02 D20 Spring 2024 24GS00I34 Rot.xlsx</td>
 <td align="right">141.5</td>
 <td align="right">1</td>
 <td align="right">19</td>
-<td align="right">21</td>
+<td align="right">4</td>
 </tr>
 <tr class="odd">
 <td align="left">rot</td>
@@ -16126,7 +19043,7 @@ Spring/Superior/D20/Rots/SU 03 D20 Spring 2024 24GS00I54 Rot.xlsx</td>
 <td align="right">175.0</td>
 <td align="right">1</td>
 <td align="right">81</td>
-<td align="right">82</td>
+<td align="right">10</td>
 </tr>
 <tr class="even">
 <td align="left">rot</td>
@@ -16144,7 +19061,7 @@ Spring/Superior/D20/Rots/SU 03 D20 Spring 2024 24GS00I54 Rot.xlsx</td>
 <td align="right">175.0</td>
 <td align="right">1</td>
 <td align="right">29</td>
-<td align="right">33</td>
+<td align="right">3</td>
 </tr>
 <tr class="odd">
 <td align="left">rot</td>
@@ -16162,7 +19079,7 @@ Spring/Superior/D20/Rots/SU 04 D20 Spring 2024 24GS00I74 Rot.xlsx</td>
 <td align="right">125.0</td>
 <td align="right">1</td>
 <td align="right">54</td>
-<td align="right">55</td>
+<td align="right">5</td>
 </tr>
 <tr class="even">
 <td align="left">rot</td>
@@ -16180,7 +19097,7 @@ Spring/Superior/D20/Rots/SU 04 D20 Spring 2024 24GS00I74 Rot.xlsx</td>
 <td align="right">125.0</td>
 <td align="right">1</td>
 <td align="right">16</td>
-<td align="right">18</td>
+<td align="right">4</td>
 </tr>
 <tr class="odd">
 <td align="left">rot</td>
@@ -16198,7 +19115,7 @@ Spring/Superior/D20/Rots/SU 05 D20 Spring 2024 24GS00I94 Rot.xlsx</td>
 <td align="right">146.0</td>
 <td align="right">1</td>
 <td align="right">54</td>
-<td align="right">55</td>
+<td align="right">3</td>
 </tr>
 <tr class="even">
 <td align="left">rot</td>
@@ -16216,7 +19133,7 @@ Spring/Superior/D20/Rots/SU 05 D20 Spring 2024 24GS00I94 Rot.xlsx</td>
 <td align="right">146.0</td>
 <td align="right">1</td>
 <td align="right">25</td>
-<td align="right">27</td>
+<td align="right">1</td>
 </tr>
 <tr class="odd">
 <td align="left">rot</td>
@@ -16234,7 +19151,7 @@ Spring/Superior/D20/Rots/SU 06 D20 Spring 2024 24GS01I14 Rot.xlsx</td>
 <td align="right">196.0</td>
 <td align="right">1</td>
 <td align="right">61</td>
-<td align="right">62</td>
+<td align="right">3</td>
 </tr>
 <tr class="even">
 <td align="left">rot</td>
@@ -16252,7 +19169,7 @@ Spring/Superior/D20/Rots/SU 06 D20 Spring 2024 24GS01I14 Rot.xlsx</td>
 <td align="right">196.0</td>
 <td align="right">1</td>
 <td align="right">32</td>
-<td align="right">35</td>
+<td align="right">2</td>
 </tr>
 <tr class="odd">
 <td align="left">rot</td>
@@ -16270,7 +19187,7 @@ Spring/Superior/D20/Rots/SU 07 D20 Spring 2024 24GS01I34 Rot.xlsx</td>
 <td align="right">133.0</td>
 <td align="right">1</td>
 <td align="right">60</td>
-<td align="right">62</td>
+<td align="right">5</td>
 </tr>
 <tr class="even">
 <td align="left">rot</td>
@@ -16288,7 +19205,7 @@ Spring/Superior/D20/Rots/SU 07 D20 Spring 2024 24GS01I34 Rot.xlsx</td>
 <td align="right">133.0</td>
 <td align="right">1</td>
 <td align="right">16</td>
-<td align="right">18</td>
+<td align="right">4</td>
 </tr>
 <tr class="odd">
 <td align="left">rot</td>
@@ -16307,7 +19224,7 @@ Rot.xlsx</td>
 <td align="right">40.0</td>
 <td align="right">1</td>
 <td align="right">41</td>
-<td align="right">42</td>
+<td align="right">4</td>
 </tr>
 <tr class="even">
 <td align="left">rot</td>
@@ -16326,7 +19243,7 @@ Rot.xlsx</td>
 <td align="right">40.0</td>
 <td align="right">1</td>
 <td align="right">15</td>
-<td align="right">17</td>
+<td align="right">6</td>
 </tr>
 <tr class="odd">
 <td align="left">rot</td>
@@ -16344,7 +19261,7 @@ Spring/Superior/D20/Rots/SU 08M D20 Spring 2024 24GS01I54 Rot.xlsx</td>
 <td align="right">40.0</td>
 <td align="right">1</td>
 <td align="right">41</td>
-<td align="right">47</td>
+<td align="right">4</td>
 </tr>
 <tr class="even">
 <td align="left">rot</td>
@@ -16362,7 +19279,7 @@ Spring/Superior/D20/Rots/SU 08M D20 Spring 2024 24GS01I54 Rot.xlsx</td>
 <td align="right">40.0</td>
 <td align="right">1</td>
 <td align="right">14</td>
-<td align="right">15</td>
+<td align="right">4</td>
 </tr>
 <tr class="odd">
 <td align="left">rot</td>
@@ -16380,7 +19297,7 @@ Spring/Superior/D20/Rots/SU 09 D20 Spring 2024 24GS01I74 Rot.xlsx</td>
 <td align="right">127.0</td>
 <td align="right">1</td>
 <td align="right">52</td>
-<td align="right">53</td>
+<td align="right">2</td>
 </tr>
 <tr class="even">
 <td align="left">rot</td>
@@ -16398,7 +19315,7 @@ Spring/Superior/D20/Rots/SU 09 D20 Spring 2024 24GS01I74 Rot.xlsx</td>
 <td align="right">127.0</td>
 <td align="right">1</td>
 <td align="right">11</td>
-<td align="right">13</td>
+<td align="right">0</td>
 </tr>
 <tr class="odd">
 <td align="left">rot</td>
@@ -16416,7 +19333,7 @@ Spring/Superior/D20/Rots/SU 10 D20 Spring 2024 24GS01I94 Rot.xlsx</td>
 <td align="right">186.0</td>
 <td align="right">1</td>
 <td align="right">46</td>
-<td align="right">47</td>
+<td align="right">1</td>
 </tr>
 <tr class="even">
 <td align="left">rot</td>
@@ -16434,7 +19351,7 @@ Spring/Superior/D20/Rots/SU 10 D20 Spring 2024 24GS01I94 Rot.xlsx</td>
 <td align="right">186.0</td>
 <td align="right">1</td>
 <td align="right">20</td>
-<td align="right">21</td>
+<td align="right">2</td>
 </tr>
 <tr class="odd">
 <td align="left">rot</td>
@@ -16452,7 +19369,7 @@ Spring/Superior/D20/Rots/SU 11 D20 Spring 2024 24GS02I14 Rot.xlsx</td>
 <td align="right">140.0</td>
 <td align="right">1</td>
 <td align="right">34</td>
-<td align="right">35</td>
+<td align="right">1</td>
 </tr>
 <tr class="even">
 <td align="left">rot</td>
@@ -16470,7 +19387,7 @@ Spring/Superior/D20/Rots/SU 11 D20 Spring 2024 24GS02I14 Rot.xlsx</td>
 <td align="right">140.0</td>
 <td align="right">1</td>
 <td align="right">19</td>
-<td align="right">20</td>
+<td align="right">2</td>
 </tr>
 <tr class="odd">
 <td align="left">rot</td>
@@ -16488,7 +19405,7 @@ Spring/Superior/D20/Rots/SU 12 D20 Spring 2024 24GS02I34 Rot.xlsx</td>
 <td align="right">142.5</td>
 <td align="right">1</td>
 <td align="right">27</td>
-<td align="right">28</td>
+<td align="right">2</td>
 </tr>
 <tr class="even">
 <td align="left">rot</td>
@@ -16506,7 +19423,7 @@ Spring/Superior/D20/Rots/SU 12 D20 Spring 2024 24GS02I34 Rot.xlsx</td>
 <td align="right">142.5</td>
 <td align="right">1</td>
 <td align="right">16</td>
-<td align="right">17</td>
+<td align="right">4</td>
 </tr>
 <tr class="odd">
 <td align="left">rot</td>
@@ -16524,7 +19441,7 @@ Spring/Superior/D20/Rots/SU 13 D20 Spring 2024 24GS02I54 Rot.xlsx</td>
 <td align="right">113.0</td>
 <td align="right">1</td>
 <td align="right">54</td>
-<td align="right">55</td>
+<td align="right">3</td>
 </tr>
 <tr class="even">
 <td align="left">rot</td>
@@ -16542,7 +19459,7 @@ Spring/Superior/D20/Rots/SU 13 D20 Spring 2024 24GS02I54 Rot.xlsx</td>
 <td align="right">113.0</td>
 <td align="right">1</td>
 <td align="right">24</td>
-<td align="right">24</td>
+<td align="right">3</td>
 </tr>
 <tr class="odd">
 <td align="left">rot</td>
@@ -16561,7 +19478,7 @@ Rot.xlsx</td>
 <td align="right">60.0</td>
 <td align="right">1</td>
 <td align="right">34</td>
-<td align="right">34</td>
+<td align="right">2</td>
 </tr>
 <tr class="even">
 <td align="left">rot</td>
@@ -16580,7 +19497,7 @@ Rot.xlsx</td>
 <td align="right">60.0</td>
 <td align="right">1</td>
 <td align="right">12</td>
-<td align="right">12</td>
+<td align="right">0</td>
 </tr>
 <tr class="odd">
 <td align="left">rot</td>
@@ -16598,7 +19515,7 @@ Spring/Superior/D20/Rots/SU 14 D20 Spring 2024 24GS02I74 Rot.xlsx</td>
 <td align="right">60.0</td>
 <td align="right">1</td>
 <td align="right">34</td>
-<td align="right">34</td>
+<td align="right">2</td>
 </tr>
 <tr class="even">
 <td align="left">rot</td>
@@ -16616,7 +19533,7 @@ Spring/Superior/D20/Rots/SU 14 D20 Spring 2024 24GS02I74 Rot.xlsx</td>
 <td align="right">60.0</td>
 <td align="right">1</td>
 <td align="right">12</td>
-<td align="right">12</td>
+<td align="right">0</td>
 </tr>
 <tr class="odd">
 <td align="left">rot</td>
@@ -16634,7 +19551,7 @@ Spring/Superior/D20/Rots/SU 15 D20 Spring 2024 24GS02I94 Rot.xlsx</td>
 <td align="right">224.5</td>
 <td align="right">1</td>
 <td align="right">75</td>
-<td align="right">77</td>
+<td align="right">1</td>
 </tr>
 <tr class="even">
 <td align="left">rot</td>
@@ -16652,7 +19569,7 @@ Spring/Superior/D20/Rots/SU 15 D20 Spring 2024 24GS02I94 Rot.xlsx</td>
 <td align="right">224.5</td>
 <td align="right">1</td>
 <td align="right">25</td>
-<td align="right">27</td>
+<td align="right">1</td>
 </tr>
 <tr class="odd">
 <td align="left">rot</td>
@@ -16670,7 +19587,7 @@ Spring/Superior/D20/Rots/SU 16 D20 Spring 2024 24GS03I14 Rot.xlsx</td>
 <td align="right">190.5</td>
 <td align="right">1</td>
 <td align="right">31</td>
-<td align="right">32</td>
+<td align="right">2</td>
 </tr>
 <tr class="even">
 <td align="left">rot</td>
@@ -16688,7 +19605,7 @@ Spring/Superior/D20/Rots/SU 16 D20 Spring 2024 24GS03I14 Rot.xlsx</td>
 <td align="right">190.5</td>
 <td align="right">1</td>
 <td align="right">11</td>
-<td align="right">12</td>
+<td align="right">2</td>
 </tr>
 <tr class="odd">
 <td align="left">rot</td>
@@ -16706,7 +19623,7 @@ Spring/Superior/D20/Rots/SU 17M D20 Spring 2024 24GS03I34 Rot.xlsx</td>
 <td align="right">162.0</td>
 <td align="right">1</td>
 <td align="right">50</td>
-<td align="right">51</td>
+<td align="right">5</td>
 </tr>
 <tr class="even">
 <td align="left">rot</td>
@@ -16724,7 +19641,7 @@ Spring/Superior/D20/Rots/SU 17M D20 Spring 2024 24GS03I34 Rot.xlsx</td>
 <td align="right">162.0</td>
 <td align="right">1</td>
 <td align="right">22</td>
-<td align="right">22</td>
+<td align="right">1</td>
 </tr>
 <tr class="odd">
 <td align="left">rot</td>
@@ -16742,7 +19659,7 @@ Spring/Superior/D20/Rots/SU 18 D20 Spring 2024 24GS03I54 Rot.xlsx</td>
 <td align="right">144.0</td>
 <td align="right">1</td>
 <td align="right">52</td>
-<td align="right">53</td>
+<td align="right">1</td>
 </tr>
 <tr class="even">
 <td align="left">rot</td>
@@ -16760,7 +19677,7 @@ Spring/Superior/D20/Rots/SU 18 D20 Spring 2024 24GS03I54 Rot.xlsx</td>
 <td align="right">144.0</td>
 <td align="right">1</td>
 <td align="right">14</td>
-<td align="right">17</td>
+<td align="right">1</td>
 </tr>
 <tr class="odd">
 <td align="left">rot</td>
@@ -16778,7 +19695,7 @@ Spring/Superior/D20/Rots/SU 19 D20 Spring 2024 24GS03I74 Rot.xlsx</td>
 <td align="right">213.0</td>
 <td align="right">1</td>
 <td align="right">54</td>
-<td align="right">56</td>
+<td align="right">0</td>
 </tr>
 <tr class="even">
 <td align="left">rot</td>
@@ -16796,18 +19713,18 @@ Spring/Superior/D20/Rots/SU 19 D20 Spring 2024 24GS03I74 Rot.xlsx</td>
 <td align="right">213.0</td>
 <td align="right">1</td>
 <td align="right">8</td>
-<td align="right">10</td>
+<td align="right">2</td>
 </tr>
 </tbody>
 </table>
 </div>
 <div id="rot-missing-required-values" class="section level2">
-<h2>Rot Missing required values</h2>
+<h2>Rot missing required values</h2>
 <table>
 <thead>
 <tr class="header">
-<th align="left">protocol</th>
 <th align="right">row_id</th>
+<th align="left">protocol</th>
 <th align="left">source_file</th>
 <th align="left">sample_num</th>
 <th align="left">split</th>
@@ -16907,8 +19824,8 @@ Spring/Superior/D20/Rots/SU 19 D20 Spring 2024 24GS03I74 Rot.xlsx</td>
 </tbody>
 </table>
 </div>
-<div id="rot-duplicate-organism-rows" class="section level2">
-<h2>Rot duplicate organism rows</h2>
+<div id="rot-duplicate-organism-rows-for-review" class="section level2">
+<h2>Rot duplicate organism rows for review</h2>
 <table>
 <colgroup>
 <col width="3%" />
@@ -17902,8 +20819,8 @@ D20 Spring 2024 24GE02I34 Rot.xlsx</td>
 </tbody>
 </table>
 </div>
-<div id="rot-station-standardization" class="section level2">
-<h2>Rot Station standardization</h2>
+<div id="rot-station-standardization-for-review" class="section level2">
+<h2>Rot station standardization for review</h2>
 <table>
 <colgroup>
 <col width="6%" />
@@ -18031,11 +20948,12 @@ D20 Spring 2024 24GE03I54 Rot.xlsx</td>
 </tbody>
 </table>
 </div>
-<div id="rot-multiple-analyst-dates" class="section level2">
-<h2>Rot multiple analyst dates</h2>
+<div id="rot-multiple-analyst-dates-for-review" class="section level2">
+<h2>Rot multiple analyst dates for review</h2>
 <table>
 <thead>
 <tr class="header">
+<th align="left">protocol</th>
 <th align="left">source_file</th>
 <th align="left">sample_num</th>
 <th align="left">split</th>
@@ -18047,8 +20965,8 @@ D20 Spring 2024 24GE03I54 Rot.xlsx</td>
 </tbody>
 </table>
 </div>
-<div id="rot-missing-analyst-dates" class="section level2">
-<h2>Rot missing analyst dates</h2>
+<div id="rot-missing-analyst-dates-for-review" class="section level2">
+<h2>Rot missing analyst dates for review</h2>
 <table>
 <thead>
 <tr class="header">
@@ -18156,6 +21074,75 @@ D20 Spring 2024 24GE03I54 Rot.xlsx</td>
 </tbody>
 </table>
 </div>
+<div id="rot-taxa-requiring-both-length-and-width" class="section level2">
+<h2>Rot taxa requiring both length and width</h2>
+<table>
+<colgroup>
+<col width="46%" />
+<col width="5%" />
+<col width="3%" />
+<col width="9%" />
+<col width="6%" />
+<col width="5%" />
+<col width="4%" />
+<col width="18%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">source_file</th>
+<th align="left">sample_num</th>
+<th align="left">split</th>
+<th align="left">species_name</th>
+<th align="left">species_code</th>
+<th align="right">length_mm</th>
+<th align="right">width_mm</th>
+<th align="left">expected_measurement_rule</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">GLNPO 2024 Spring/GLNPO 2024 Spring/Erie/D20/Rots/ER 59
+D20 Spring 2024 24GE03I14 Rot.xlsx</td>
+<td align="left">24GE03I14</td>
+<td align="left">B</td>
+<td align="left">Filinia terminalis</td>
+<td align="left">FILTERM</td>
+<td align="right">0.18</td>
+<td align="right">0</td>
+<td align="left">Both length_mm and width_mm required</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="rot-collotheca-rows-missing-required-width" class="section level2">
+<h2>Rot Collotheca rows missing required width</h2>
+<table>
+<colgroup>
+<col width="12%" />
+<col width="11%" />
+<col width="6%" />
+<col width="13%" />
+<col width="13%" />
+<col width="10%" />
+<col width="9%" />
+<col width="26%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">source_file</th>
+<th align="left">sample_num</th>
+<th align="left">split</th>
+<th align="left">species_name</th>
+<th align="left">species_code</th>
+<th align="right">length_mm</th>
+<th align="right">width_mm</th>
+<th align="left">expected_measurement_rule</th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+</div>
 <div id="rot-unexpected-width-without-length" class="section level2">
 <h2>Rot unexpected width without length</h2>
 <table>
@@ -18196,85 +21183,6 @@ D20 Spring 2024 24GE03I54 Rot.xlsx</td>
 </tr>
 </thead>
 <tbody>
-</tbody>
-</table>
-</div>
-<div id="rot-taxa-requiring-both-length-and-width" class="section level2">
-<h2>Rot taxa requiring both length and width</h2>
-<table>
-<colgroup>
-<col width="12%" />
-<col width="11%" />
-<col width="6%" />
-<col width="13%" />
-<col width="13%" />
-<col width="10%" />
-<col width="9%" />
-<col width="26%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="left">source_file</th>
-<th align="left">sample_num</th>
-<th align="left">split</th>
-<th align="left">species_name</th>
-<th align="left">species_code</th>
-<th align="right">length_mm</th>
-<th align="right">width_mm</th>
-<th align="left">expected_measurement_rule</th>
-</tr>
-</thead>
-<tbody>
-</tbody>
-</table>
-</div>
-<div id="rot-collotheca-rows-missing-required-width" class="section level2">
-<h2>Rot Collotheca rows missing required width</h2>
-<table>
-<colgroup>
-<col width="12%" />
-<col width="11%" />
-<col width="6%" />
-<col width="13%" />
-<col width="13%" />
-<col width="10%" />
-<col width="9%" />
-<col width="26%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="left">source_file</th>
-<th align="left">sample_num</th>
-<th align="left">split</th>
-<th align="left">species_name</th>
-<th align="left">species_code</th>
-<th align="right">length_mm</th>
-<th align="right">width_mm</th>
-<th align="left">expected_measurement_rule</th>
-</tr>
-</thead>
-<tbody>
-</tbody>
-</table>
-</div>
-<div id="flagged-row-overview" class="section level2">
-<h2>Flagged row overview</h2>
-<table>
-<thead>
-<tr class="header">
-<th align="left">dataset</th>
-<th align="right">flagged_rows</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">Zoop</td>
-<td align="right">13919</td>
-</tr>
-<tr class="even">
-<td align="left">Rot</td>
-<td align="right">1</td>
-</tr>
 </tbody>
 </table>
 </div>
