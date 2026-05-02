@@ -22,30 +22,31 @@ write_compiled_zoop_data <- function(df) {
   df |>
     dplyr::filter(protocol == "zoop") |>
     dplyr::select(
-      -rotvol_ml,
-      -submla_ml,
-      -submlb_ml,
-      -rot_subml_ml,
-      -width_mm
+      -dplyr::any_of(c(
+        "rotvol_ml",
+        "submla_ml",
+        "submlb_ml",
+        "rot_subml_ml",
+        "width_mm"
+      ))
     ) |>
     readr::write_csv(out_path)
   
   out_path
 }
 
-
 write_compiled_rot_data <- function(df) {
   out_path <- here::here("data", "processed", "compiled_rot.csv")
-    
-    df |>
-      dplyr::filter(protocol == "rot") |>
-      dplyr::select(
-        -sex
-      ) |>
-      readr::write_csv(out_path)
-    
-    out_path
-  }
+  
+  df |>
+    dplyr::filter(protocol == "rot") |>
+    dplyr::select(
+      -dplyr::any_of(c("sex"))
+    ) |>
+    readr::write_csv(out_path)
+  
+  out_path
+}
 
 write_qa_summary <- function(df, file_name) {
   out_path <- here::here("outputs", "tables", file_name)
