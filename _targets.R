@@ -15,7 +15,10 @@
 #Users usually do not need to run individual scripts manually.
 # Instead, in the console run:
 #
-#   targets::tar_make()
+#   for basic pipeline run - 
+#   targets::tar_make() for a basic 
+#   for detailed pipeline run -
+#   targets::tar_make(callr_function = NULL, reporter = "verbose")
 #
 # The pipeline will:
 #   1. Find raw Excel files

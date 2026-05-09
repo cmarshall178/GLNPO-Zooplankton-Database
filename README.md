@@ -310,8 +310,21 @@ Then rerun the pipeline.
 ### Packages out of sync
 
 ```r
-renv::status()
+renv::status() # reports issues caused by inconsistencies across project lockfile, library, and dependencies
+renv::restore() # installs the package versions from the lockfile
+renv:install() # install used or non-recorded package from CRAN or elsewhere
+renv::snapshot() # save the library state to lockfile
+renv::restore() # use if multiple packages are in an inconsistent state then ::install() then ::snapshot()
+```
+
+### RStudio or R need updating- run these codes individually in the console
+
+```r
+renv::status() 
 renv::restore()
+renv::rebuild() 
+renv::snapshot()
+targets::tar_make(callr_function = NULL, reporter = "verbose")
 ```
 
 ### Pipeline errors
@@ -323,8 +336,10 @@ targets::tar_meta(fields = c(error, warnings), complete_only = TRUE)
 ### Reset pipeline
 
 ```r
-targets::tar_destroy(ask = FALSE)
-targets::tar_make()
+rm(list = ls()) # Removes existing list and environment variables
+targets::tar_destroy(ask = FALSE) # Refreshes the pipeline with any changes
+targets::tar_make() # runs a basic version of the pipeline
+targets::tar_make(callr_function = NULL, reporter = "verbose") # runs the full detailed pipeline
 ```
 
 ---
